@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+   <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>View Timetable</title>
+        <script src="nonsense.js" defer></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+<body  class=" from-yellow-300 to-yellow-100 bg-gradient-to-l   ">
+    
+    <!--Nav Bar  class="table-auto border-collapse flex justify-center "
+    <div class="p-4">
+        <nav class=" from-yellow-600 to-yellow-300 bg-gradient-to-r   text-purple-100 border-b border-purple-100 shadow-lg p-2 rounded-lg ">
+           
+              <div class="text-center">
+                <a  href="#" class=" text-center text-lg uppercase font-bold "> SEXY COLOR SCHEME</a>
+              </div>
+        </nav>
+    </div>
+-->
+    <nav class="bg-purple-600 text-purple-100 border-b border-purple-100 shadow-lg p-2 rounded-lg ">
+      <div class="container mx-auto">
+          <div class="sm:flex justify-between">
+              <a  href="#" class=" flex justify-start text-lg uppercase font-bold pr-80">Project Table</a>
+         
+              <ul >
+              
+                  <div class="pl-20 flex">
+                      <li class="sm:inline-block hover:bg-red-500 rounded p-1"><a href="index.html" class="ml-2">Home</a></li>
+                      <li class="sm:inline-block hover:bg-red-300 rounded p-1"><a href="Login.html" class="ml-2">Log in</a></li>
+                      <li class="sm:inline-block hover:bg-red-300 rounded p-1"><a href="SignUp.html" class="ml-2">Sign Up</a></li>
+                      <div>
+                        <button class="mt-1 pl-1"  id=menubtn>Menu</button>
+                        <div class="bg-gray-200 hidden flex-col rounded mt-1 p-2 text-sm text-blue-700" id="dropdown">
+                          <a href="#">View</a>
+                          <a href="#">Logout</a>
+                          <a href="#">Manage Account</a>
+                        </div>
+                      </div>
+                     
+                      <li class="sm:inline-block hover:bg-red-300 rounded p-1"><a href="About.html" class="ml-2">About</a></li>
+                      
+                      
+                  </div> 
+              </ul>
+          </div>
+          
+      </div>
+  </nav>
+
+    <main >
+
+      <div class="bg-gray-700 m-4 p-5 rounded container">
+        <p class="draggable bg-red-200 p-4 mb-2 cursor-move" draggable= True>1</p>
+        <p class=" draggable  bg-red-200 p-4 cursor-move" draggable= True>2</p>
+      </div>
+      
+      <div class="bg-gray-700 m-4 p-5 rounded md: bg-red-600 container">
+        <p class="draggable bg-red-200 p-4 cursor-move" draggable= True>3</p>
+        <p class="draggable bg-red-200 p-4 mt-2 cursor-move" draggable= True>4</p>
+      </div>
+        
+       
+       
+    </main>
+            <script>
+              window.addEventListener('DOMContentLoaded', ()=> {
+                
+                const menuBtn = document.querySelector('#menubtn')
+                const dropdown = document.querySelector('#dropdown')
+
+                menuBtn.addEventListener('click', () =>{
+                  dropdown.classList.toggle('hidden')
+                dropdown.classList.toggle('flex')
+                })
+
+               
+              })
+            </script>        
+               
+                
+    </body>
+    </html>   

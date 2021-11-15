@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+    
+/*
+nav ul{
+    float: right;
+}
+
+nav ul li{
+    float: right;
+    position: relative;
+
+}
+
+nav ul li a{
+    padding: 2px;
+    display: block;
+    font-size: 16px;
+}
+
+nav ul li ul{
+   
+    display: block;
+    position: absolute;
+}
+
+nav ul li ul{
+    background-color: blueviolet;
+    display: block;
+    position: absolute;
+}
+
+nav ul li ul li a{
+   padding: 10px 14px;
+}
+
+nav ul li ul li a:hover{
+   background-color: rgb(218, 188, 247);
+ }
+
+ */
