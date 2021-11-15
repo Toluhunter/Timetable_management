@@ -32244,45 +32244,6 @@ video {
   content: none;
 }
 
-/*
-nav ul{
-    float: right;
-}
-
-nav ul li{
-    float: right;
-    position: relative;
-
-}
-
-nav ul li a{
-    padding: 2px;
-    display: block;
-    font-size: 16px;
-}
-
-nav ul li ul{
-   
-    display: block;
-    position: absolute;
-}
-
-nav ul li ul{
-    background-color: blueviolet;
-    display: block;
-    position: absolute;
-}
-
-nav ul li ul li a{
-   padding: 10px 14px;
-}
-
-nav ul li ul li a:hover{
-   background-color: rgb(218, 188, 247);
- }
-
- */
-
 @media (min-width: 640px) {
   .sm\:container {
     width: 100%;
@@ -188417,3 +188378,6 @@ nav ul li ul li a:hover{
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
+
+
+    

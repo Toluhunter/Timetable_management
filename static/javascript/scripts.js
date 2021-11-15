@@ -1,3 +1,5 @@
+//Drop down menu 
+
 window.addEventListener('DOMContentLoaded', ()=> {
           
     const menuBtn = document.querySelector('.menubtn');
@@ -10,3 +12,12 @@ window.addEventListener('DOMContentLoaded', ()=> {
 
    
   })
+
+//Responsive mobile menu
+
+  const btn = document.querySelector('button.toggle-mobile-menu')
+        const menu = document.querySelector('.mobile-menu')
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle("hidden")
+        })
