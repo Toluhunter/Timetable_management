@@ -1,0 +1,15 @@
+{
+  "name": "timetable",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "tailwindcss build /static/CSS/styles.css -o ../static/CSS/style.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tailwindcss": "^2.2.15"
+  }
+}
