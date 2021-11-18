@@ -10,5 +10,4 @@ class AboutPageView(generic.TemplateView):
 
 class ConatactPageView(generic.TemplateView):
 
-    def get(self, request):
-        return HttpResponse("We await ini")
+    template_name = "contact.html"

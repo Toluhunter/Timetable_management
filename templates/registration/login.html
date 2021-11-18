@@ -1,16 +1,5 @@
-<!DOCTYPE html>
-<html>
-   <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Home Page</title>
-        <link rel="stylesheet" href="..\static\CSS\style.css ">
-    </head>
-<body  class="text-gray-600 font-bold  from-purple-500 via-blue-300 to-purple-500 bg-gradient-to-r  ">
-    
-    <!--Nav Bar-->
-    
-    <body>
+{% extends 'base.html' %}
+    {% block content %}
         <main class="min-h-screen flex items-center justify-center font-serif">
             <!-- <div class="bg-purple-300 p-4 justify-center mx-80 my-10 py-10 rounded-3xl">
 
@@ -42,16 +31,11 @@
                         class="w-full rounded p-2 outline-none border-2 border-purple-200 focus:border-purple-400">
                     </div>
 
-                    <div>
-                        <label for="verificationCode" class="block mb-2">Verification Code</label>
-                        <input type="text" name="verification" placeholder="Enter 4 digit code" required
-                        class="w-full rounded p-2 outline-none border-2 border-purple-200">
-                    </div>
                     <div class="flex justify-between items-center">
                         <button class="font-bold from-purple-600 to-blue-400  bg-gradient-to-r text-gray-100  text-gray-100 rounded p-2 hover:bg-blue-500">Login</button>
 
                         
-                        <a href="index.html" class="text-red-500" >
+                        <a href="{% url 'page:home' %}" class="text-red-500" >
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                         </svg>
@@ -63,6 +47,5 @@
 
            </div>
     </main>
-    </body>
-    
-</html>
+
+{% endblock content %}
