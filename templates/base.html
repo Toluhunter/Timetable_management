@@ -1,0 +1,84 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+   <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Home Page</title>
+        <script src="{% static 'js/script.js'%}" defer></script>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+<body  class="text-purple-700 bg-white-50  ">
+    
+    <!--Nav Bar -->
+    <div class="p-2 fixed w-full"> 
+        <nav class="bg-purple-600 text-purple-100 w-full border-b border-purple-100 shadow-lg p-2 rounded-lg ">
+            
+                <div class="flex justify-between items-center">
+                    <a  href="{% url 'page:home' %}" class=" text-lg uppercase font-bold pr-80">Project Table</a>
+                    
+                    <!-- nav items -->
+                    <ul>
+                        <div class="hidden md:flex space-x-5 text-lg items-center ">
+                            
+                           
+                            
+                            <div>
+                                <button class="relative menubtn">Sign Up</button>
+                                    <ul class="absolute hidden flex-col bg-purple-600 p-2 text-sm space-y-4 rounded-b-lg dropdown">
+                                        <li class="px-1 pt-1 hover:bg-purple-400  rounded"><a href="LecturerSignUp.html">Staff</a> </li> 
+                                        <li class="px-1 hover:bg-purple-400  rounded"><a href="{% url 'accounts:signup' %}">Student</a> </li> 
+                                    </ul>
+                            </div>  
+                            <li class="hover:bg-purple-500 rounded p-1"><a href="{% url 'accounts:login' %}" >Log in</a></li> 
+
+                                    </ul>
+                            </div>
+                        </div> 
+
+                        <!-- toggle button -->
+                        <div class="md:hidden flex items-center">
+                            <button class="toggle-mobile-menu">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                                  </svg>
+                            </button>  
+                        </div>
+                    </ul>
+
+               
+                </div>
+                <!-- mobile menu -->
+                <div class="hidden mobile-menu md:hidden">
+                    <a href="{% url 'accounts:login' %}" class="block  p-2 rounded text-sm hover:bg-purple-500">Login</a>
+                    <a href="{% url 'accounts:signup' %}" class="block p-2 rounded text-sm hover:bg-purple-500">Sign Up</a>
+                    <a href="{% url 'page:contact' %}" class="block p-2 rounded text-sm hover:bg-purple-500">Contact Us</a>
+                    <a href="{% url 'page:about' %}" class="block p-2 rounded text-sm hover:bg-purple-500">About</a>
+                </div>
+        </nav>
+    </div>
+
+    {% block content %}
+    {% endblock content %}
+
+<footer class="font-bold text-purple-100 bg-purple-600  mx-4
+                               p-2 mt-20 pr-5 mb-5 rounded-lg flex justify-between"> 
+                    <div>
+                        Project Table 2022
+                    </div>
+                    <div class="space-x-4">
+                        <a href="{% url 'page:about' %}">About</a>
+                        <a href="{% url 'page:contact' %}">Contact Us</a>
+                    </div>
+                    
+                   
+                </footer>
+
+    <script>
+        
+    </script>
+
+    
+</body>
+    
+</html>
