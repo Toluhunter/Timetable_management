@@ -11,10 +11,12 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import configparser
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
+CONFIG = configparser.ConfigParser()
+CONFIG.read('config.ini')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -77,8 +79,12 @@ WSGI_APPLICATION = 'victoria.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': CONFIG['DEFAULT']['NAME'],
+        'USER': CONFIG['DEFAULT']['USER'],
+        'HOST': CONFIG['DEFAULT']['HOST'],
+        'PORT': int(CONFIG['DEFAULT']['PORT']),
+        'PASSWORD': CONFIG['DEFAULT']['PASSWORD']
     }
 }
 
