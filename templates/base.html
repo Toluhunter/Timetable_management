@@ -5,23 +5,24 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Home Page</title>
-        <script src="{% static 'js/script.js'%}" defer></script>
+        <script src="{% static 'js/scripts.js'%}" defer></script>
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
     </head>
-<body  class="text-purple-700 bg-white-50  ">
+<body  class="text-purple-700  ">
     
     <!--Nav Bar -->
     <div class="p-2 fixed w-full"> 
-        <nav class="bg-purple-600 text-purple-100 w-full border-b border-purple-100 shadow-lg p-2 rounded-lg ">
+        <nav class="bg-purple-600 text-purple-100 w-full border-b border-purple-100 
+                    shadow-lg p-2 rounded-lg text-sm md:text-lg">
             
                 <div class="flex justify-between items-center">
-                    <a  href="{% url 'page:home' %}" class=" text-lg uppercase font-bold pr-80">Project Table</a>
+                    <a  href="{% url 'page:home' %}"  class=" text-sm uppercase md:text-lg font-bold ">Project Table</a>
+   
+                 
                     
                     <!-- nav items -->
                     <ul>
                         <div class="hidden md:flex space-x-5 text-lg items-center ">
-                            
-                           
                             
                             <div>
                                 <button class="relative menubtn">Sign Up</button>
@@ -32,9 +33,10 @@
                             </div>  
                             <li class="hover:bg-purple-500 rounded p-1"><a href="{% url 'accounts:login' %}" >Log in</a></li> 
 
-                                    </ul>
+                                   
                             </div>
-                        </div> 
+                        
+                
 
                         <!-- toggle button -->
                         <div class="md:hidden flex items-center">
@@ -45,23 +47,25 @@
                             </button>  
                         </div>
                     </ul>
-
                
                 </div>
                 <!-- mobile menu -->
-                <div class="hidden mobile-menu md:hidden">
+                 
+                 <div class="hidden mobile-menu md:hidden">
                     <a href="{% url 'accounts:login' %}" class="block  p-2 rounded text-sm hover:bg-purple-500">Login</a>
-                    <a href="{% url 'accounts:signup' %}" class="block p-2 rounded text-sm hover:bg-purple-500">Sign Up</a>
-                    <a href="{% url 'page:contact' %}" class="block p-2 rounded text-sm hover:bg-purple-500">Contact Us</a>
-                    <a href="{% url 'page:about' %}" class="block p-2 rounded text-sm hover:bg-purple-500">About</a>
+                    <a href="{% url 'accounts:signup' %}" class="block p-2 rounded text-sm hover:bg-purple-500">Register Student</a>
+                    <a href="#" class="block p-2 rounded text-sm hover:bg-purple-500">Register Lecturer</a>
+                    <a href="{% url 'page:contact' %}"class="block p-2 rounded text-sm hover:bg-purple-500">Contact Us</a>
+                    <a href="{% url 'page:about' %}"  class="block p-2 rounded text-sm hover:bg-purple-500">About</a>
                 </div>
         </nav>
     </div>
+               
 
     {% block content %}
     {% endblock content %}
 
-<footer class="font-bold text-purple-100 bg-purple-600  mx-4
+<footer class="font-bold text-purple-100 bg-purple-600  mx-4 
                                p-2 mt-20 pr-5 mb-5 rounded-lg flex justify-between"> 
                     <div>
                         Project Table 2022
@@ -74,9 +78,7 @@
                    
                 </footer>
 
-    <script>
-        
-    </script>
+   
 
     
 </body>

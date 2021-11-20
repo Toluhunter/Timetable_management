@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+   <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>View Timetable</title>
+        <script src="..\static\javascript\scripts.js" defer></script>
+        <link rel="stylesheet" href="..\static\CSS\style.css ">
+    </head>
+<body  class="text-purple-700 bg-white-50  ">
+    
+    <!--Nav Bar  class="table-auto border-collapse flex justify-center "-->
+    <div class="p-4">
+        <nav class="bg-purple-600 text-purple-100 border-b border-purple-100 shadow-lg p-2 rounded-lg w-full">
+            
+                <div class="flex justify-between items-center">
+                    
+                    <div class="flex items-center">
+                        <button class="mt-1  relative  md:mr-32  mr-18 flex menubtn">
+                             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <span class="pl-2 text-sm mb-0">Hi, Toluuuuuuuuuuuuuuu</span>
+                        </button> 
+                        <ul class="bg-purple-600 hidden flex-col rounded-b-lg p-2 text-xs absolute ml-4 mt-16 text-left dropdown">
+                            <li class=" hover:bg-purple-400 rounded p-1"><a href="#">Profile</a> </li> 
+                        </ul>
+                    </div>
+                            
+                        
+                <div>
+                    <a  href="#" class=" text-sm  ">Logout</a>
+                    
+                </div>
+                   
+                    
+                </div>
+                
+            
+        </nav>
+    </div>
+
+    <main class="px-10 py-3 ">
+        <p class="font-bold text-center mb-2 text-2xl">Software Engineering 300Level Group D</p>
+<!-- 
+        <div class="table w-full p-2">
+            <table class="w-full border">
+               
+                <tr class="bg-purple-300 border-b ">
+                        <th class="p-2">Course</th>
+                        <th class="p-2">Time</th>
+                        <th class="p-2">Venue</th>  
+                        <th class="p-2">Lecturer</th>    
+                </tr>
+
+                <tr class="bg-purple-100 text-center">
+                    <td class="p-2">SENG 305</td>
+                    <td class="p-2">9-11</td> 
+                    <td class="p-2">E102</td>
+                    <td class="p-2">MR. Man</td>
+                </tr>
+                
+                <tr class="bg-purple-300 text-center">
+                    <td class="p-2">COSC 335</td>
+                    <td class="p-2">12-1</td> 
+                    <td class="p-2">RM 7</td>
+                    <td class="p-2">MR. Man</td>
+                </tr>
+                
+                <tr class="bg-purple-100 text-center">
+                    <td class="p-2">GEDS 204</td>
+                    <td class="p-2">2-4</td> 
+                    <td class="p-2">WRA</td>
+                    <td class="p-2">MR. Man</td>
+                </tr>
+                
+                <tr class="bg-purple-300 text-center">
+                    <td class="p-2">COSC 219</td>
+                    <td class="p-2">4-6</td> 
+                    <td class="p-2">CIT</td>
+                    <td class="p-2">MR. Man</td>
+                </tr>
+
+               
+                
+            </table>
+        </div> -->
+
+        <div class="table md:flex flex-col w-full p-2">
+            <table class="w-full border md:bg-red-500">
+                <tr class="bg-purple-300 border-b ">
+                        <th class="p-1">DAY</th>
+                        <th class="p-2">7-8</th>
+                        <th class="p-2">8-9</th>
+                        <th class="p-2">9-10</th>
+                        <th class="p-2">11-12</th>
+                        <th class="p-2">1-2</th>
+                        <th class="p-2">2-4</th>
+                        <th class="p-2">4-6</th>
+                </tr>
+
+                <tr class="bg-purple-100 text-center">
+                    <td class="p-2">MONDAY</td> 
+                    <td class="p-2">english Otuneme b107</td> 
+                    <td class="p-2">english Otuneme b107</td>
+                    <td class="p-2">english Otuneme b107</td> 
+                    <td class="p-2">english Otuneme b107</td>
+                    <td class="p-2">english Otuneme b107</td> 
+                    <td class="p-2">english Otuneme b107</td>
+                    <td class="p-2">english Otuneme b107</td> 
+                   
+                    
+                    
+                </tr>
+                
+                <!-- <tr class="bg-purple-300 text-center">
+                    <td class="p-2">TUESDAY</td>
+                    <td class="p-2">english Otuneme b107</td> 
+                    <td class="p-2">english Otuneme b107</td>
+                    <td class="p-2">english Otuneme b107</td> 
+                    <td class="p-2">english Otuneme b107</td>
+                    <td class="p-2">english Otuneme b107</td> 
+                    <td class="p-2">english Otuneme b107</td>
+                    <td class="p-2">english Otuneme b107</td> 
+                </tr>
+                
+                <tr class="bg-purple-100 text-center">
+                    <td class="p-2">WEDNESDAY</td>
+                    <td class="p-2"></td> 
+                    <td class="p-2"></td>
+                    <td class="p-2"></td> 
+                    <td class="p-2"></td>
+                    <td class="p-2"></td> 
+                    <td class="p-2"></td>
+                    <td class="p-2"></td> 
+                    
+                </tr>
+                
+                <tr class="bg-purple-300 text-center">
+                    <td class="p-2">THURSDAY</td>
+                    <td class="p-2"></td> 
+                    <td class="p-2"></td>
+                    <td class="p-2"></td> 
+                    <td class="p-2"></td>
+                    <td class="p-2"></td> 
+                    <td class="p-2"></td>
+                    <td class="p-2"></td> 
+                   
+                </tr>
+
+                <tr class="bg-purple-100 text-center">
+                    <td class="p-2">FRIDAY</td>
+                    <td class="p-2"></td> 
+                    <td class="p-2"></td>
+                    <td class="p-2"></td> 
+                    <td class="p-2"></td>
+                    <td class="p-2"></td> 
+                    <td class="p-2"></td>
+                    <td class="p-2"></td> 
+                    
+                </tr>
+                 -->
+            </table>
+        </div>
+
+
+
+    </main>
+
+    
+
+</body>
+</html>
