@@ -1,51 +1,53 @@
 {% extends 'base.html' %}
 
     {% block content %}
-   <main class="px-20 py-3 ">
+   <main class=" px-5 md:px-20 py-3 ">
 
             <!--Introduction-->
-               <div class="pt-10 font-serif "> 
-                    <div class="bg-purple-200 px-5 py-5 rounded-lg mt-8">
-                        <span class="text-5xl font-bold pb-4"> Welcome to Project Table<br> </span>
-                        <span class ="text-l font-bold py-px">
-                            Where we help you keep track of what's important <br>
-                            Project Table is designed to help you keep <strong>create, track and follow</strong> <br>
-                            your neatly designed schedule.<br>
-                        </span>
-                        <div class="mt-10 font-bold space-x-2">
-                            <a class="bg-purple-500 text-blue-100 p-1 rounded-lg" href="{% url 'accounts:signup' %}">Get Started</a>
-                            <a class="bg-purple-300 p-1 rounded-lg" href="{% url 'accounts:login' %}">Login</a>
-                        </div>
-                </div>
+            <div class="pt-10 font-serif "> 
+                <div class="bg-purple-200 px-5 py-5 rounded-lg mt-8">
+                    <span class="text-lg md:text-5xl font-bold pb-4"> Welcome to Project Table<br> </span>
+                    <span class ="text-sm md:text-lg font-bold py-px">
+                        Where we help you keep track of what's important <br>
+                        Project Table is designed to help you keep <strong>create, track and follow</strong>
+                        your neatly designed schedule.<br>
+                    </span>
+                    <div class="mt-10 font-bold space-x-2">
+                        <a class="bg-purple-500 text-blue-100 p-1 rounded-lg" href="{% url 'accounts:signup' %}">Get Started</a>
+                        <a class="bg-purple-300 p-1 rounded-lg" href="{% url 'accounts:login' %}">Login</a>
+                    </div>
+            </div>
+
+               
 
 
             <!--Description-->
-                    <div class="pt-10 font-serif"> 
-                        <div class="bg-purple-200 px-5 py-5 rounded-lg">
-                            <div class="bg-purple-300 px-12 py-5 rounded-xl">
-                                <span class="text-2xl  font-bold pb-4"> Access Your Schools Timetable Easily<br> </span>
-                                <span class ="text-xl py-px">
-                                    Using database technologies, we store your timetable for you <br>
-                                    to seamlessly access and use.<br>
-                                </span>
-                              
-                        </div>
+            <div class="pt-10 font-serif"> 
+                <div class="bg-purple-200 px-5 py-5 rounded-lg">
+                    <div class="bg-purple-300 px-12 py-5 rounded-xl">
+                        <span class="text-lg md:text-2xl  font-bold pb-4"> Access Your Schools Timetable Easily<br> </span>
+                        <span class ="text-sm md:text-xl py-px">
+                            Using database technologies, we store your timetable for you
+                            to seamlessly access and use.<br>
+                        </span>
+                      
+                </div>
 
                         <div class="bg-purple-300 px-12 py-5 rounded-xl mt-6">
-                                <span class="text-2xl font-bold pb-4">Create your personal Timeatble<br> </span>
-                                <span class ="text-xl  py-px">
-                                   You can now create your personalised timetables<br>
-                                    Easily manage your time properly.<br>
-                                </span>
-                        </div>
-
-                        <div class="bg-purple-300 px-12 py-5 rounded-xl mt-6">
-                            <span class="text-2xl font-bold pb-4">Receive Notifications<br> </span>
-                            <span class ="text-xl  py-px">
-                               Sign up with your email address to receive reminders<br>
-                               Easy access schedule, Let's help you be on time.<br>
+                            <span class="text-lg md:text-2xl font-bold pb-4">Create your personal Timeatble<br> </span>
+                            <span class ="text-sm md:text-xl  py-px">
+                               You can now create your personalised timetables<br>
+                                Easily manage your time properly.<br>
                             </span>
                     </div>
+
+                    <div class="bg-purple-300 px-12 py-5 rounded-xl mt-6">
+                        <span class="text-lg md:text-2xl font-bold pb-4">Receive Notifications<br> </span>
+                        <span class ="text-sm md:text-xl  py-px">
+                           Sign up with your email address to receive reminders<br>
+                           Easy access schedule, Let's help you be on time.<br>
+                        </span>
+                </div>
                             
                               
                            
