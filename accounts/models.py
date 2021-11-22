@@ -1,5 +1,7 @@
+import re
 from django.db import models
 from django.contrib.auth.models import AbstractBaseUser,BaseUserManager
+from django.core.exceptions import ValidationError
 
 # Create your models here.
 
@@ -32,12 +34,27 @@ class CustomUser(AbstractBaseUser):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     is_staff = models.BooleanField(default=False)
-    is_student = models.BooleanField(default=True)
+    is_student = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=False)
     department = models.ForeignKey('Department', on_delete=models.CASCADE)
 
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['first_name', 'last_name', 'department']
     objects = CustomManager()
+
+    def clean(self, *args, **kwargs):
+        email = self.email.strip()
+        
+        if self.is_student:       
+            student_email = re.compile(r"^[a-z]{3,}[0-9]{4}@student\.babcock\.edu\.ng$")
+            if not student_email.match(email):
+                raise ValidationError("Not a Valid babcock email for student")
+        else:
+            lecturer_email = re.compile(r"^[a-z]{3,}[0-9]{4}@babcock\.edu\.ng$")
+            if not lecturer_email.match(email):
+                raise ValidationError("Not a Valid babcock email for lecturer")
+        
+        super().clean(*args, **kwargs)
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
@@ -48,12 +65,15 @@ class Student(models.Model):
 
     def __str__(self):
         return f'{self.user.first_name} {self.user.last_name}'
+    
+
 
 class Lecturer(models.Model):
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
 
     def __str__(self):
         return f'{self.user.first_name} {self.user.last_name}'
+    
 
 class Courses(models.Model):
     department = models.ManyToManyField('Department')
@@ -66,7 +86,8 @@ class Courses(models.Model):
         return self.name
 
 class Department(models.Model):
-    name = models.CharField(max_length=60, unique=True, primary_key=True)
+    name = models.CharField(max_length=60, unique=True)
+    code = models.CharField(max_length=10, unique=True, primary_key=True)
 
     def __str__(self):
         return self.name

@@ -7,6 +7,12 @@
         <title>Home Page</title>
         <script src="{% static 'js/scripts.js'%}" defer></script>
         <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        <style>
+        .asteriskField{
+        display: none;
+         }
+        </style>
+        
     </head>
 <body  class="text-purple-700  ">
     
@@ -23,18 +29,29 @@
                     <!-- nav items -->
                     <ul>
                         <div class="hidden md:flex space-x-5 text-lg items-center ">
-                            
+                            {% if not user.is_authenticated %}
                             <div>
                                 <button class="relative menubtn">Sign Up</button>
                                     <ul class="absolute hidden flex-col bg-purple-600 p-2 text-sm space-y-4 rounded-b-lg dropdown">
-                                        <li class="px-1 pt-1 hover:bg-purple-400  rounded"><a href="LecturerSignUp.html">Staff</a> </li> 
-                                        <li class="px-1 hover:bg-purple-400  rounded"><a href="{% url 'accounts:signup' %}">Student</a> </li> 
+                                        <li class="px-1 pt-1 hover:bg-purple-400  rounded"><a href="{% url 'accounts:lecturersignup' %}">Staff</a> </li> 
+                                        <li class="px-1 hover:bg-purple-400  rounded"><a href="{% url 'accounts:studentsignup' %}">Student</a> </li> 
                                     </ul>
                             </div>  
                             <li class="hover:bg-purple-500 rounded p-1"><a href="{% url 'accounts:login' %}" >Log in</a></li> 
 
                                    
                             </div>
+                            {% else %}
+                            <div>
+                                <button class="relative menubtn">Logged in: {{  user.first_name }}</button>
+                                    <ul class="absolute hidden flex-col bg-purple-600 p-2 text-sm space-y-4 rounded-b-lg dropdown">
+                                        <li class="px-1 pt-1 hover:bg-purple-400  rounded"><a href="#">Timetable</a> </li> 
+                                        <li class="px-1 hover:bg-purple-400  rounded"><a href="{% url 'accounts:delete' %}">delete account</a> </li>
+                                        <li class="px-1 hover:bg-purple-400  rounded"><a href="{% url 'accounts:password_change' %}">Change Password</a> </li>
+                                        <li class="px-1 hover:bg-purple-400  rounded"><a href="{% url 'accounts:logout' %}">Logout</a> </li> 
+                                    </ul>
+                            </div>  
+                            {% endif %}
                         
                 
 
@@ -52,9 +69,16 @@
                 <!-- mobile menu -->
                  
                  <div class="hidden mobile-menu md:hidden">
+                     {% if not user.is_authenticated %}
                     <a href="{% url 'accounts:login' %}" class="block  p-2 rounded text-sm hover:bg-purple-500">Login</a>
-                    <a href="{% url 'accounts:signup' %}" class="block p-2 rounded text-sm hover:bg-purple-500">Register Student</a>
-                    <a href="#" class="block p-2 rounded text-sm hover:bg-purple-500">Register Lecturer</a>
+                    <a href="{% url 'accounts:studentsignup' %}" class="block p-2 rounded text-sm hover:bg-purple-500">Register Student</a>
+                    <a href="{% url 'accounts:lecturersignup' %}" class="block p-2 rounded text-sm hover:bg-purple-500">Register Lecturer</a>
+                        {%else%}
+                        <a href="#" class="block  p-2 rounded text-sm hover:bg-purple-500">Timetable</a>
+                    <a href="#" class="block p-2 rounded text-sm hover:bg-purple-500">manage account</a>
+                    <a href="{% url 'accounts:password_change' %}" class="block p-2 rounded text-sm hover:bg-purple-500">Change Password</a>
+                    <a href="{% url 'accounts:logout' %}" class="block p-2 rounded text-sm hover:bg-purple-500">Logout</a>
+                    {% endif %}
                     <a href="{% url 'page:contact' %}"class="block p-2 rounded text-sm hover:bg-purple-500">Contact Us</a>
                     <a href="{% url 'page:about' %}"  class="block p-2 rounded text-sm hover:bg-purple-500">About</a>
                 </div>

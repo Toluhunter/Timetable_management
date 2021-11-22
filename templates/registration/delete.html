@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+ <main class="min-h-screen  flex items-center justify-center font-serif text-gray-500">
+    
+    <form method="post" action="{% url 'accounts:delete' %}">
+        {% csrf_token %}
+        <label>Do You wish to delete this account</label>
+        <button type="submit">Confirm</button>
+    </form>
+</main>
+{% endblock content %}

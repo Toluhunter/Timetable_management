@@ -1,0 +1,10 @@
+
+{% extends 'base.html' %}
+
+
+{% block content %}
+ <main class="min-h-screen  flex items-center justify-center font-serif text-gray-500">
+    
+    Thank you for verifying your mail you can login <a href="{% url 'accounts:login' %}">here</a>
+</main>
+{% endblock content %}
