@@ -634,6 +634,26 @@ video {
   }
 }
 
+.course-list{
+  margin: 0.5rem;
+  border-radius: 0.5rem;
+  border-width: 2px;
+  --tw-border-opacity: 1;
+  border-color: rgba(255, 255, 255, var(--tw-border-opacity));
+}
+
+.course-list:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgba(167, 139, 250, var(--tw-bg-opacity));
+}
+
+.course-list {
+  padding-right: 0.25rem;
+  padding-left: 0.25rem;
+  --tw-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -32242,6 +32262,10 @@ video {
 
 .content-none {
   content: none;
+}
+
+.hidden{
+  display:none;
 }
 
 @media (min-width: 640px) {
@@ -188377,7 +188401,4 @@ video {
   .\32xl\:ease-in-out {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
-}
-
-
-    
+}  
