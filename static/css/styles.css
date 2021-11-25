@@ -2,5 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components{
+    .course-list{
+        @apply border-2 border-white m-2 shadow-xl pl-1 pr-1 rounded-lg hover:bg-purple-400;
+    }
+}
 
-    
+.hidden{
+    display:none;
+}  
