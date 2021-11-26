@@ -9,6 +9,7 @@ class CustomManager(BaseUserManager):
     def create_user(self, email, first_name, last_name, password, department, *args, **kwargs):
         email = self.normalize_email(email)
 
+        department = Department.objects.get(code=department)
         user = self.model(
             email=email,
             first_name=first_name,
@@ -19,13 +20,18 @@ class CustomManager(BaseUserManager):
         )
 
         user.set_password(password)
-
+        user.full_clean()
         user.save()
+        if user.is_admin:
+            admin = Admin(user=user)
+            admin.save()
+
         return user
     
     def create_superuser(self, email, first_name, last_name, password, department, *args, **kwargs):
-        kwargs.setdefault("is_student", False)
-        kwargs.setdefault("is_staff", True)
+        kwargs.setdefault("is_lecturer", True)
+        kwargs.setdefault("is_active", True)
+        kwargs.setdefault("is_admin", True)
 
         return self.create_user(email, first_name, last_name, password, department, *args, **kwargs)
 
@@ -33,8 +39,9 @@ class CustomUser(AbstractBaseUser):
     email = models.EmailField(unique=True)
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
-    is_staff = models.BooleanField(default=False)
+    is_lecturer = models.BooleanField(default=False)
     is_student = models.BooleanField(default=False)
+    is_admin = models.BooleanField(default=False)
     is_active = models.BooleanField(default=False)
     department = models.ForeignKey('Department', on_delete=models.CASCADE)
 
@@ -49,10 +56,10 @@ class CustomUser(AbstractBaseUser):
             student_email = re.compile(r"^[a-z]{3,}[0-9]{4}@student\.babcock\.edu\.ng$")
             if not student_email.match(email):
                 raise ValidationError("Not a Valid babcock email for student")
-        else:
+        elif self.is_lecturer or self.is_admin:
             lecturer_email = re.compile(r"^[a-z]{3,}[0-9]{4}@babcock\.edu\.ng$")
             if not lecturer_email.match(email):
-                raise ValidationError("Not a Valid babcock email for lecturer")
+                raise ValidationError("Not a Valid babcock email for staff")
         
         super().clean(*args, **kwargs)
 
@@ -74,6 +81,8 @@ class Lecturer(models.Model):
     def __str__(self):
         return f'{self.user.first_name} {self.user.last_name}'
     
+class Admin(Lecturer):
+    pass
 
 class Courses(models.Model):
     department = models.ManyToManyField('Department')
@@ -91,4 +100,10 @@ class Department(models.Model):
 
     def __str__(self):
         return self.name
-    
+
+class Venue(models.Model):
+    name = models.CharField(max_length=50, unique=True)
+    department = models.ManyToManyField(Department)
+
+    def __str__(self):
+        return self.name

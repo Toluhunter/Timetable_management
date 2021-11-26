@@ -37,8 +37,8 @@ class StudentCreation(UserCreation):
         fields = UserCreation.Meta.fields + ["is_student"]
 
 class LecturerCreation(UserCreation):
-    is_staff = forms.BooleanField(widget=forms.HiddenInput, initial=True)
+    is_lecturer = forms.BooleanField(widget=forms.HiddenInput, initial=True)
 
     class Meta(UserCreation.Meta):
-        fields = UserCreation.Meta.fields + ["is_staff"]
+        fields = UserCreation.Meta.fields + ["is_lecturer"]
 

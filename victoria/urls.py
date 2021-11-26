@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.urls import path
 from django.urls import include
+
 urlpatterns = [
-   path('',  include('pages.urls')),
+path('',  include('pages.urls')),
+   path('timetable/', include('timetable.urls')),
    path('accounts/', include('accounts.urls')) 
 ]
