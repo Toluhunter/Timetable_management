@@ -86,7 +86,7 @@ class Admin(Lecturer):
 
 class Courses(models.Model):
     department = models.ManyToManyField('Department')
-    name = models.CharField(max_length=50, unique=True)
+    name = models.CharField(max_length=80)
     level = models.CharField(max_length=3)
     course_code = models.CharField(max_length=10, unique=True, primary_key=True)
     unit = models.CharField(max_length=1)

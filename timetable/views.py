@@ -29,7 +29,6 @@ class CreateTimeTableView(IsAdminMixin, generic.FormView):
         admins = Admin.objects.filter(user__department__name=department)
         venues = Venue.objects.filter(department__name=department)
         courses = Courses.objects.filter(department__name=department, level=level)
-        print(department)
 
         context.update({
             'lecturers': lecturers,

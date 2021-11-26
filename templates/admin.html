@@ -1,5 +1,6 @@
 
 {% extends 'base.html' %}
+{% load crispy_forms_tags %}
 {% block content %}
 
 <!-- <nav class="bg-purple-600 text-purple-100 w-full border-b border-purple-100 
@@ -58,201 +59,144 @@
                         <tr class="bg-purple-100">
                             <td class="p-2 px-6 border-purple-500 border-2" >Monday</td>
                             <td  class=" px-6 border-purple-500 border-2 py-2" >
-                                
                                 <div class="text-sm  my-1" >
-                                    <label> Course</label>
-                                    <input type="text" size="8" id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm ">
+                                    {{ form.monday_course_7_8 | as_crispy_field}}
                                 </div>
                                 <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8"  id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.monday_lecturer_7_8 | as_crispy_field}}
                                </div>
                             
                                 <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8" id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                   {{ form.monday_venue_7_8 | as_crispy_field }}
                                 </div>       
                             </td> 
             
                             <td  class="px-6 border-purple-500 border-2" >
                                 
                                 <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="cmon" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm ">
+                                    {{ form.monday_course_8_9 | as_crispy_field }}
                                 </div>
                                 <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8" id="lmon2" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                   {{ form.monday_lecturer_8_9 | as_crispy_field }}
                                </div>
                             
                                 <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vmon2" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.monday_venue_8_9 | as_crispy_field }}
                                 </div>       
                             </td> 
             
                             <td  class="px-6 border-purple-500 border-2" >
                                 
                                 <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="cmon3" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                   {{ form.monday_course_9_10 | as_crispy_field }}
                                 </div>
                                 <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8" id="lmon3" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                   {{ form.monday_lecturer_9_10 | as_crispy_field}}
                                </div>
                             
                                 <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vmon3" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.monday_venue_9_10 | as_crispy_field }}
                                 </div>       
                             </td> 
             
                             <td  class=" px-6 border-purple-500 border-2" >
                                 
                                 <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8" id="cmon4" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.monday_course_10_11 | as_crispy_field }}
                                 </div>
                                 <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8" id="lmon4" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.monday_lecturer_10_11 | as_crispy_field}}
                                </div>
                             
                                 <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vmon4" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                   {{ form.monday_venue_10_11 | as_crispy_field }}
                                 </div>       
                             </td> 
             
                             <td  class=" px-6 border-purple-500 border-2" >
                                 
                                 <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="cmon5" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                   {{ form.monday_course_11_12 | as_crispy_field }}
                                 </div>
                                 <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8" id="lmon5" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.monday_lecturer_11_12 | as_crispy_field}}
                                </div>
                             
                                 <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vmon5" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.monday_venue_11_12 | as_crispy_field }}
                                 </div>       
                             </td> 
             
                             <td  class=" px-6 border-purple-500 border-2" >
                                 
                                 <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="cmon6" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.monday_course_12_1 | as_crispy_field }}
                                 </div>
                                 <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8"  id="lmon6" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.monday_lecturer_12_1 | as_crispy_field}}
                                </div>
                             
                                 <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vmon6" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.monday_venue_12_1 | as_crispy_field }}
                                 </div>       
                             </td>
                             <td  class=" px-6 border-purple-500 border-2" >
                                 
                                 <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="cmon7" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    
+                                    {{ form.monday_course_2_3 | as_crispy_field }}
                                 </div>
                                 <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8"  id="lmon7" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.monday_lecturer_2_3 | as_crispy_field}}
                                </div>
                             
                                 <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vmon7" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                   {{ form.monday_venue_2_3 | as_crispy_field }}
                                 </div>       
                             </td> 
             
                             <td  class=" px-6 border-purple-500 border-2" >
                                 
                                 <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="cmon8" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    
+                                    {{ form.monday_course_3_4 | as_crispy_field }}
                                 </div>
                                 <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8"  id="lmon8" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.monday_lecturer_3_4 | as_crispy_field}}
                                </div>
                             
                                 <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vmon8" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                   {{ form.monday_venue_3_4 | as_crispy_field }}
                                 </div>       
                             </td>
             
                             <td  class=" px-6 border-purple-500 border-2" >
                                 
                                 <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="cmon9" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                   
+                                    {{ form.monday_course_4_5 | as_crispy_field }}
                                 </div>
                                 <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8"  id="lmon9" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.monday_lecturer_4_5 | as_crispy_field}}
                                </div>
                             
                                 <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vmon9" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.monday_venue_4_5 | as_crispy_field }}
                                 </div>       
                             </td>
             
                             <td  class=" px-6 border-purple-500 border-2" >
                                 
                                 <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="cmon10" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    
+                                    {{ form.monday_course_5_6 | as_crispy_field }}
                                 </div>
                                 <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8"  id="lmon10" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                   {{ form.monday_lecturer_5_6 | as_crispy_field}}
                                </div>
                             
                                 <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vmon10" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                   {{ form.monday_venue_5_6 | as_crispy_field }}
                                 </div>       
                             </td>
         
@@ -281,203 +225,146 @@
                             </tr>
             
                         <tr class="bg-purple-100">
-                            <td class="p-6 border-purple-500 border-2" >Tuesday</td>
+                            <td class="p-2 px-6 border-purple-500 border-2" >Tuesday</td>
                             <td  class=" px-6 border-purple-500 border-2 py-2" >
-                                
                                 <div class="text-sm  my-1" >
-                                    <label> Course</label>
-                                    <input type="text" size="8" id="ctue1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm ">
+                                    {{ form.tuesday_course_7_8 | as_crispy_field}}
                                 </div>
                                 <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8"  id="ltue1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.tuesday_lecturer_7_8 | as_crispy_field}}
                                </div>
                             
                                 <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8" id="vtue1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                   {{ form.tuesday_venue_7_8 | as_crispy_field }}
                                 </div>       
                             </td> 
             
                             <td  class="px-6 border-purple-500 border-2" >
                                 
                                 <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="ctue2" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm ">
+                                    {{ form.tuesday_course_8_9 | as_crispy_field }}
                                 </div>
                                 <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8" id="ltue2" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                   {{ form.tuesday_lecturer_8_9 | as_crispy_field }}
                                </div>
                             
                                 <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vtue2" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.tuesday_venue_8_9 | as_crispy_field }}
                                 </div>       
                             </td> 
             
                             <td  class="px-6 border-purple-500 border-2" >
                                 
                                 <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="ctue3" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                   {{ form.tuesday_course_9_10 | as_crispy_field }}
                                 </div>
                                 <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8" id="ltue3" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                   {{ form.tuesday_lecturer_9_10 | as_crispy_field}}
                                </div>
                             
                                 <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vtue3" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.tuesday_venue_9_10 | as_crispy_field }}
                                 </div>       
                             </td> 
             
                             <td  class=" px-6 border-purple-500 border-2" >
                                 
                                 <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8" id="ctue4" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.tuesday_course_10_11 | as_crispy_field }}
                                 </div>
                                 <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8" id="ltue4" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.tuesday_lecturer_10_11 | as_crispy_field}}
                                </div>
                             
                                 <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vtue4" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                   {{ form.tuesday_venue_10_11 | as_crispy_field }}
                                 </div>       
                             </td> 
             
                             <td  class=" px-6 border-purple-500 border-2" >
                                 
                                 <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="ctue5" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                   {{ form.tuesday_course_11_12 | as_crispy_field }}
                                 </div>
                                 <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8" id="ltue5" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.tuesday_lecturer_11_12 | as_crispy_field}}
                                </div>
                             
                                 <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vtue5" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.tuesday_venue_11_12 | as_crispy_field }}
                                 </div>       
                             </td> 
             
                             <td  class=" px-6 border-purple-500 border-2" >
                                 
                                 <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="ctue6" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.tuesday_course_12_1 | as_crispy_field }}
                                 </div>
                                 <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8"  id="ltue6" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.tuesday_lecturer_12_1 | as_crispy_field}}
                                </div>
                             
                                 <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vtue6" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.tuesday_venue_12_1 | as_crispy_field }}
                                 </div>       
                             </td>
                             <td  class=" px-6 border-purple-500 border-2" >
                                 
                                 <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="ctue7" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    
+                                    {{ form.tuesday_course_2_3 | as_crispy_field }}
                                 </div>
                                 <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8"  id="ltue7" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.tuesday_lecturer_2_3 | as_crispy_field}}
                                </div>
                             
                                 <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vtue7" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                   {{ form.tuesday_venue_2_3 | as_crispy_field }}
                                 </div>       
                             </td> 
             
                             <td  class=" px-6 border-purple-500 border-2" >
                                 
                                 <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="cmon8" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    
+                                    {{ form.tuesday_course_3_4 | as_crispy_field }}
                                 </div>
                                 <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8"  id="lmon8" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.tuesday_lecturer_3_4 | as_crispy_field}}
                                </div>
                             
                                 <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vmon8" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                   {{ form.tuesday_venue_3_4 | as_crispy_field }}
                                 </div>       
                             </td>
             
                             <td  class=" px-6 border-purple-500 border-2" >
                                 
                                 <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="cmon9" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                   
+                                    {{ form.tuesday_course_4_5 | as_crispy_field }}
                                 </div>
                                 <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8"  id="lmon9" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.tuesday_lecturer_4_5 | as_crispy_field}}
                                </div>
                             
                                 <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vmon9" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.tuesday_venue_4_5 | as_crispy_field }}
                                 </div>       
                             </td>
             
                             <td  class=" px-6 border-purple-500 border-2" >
                                 
                                 <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="ctue10" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    
+                                    {{ form.tuesday_course_5_6 | as_crispy_field }}
                                 </div>
                                 <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8"  id="ltue10" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                   {{ form.tuesday_lecturer_5_6 | as_crispy_field}}
                                </div>
                             
                                 <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vtue10" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                   {{ form.tuesday_venue_5_6 | as_crispy_field }}
                                 </div>       
                             </td>
         
@@ -485,8 +372,7 @@
         
                         
                     </table>
-        
-                    <table class="border-2 border-purple-500 bg-purple-500 mr-2 hidden rounded" id='wednesday'>
+                      <table class="border-2 border-purple-500 bg-purple-500 mr-2 hidden rounded" id='wednesday'>
                     
                         <!-- 1 hour classes -->
                        
@@ -506,203 +392,146 @@
                             </tr>
             
                         <tr class="bg-purple-100">
-                            <td class="p-4 border-purple-500 border-2" >Wednesday</td>
+                            <td class="p-2 px-6 border-purple-500 border-2" >Wednesday</td>
                             <td  class=" px-6 border-purple-500 border-2 py-2" >
-                                
                                 <div class="text-sm  my-1" >
-                                    <label> Course</label>
-                                    <input type="text" size="8" id="cwed1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm ">
+                                    {{ form.wednesday_course_7_8 | as_crispy_field}}
                                 </div>
                                 <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8"  id="lwed1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.wednesday_lecturer_7_8 | as_crispy_field}}
                                </div>
                             
                                 <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8" id="vwed1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                   {{ form.wednesday_venue_7_8 | as_crispy_field }}
                                 </div>       
                             </td> 
             
                             <td  class="px-6 border-purple-500 border-2" >
                                 
                                 <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="cwed2" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm ">
+                                    {{ form.wednesday_course_8_9 | as_crispy_field }}
                                 </div>
                                 <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8" id="lwed2" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                   {{ form.wednesday_lecturer_8_9 | as_crispy_field }}
                                </div>
                             
                                 <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vwed2" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.wednesday_venue_8_9 | as_crispy_field }}
                                 </div>       
                             </td> 
             
                             <td  class="px-6 border-purple-500 border-2" >
                                 
                                 <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="cwed3" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                   {{ form.wednesday_course_9_10 | as_crispy_field }}
                                 </div>
                                 <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8" id="lmon3" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                   {{ form.wednesday_lecturer_9_10 | as_crispy_field}}
                                </div>
                             
                                 <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vmon3" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.wednesday_venue_9_10 | as_crispy_field }}
                                 </div>       
                             </td> 
             
                             <td  class=" px-6 border-purple-500 border-2" >
                                 
                                 <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8" id="cwed4" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.wednesday_course_10_11 | as_crispy_field }}
                                 </div>
                                 <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8" id="lwed4" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.wednesday_lecturer_10_11 | as_crispy_field}}
                                </div>
                             
                                 <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vwed4" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                   {{ form.wednesday_venue_10_11 | as_crispy_field }}
                                 </div>       
                             </td> 
             
                             <td  class=" px-6 border-purple-500 border-2" >
                                 
                                 <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="cwed5" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                   {{ form.wednesday_course_11_12 | as_crispy_field }}
                                 </div>
                                 <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8" id="lwed5" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.wednesday_lecturer_11_12 | as_crispy_field}}
                                </div>
                             
                                 <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vwed5" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.wednesday_venue_11_12 | as_crispy_field }}
                                 </div>       
                             </td> 
             
                             <td  class=" px-6 border-purple-500 border-2" >
                                 
                                 <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="cwed6" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.wednesday_course_12_1 | as_crispy_field }}
                                 </div>
                                 <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8"  id="lwed6" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.wednesday_lecturer_12_1 | as_crispy_field}}
                                </div>
                             
                                 <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vwed6" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.wednesday_venue_12_1 | as_crispy_field }}
                                 </div>       
                             </td>
                             <td  class=" px-6 border-purple-500 border-2" >
                                 
                                 <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="cwed7" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    
+                                    {{ form.wednesday_course_2_3 | as_crispy_field }}
                                 </div>
                                 <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8"  id="lwed7" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.wednesday_lecturer_2_3 | as_crispy_field}}
                                </div>
                             
                                 <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vwed7" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                   {{ form.wednesday_venue_2_3 | as_crispy_field }}
                                 </div>       
                             </td> 
             
                             <td  class=" px-6 border-purple-500 border-2" >
                                 
                                 <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="cwed8" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    
+                                    {{ form.wednesday_course_3_4 | as_crispy_field }}
                                 </div>
                                 <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8"  id="lwed8" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.wednesday_lecturer_3_4 | as_crispy_field}}
                                </div>
                             
                                 <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vwed8" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                   {{ form.wednesday_venue_3_4 | as_crispy_field }}
                                 </div>       
                             </td>
             
                             <td  class=" px-6 border-purple-500 border-2" >
                                 
                                 <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="cwed9" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                   
+                                    {{ form.wednesday_course_4_5 | as_crispy_field }}
                                 </div>
                                 <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8"  id="lwed9" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.wednesday_lecturer_4_5 | as_crispy_field}}
                                </div>
                             
                                 <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vwed9" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    {{ form.wednesday_venue_4_5 | as_crispy_field }}
                                 </div>       
                             </td>
             
                             <td  class=" px-6 border-purple-500 border-2" >
                                 
                                 <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="cwed10" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                    
+                                    {{ form.wednesday_course_5_6 | as_crispy_field }}
                                 </div>
                                 <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8"  id="lwed10" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                   {{ form.wednesday_lecturer_5_6 | as_crispy_field}}
                                </div>
                             
                                 <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vwed10" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
+                                   {{ form.wednesday_venue_5_6 | as_crispy_field }}
                                 </div>       
                             </td>
         
@@ -714,224 +543,166 @@
                     <table class="border-2 border-purple-500 bg-purple-500 mr-2 hidden rounded" id='thursday'>
                     
                         <!-- 1 hour classes -->
-                       
-                            <tr class="bg-purple-500 border-purple-500 border-2">
-                                    <th class="p-1">DAY</th>
-                                    <th class="p-1">7-8</th>
-                                    <th class="p-1">8-9</th>
-                                    <th class="p-1">9-10</th>
-                                    <th class="p-1">10-11</th>
-                                    <th class="p-1">11-12</th>
-                                    <th class="p-1">12-1</th>
-                                    <th class="p-1">2-3</th>
-                                    <th class="p-1">3-4</th>
-                                    <th class="p-1">4-5</th>
-                                    <th class="p-1">5-6</th>
-                                    
-                            </tr>
-            
-                        <tr class="bg-purple-100">
-                            <td class="p-6 border-purple-500 border-2" >Thursday</td>
-                            <td  class=" px-6 border-purple-500 border-2 py-2" >
-                                
-                                <div class="text-sm  my-1" >
-                                    <label> Course</label>
-                                    <input type="text" size="8" id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm ">
-                                </div>
-                                <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8"  id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                               </div>
+                        <tr class="bg-purple-500 border-2 border-purple-500">
+                            <th class="p-1">DAY</th>
+                            <th class="p-1">7-8</th>
+                            <th class="p-1">8-9</th>
+                            <th class="p-1">9-10</th>
+                            <th class="p-1">10-11</th>
+                            <th class="p-1">11-12</th>
+                            <th class="p-1">12-1</th>
+                            <th class="p-1">2-3</th>
+                            <th class="p-1">3-4</th>
+                            <th class="p-1">4-5</th>
+                            <th class="p-1">5-6</th>
                             
-                                <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8" id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                                </div>       
-                            </td> 
-            
-                            <td  class="px-6 border-purple-500 border-2" >
-                                
-                                <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm ">
-                                </div>
-                                <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8" id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                               </div>
+                    </tr>
+    
+                <tr class="bg-purple-100">
+                    <td class="p-2 px-6 border-purple-500 border-2" >Thursday</td>
+                    <td  class=" px-6 border-purple-500 border-2 py-2" >
+                        <div class="text-sm  my-1" >
+                            {{ form.thursday_course_7_8 | as_crispy_field}}
+                        </div>
+                        <div class="text-sm my-1" >
+                            {{ form.thursday_lecturer_7_8 | as_crispy_field}}
+                       </div>
+                    
+                        <div class="text-sm my-1" >
+                           {{ form.thursday_venue_7_8 | as_crispy_field }}
+                        </div>       
+                    </td> 
+    
+                    <td  class="px-6 border-purple-500 border-2" >
+                        
+                        <div class="text-sm  my-1" >
+                            {{ form.thursday_course_8_9 | as_crispy_field }}
+                        </div>
+                        <div class="text-sm my-1" >
+                           {{ form.thursday_lecturer_8_9 | as_crispy_field }}
+                       </div>
+                    
+                        <div class="text-sm my-1" >
+                            {{ form.thursday_venue_8_9 | as_crispy_field }}
+                        </div>       
+                    </td> 
+    
+                    <td  class="px-6 border-purple-500 border-2" >
+                        
+                        <div class="text-sm  my-1" >
+                           {{ form.thursday_course_9_10 | as_crispy_field }}
+                        </div>
+                        <div class="text-sm my-1" >
+                           {{ form.thursday_lecturer_9_10 | as_crispy_field}}
+                       </div>
+                    
+                        <div class="text-sm my-1" >
+                            {{ form.thursday_venue_9_10 | as_crispy_field }}
+                        </div>       
+                    </td> 
+    
+                    <td  class=" px-6 border-purple-500 border-2" >
+                        
+                        <div class="text-sm  my-1" >
+                            {{ form.thursday_course_10_11 | as_crispy_field }}
+                        </div>
+                        <div class="text-sm my-1" >
+                            {{ form.thursday_lecturer_10_11 | as_crispy_field}}
+                       </div>
+                    
+                        <div class="text-sm my-1" >
+                           {{ form.thursday_venue_10_11 | as_crispy_field }}
+                        </div>       
+                    </td> 
+    
+                    <td  class=" px-6 border-purple-500 border-2" >
+                        
+                        <div class="text-sm  my-1" >
+                           {{ form.thursday_course_11_12 | as_crispy_field }}
+                        </div>
+                        <div class="text-sm my-1" >
+                            {{ form.thursday_lecturer_11_12 | as_crispy_field}}
+                       </div>
+                    
+                        <div class="text-sm my-1" >
+                            {{ form.thursday_venue_11_12 | as_crispy_field }}
+                        </div>       
+                    </td> 
+    
+                    <td  class=" px-6 border-purple-500 border-2" >
+                        
+                        <div class="text-sm  my-1" >
+                            {{ form.thursday_course_12_1 | as_crispy_field }}
+                        </div>
+                        <div class="text-sm my-1" >
+                            {{ form.thursday_lecturer_12_1 | as_crispy_field}}
+                       </div>
+                    
+                        <div class="text-sm my-1" >
+                            {{ form.thursday_venue_12_1 | as_crispy_field }}
+                        </div>       
+                    </td>
+                    <td  class=" px-6 border-purple-500 border-2" >
+                        
+                        <div class="text-sm  my-1" >
                             
-                                <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                                </div>       
-                            </td> 
-            
-                            <td  class="px-6 border-purple-500 border-2" >
-                                
-                                <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                                </div>
-                                <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8" id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                               </div>
+                            {{ form.thursday_course_2_3 | as_crispy_field }}
+                        </div>
+                        <div class="text-sm my-1" >
+                            {{ form.thursday_lecturer_2_3 | as_crispy_field}}
+                       </div>
+                    
+                        <div class="text-sm my-1" >
+                           {{ form.thursday_venue_2_3 | as_crispy_field }}
+                        </div>       
+                    </td> 
+    
+                    <td  class=" px-6 border-purple-500 border-2" >
+                        
+                        <div class="text-sm  my-1" >
                             
-                                <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                                </div>       
-                            </td> 
-            
-                            <td  class=" px-6 border-purple-500 border-2" >
-                                
-                                <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8" id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                                </div>
-                                <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8" id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                               </div>
+                            {{ form.thursday_course_3_4 | as_crispy_field }}
+                        </div>
+                        <div class="text-sm my-1" >
+                            {{ form.thursday_lecturer_3_4 | as_crispy_field}}
+                       </div>
+                    
+                        <div class="text-sm my-1" >
+                           {{ form.thursday_venue_3_4 | as_crispy_field }}
+                        </div>       
+                    </td>
+    
+                    <td  class=" px-6 border-purple-500 border-2" >
+                        
+                        <div class="text-sm  my-1" >
+                           
+                            {{ form.thursday_course_4_5 | as_crispy_field }}
+                        </div>
+                        <div class="text-sm my-1" >
+                            {{ form.thursday_lecturer_4_5 | as_crispy_field}}
+                       </div>
+                    
+                        <div class="text-sm my-1" >
+                            {{ form.thursday_venue_4_5 | as_crispy_field }}
+                        </div>       
+                    </td>
+    
+                    <td  class=" px-6 border-purple-500 border-2" >
+                        
+                        <div class="text-sm  my-1" >
                             
-                                <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                                </div>       
-                            </td> 
-            
-                            <td  class=" px-6 border-purple-500 border-2" >
-                                
-                                <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                                </div>
-                                <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8" id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                               </div>
-                            
-                                <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                                </div>       
-                            </td> 
-            
-                            <td  class=" px-6 border-purple-500 border-2" >
-                                
-                                <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                                </div>
-                                <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8"  id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                               </div>
-                            
-                                <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                                </div>       
-                            </td>
-                            <td  class=" px-6 border-purple-500 border-2" >
-                                
-                                <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                                </div>
-                                <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8"  id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                               </div>
-                            
-                                <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                                </div>       
-                            </td> 
-            
-                            <td  class=" px-6 border-purple-500 border-2" >
-                                
-                                <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                                </div>
-                                <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8"  id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                               </div>
-                            
-                                <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                                </div>       
-                            </td>
-            
-                            <td  class=" px-6 border-purple-500 border-2" >
-                                
-                                <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                                </div>
-                                <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8"  id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                               </div>
-                            
-                                <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                                </div>       
-                            </td>
-            
-                            <td  class=" px-6 border-purple-500 border-2" >
-                                
-                                <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                                </div>
-                                <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8"  id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                               </div>
-                            
-                                <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                                </div>       
-                            </td>
-        
-                        </tr>
+                            {{ form.thursday_course_5_6 | as_crispy_field }}
+                        </div>
+                        <div class="text-sm my-1" >
+                           {{ form.thursday_lecturer_5_6 | as_crispy_field}}
+                       </div>
+                    
+                        <div class="text-sm my-1" >
+                           {{ form.thursday_venue_5_6 | as_crispy_field }}
+                        </div>       
+                    </td>
+
+                </tr>
         
                         
                     </table>
@@ -940,223 +711,166 @@
                     
                         <!-- 1 hour classes -->
                        
-                            <tr class="bg-purple-500 border-2 border-purple-500">
-                                    <th class="p-1">DAY</th>
-                                    <th class="p-1">7-8</th>
-                                    <th class="p-1">8-9</th>
-                                    <th class="p-1">9-10</th>
-                                    <th class="p-1">10-11</th>
-                                    <th class="p-1">11-12</th>
-                                    <th class="p-1">12-1</th>
-                                    <th class="p-1">2-3</th>
-                                    <th class="p-1">3-4</th>
-                                    <th class="p-1">4-5</th>
-                                    <th class="p-1">5-6</th>
-                                    
-                            </tr>
-            
-                        <tr class="bg-purple-100">
-                            <td class="p-6 border-purple-500 border-2" >Friday</td>
-                            <td  class=" px-6 border-purple-500 border-2 py-2" >
-                                
-                                <div class="text-sm  my-1" >
-                                    <label> Course</label>
-                                    <input type="text" size="8" id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm ">
-                                </div>
-                                <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8"  id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                               </div>
+                        <tr class="bg-purple-500 border-2 border-purple-500">
+                            <th class="p-1">DAY</th>
+                            <th class="p-1">7-8</th>
+                            <th class="p-1">8-9</th>
+                            <th class="p-1">9-10</th>
+                            <th class="p-1">10-11</th>
+                            <th class="p-1">11-12</th>
+                            <th class="p-1">12-1</th>
+                            <th class="p-1">2-3</th>
+                            <th class="p-1">3-4</th>
+                            <th class="p-1">4-5</th>
+                            <th class="p-1">5-6</th>
                             
-                                <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8" id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                                </div>       
-                            </td> 
-            
-                            <td  class="px-6 border-purple-500 border-2" >
-                                
-                                <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm ">
-                                </div>
-                                <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8" id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                               </div>
+                    </tr>
+    
+                <tr class="bg-purple-100">
+                    <td class="p-2 px-6 border-purple-500 border-2" >Friday</td>
+                    <td  class=" px-6 border-purple-500 border-2 py-2" >
+                        <div class="text-sm  my-1" >
+                            {{ form.friday_course_7_8 | as_crispy_field}}
+                        </div>
+                        <div class="text-sm my-1" >
+                            {{ form.friday_lecturer_7_8 | as_crispy_field}}
+                       </div>
+                    
+                        <div class="text-sm my-1" >
+                           {{ form.friday_venue_7_8 | as_crispy_field }}
+                        </div>       
+                    </td> 
+    
+                    <td  class="px-6 border-purple-500 border-2" >
+                        
+                        <div class="text-sm  my-1" >
+                            {{ form.friday_course_8_9 | as_crispy_field }}
+                        </div>
+                        <div class="text-sm my-1" >
+                           {{ form.friday_lecturer_8_9 | as_crispy_field }}
+                       </div>
+                    
+                        <div class="text-sm my-1" >
+                            {{ form.friday_venue_8_9 | as_crispy_field }}
+                        </div>       
+                    </td> 
+    
+                    <td  class="px-6 border-purple-500 border-2" >
+                        
+                        <div class="text-sm  my-1" >
+                           {{ form.friday_course_9_10 | as_crispy_field }}
+                        </div>
+                        <div class="text-sm my-1" >
+                           {{ form.friday_lecturer_9_10 | as_crispy_field}}
+                       </div>
+                    
+                        <div class="text-sm my-1" >
+                            {{ form.friday_venue_9_10 | as_crispy_field }}
+                        </div>       
+                    </td> 
+    
+                    <td  class=" px-6 border-purple-500 border-2" >
+                        
+                        <div class="text-sm  my-1" >
+                            {{ form.friday_course_10_11 | as_crispy_field }}
+                        </div>
+                        <div class="text-sm my-1" >
+                            {{ form.friday_lecturer_10_11 | as_crispy_field}}
+                       </div>
+                    
+                        <div class="text-sm my-1" >
+                           {{ form.friday_venue_10_11 | as_crispy_field }}
+                        </div>       
+                    </td> 
+    
+                    <td  class=" px-6 border-purple-500 border-2" >
+                        
+                        <div class="text-sm  my-1" >
+                           {{ form.friday_course_11_12 | as_crispy_field }}
+                        </div>
+                        <div class="text-sm my-1" >
+                            {{ form.friday_lecturer_11_12 | as_crispy_field}}
+                       </div>
+                    
+                        <div class="text-sm my-1" >
+                            {{ form.friday_venue_11_12 | as_crispy_field }}
+                        </div>       
+                    </td> 
+    
+                    <td  class=" px-6 border-purple-500 border-2" >
+                        
+                        <div class="text-sm  my-1" >
+                            {{ form.friday_course_12_1 | as_crispy_field }}
+                        </div>
+                        <div class="text-sm my-1" >
+                            {{ form.friday_lecturer_12_1 | as_crispy_field}}
+                       </div>
+                    
+                        <div class="text-sm my-1" >
+                            {{ form.friday_venue_12_1 | as_crispy_field }}
+                        </div>       
+                    </td>
+                    <td  class=" px-6 border-purple-500 border-2" >
+                        
+                        <div class="text-sm  my-1" >
                             
-                                <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                                </div>       
-                            </td> 
-            
-                            <td  class="px-6 border-purple-500 border-2" >
-                                
-                                <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                                </div>
-                                <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8" id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                               </div>
+                            {{ form.friday_course_2_3 | as_crispy_field }}
+                        </div>
+                        <div class="text-sm my-1" >
+                            {{ form.friday_lecturer_2_3 | as_crispy_field}}
+                       </div>
+                    
+                        <div class="text-sm my-1" >
+                           {{ form.friday_venue_2_3 | as_crispy_field }}
+                        </div>       
+                    </td> 
+    
+                    <td  class=" px-6 border-purple-500 border-2" >
+                        
+                        <div class="text-sm  my-1" >
                             
-                                <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                                </div>       
-                            </td> 
-            
-                            <td  class=" px-6 border-purple-500 border-2" >
-                                
-                                <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8" id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                                </div>
-                                <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8" id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                               </div>
+                            {{ form.friday_course_3_4 | as_crispy_field }}
+                        </div>
+                        <div class="text-sm my-1" >
+                            {{ form.friday_lecturer_3_4 | as_crispy_field}}
+                       </div>
+                    
+                        <div class="text-sm my-1" >
+                           {{ form.friday_venue_3_4 | as_crispy_field }}
+                        </div>       
+                    </td>
+    
+                    <td  class=" px-6 border-purple-500 border-2" >
+                        
+                        <div class="text-sm  my-1" >
+                           
+                            {{ form.friday_course_4_5 | as_crispy_field }}
+                        </div>
+                        <div class="text-sm my-1" >
+                            {{ form.friday_lecturer_4_5 | as_crispy_field}}
+                       </div>
+                    
+                        <div class="text-sm my-1" >
+                            {{ form.friday_venue_4_5 | as_crispy_field }}
+                        </div>       
+                    </td>
+    
+                    <td  class=" px-6 border-purple-500 border-2" >
+                        
+                        <div class="text-sm  my-1" >
                             
-                                <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                                </div>       
-                            </td> 
-            
-                            <td  class=" px-6 border-purple-500 border-2" >
-                                
-                                <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                                </div>
-                                <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8" id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                               </div>
-                            
-                                <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                                </div>       
-                            </td> 
-            
-                            <td  class=" px-6 border-purple-500 border-2" >
-                                
-                                <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                                </div>
-                                <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8"  id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                               </div>
-                            
-                                <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                                </div>       
-                            </td>
-                            <td  class=" px-6 border-purple-500 border-2" >
-                                
-                                <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                                </div>
-                                <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8"  id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                               </div>
-                            
-                                <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                                </div>       
-                            </td> 
-            
-                            <td  class=" px-6 border-purple-500 border-2" >
-                                
-                                <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                                </div>
-                                <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8"  id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                               </div>
-                            
-                                <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                                </div>       
-                            </td>
-            
-                            <td  class=" px-6 border-purple-500 border-2" >
-                                
-                                <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                                </div>
-                                <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8"  id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                               </div>
-                            
-                                <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                                </div>       
-                            </td>
-            
-                            <td  class=" px-6 border-purple-500 border-2" >
-                                
-                                <div class="text-sm  my-1" >
-                                    <label class="block"> Course</label>
-                                    <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                                </div>
-                                <div class="text-sm my-1" >
-                                    <label class="block">Lecturer</label>
-                                    <input type="text" size="8"  id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                               </div>
-                            
-                                <div class="text-sm my-1" >
-                                    <label class="block">Venue</label>
-                                    <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                                    class="text-sm">
-                                </div>       
-                            </td>
-        
-                        </tr>
+                            {{ form.friday_course_5_6 | as_crispy_field }}
+                        </div>
+                        <div class="text-sm my-1" >
+                           {{ form.friday_lecturer_5_6 | as_crispy_field}}
+                       </div>
+                    
+                        <div class="text-sm my-1" >
+                           {{ form.friday_venue_5_6 | as_crispy_field }}
+                        </div>       
+                    </td>
+
+                </tr>
         
                         
                     </table>
