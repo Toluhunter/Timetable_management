@@ -1,1188 +1,1199 @@
 
-
 {% extends 'base.html' %}
 {% block content %}
 
-    <div class="mx-10">
-        <button class="rounded p-1 bg-purple-500 text-white menubtn relative flex items-center">
-            <span class="mb-1">Days</span>
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
-        </button>
-            <div class="text-sm bg-purple-200 rounded mt-1 p-2 flex flex-col  w-max dropdown absolute">
-                <ul class="space-y-2">
-                <li><button class=" p-1  rounded hover:bg-purple-300"onClick='monTable()'>Monday</button> </li>
-                <li> <button class="p-1  rounded hover:bg-purple-300 " onClick='tueTable()'>Tuesday</button></li>
-                <li><button class=" p-1  rounded hover:bg-purple-300 " onClick='wedTable()'>Wednesday</button> </li>
-                <li><button class=" p-1  rounded hover:bg-purple-300 " onClick='thurTable()'>Thursday</button> </li>
-                <li><button class=" p-1  rounded hover:bg-purple-300 " onClick='friTable()'>Friday</button> </li>
-                </ul>
-                
+<!-- <nav class="bg-purple-600 text-purple-100 w-full border-b border-purple-100 
+    shadow-lg p-2 rounded-lg text-sm md:text-lg">
 
-            </div>
+    <div class="flex justify-between items-center">
+        <a  href="{% url 'page:home' %}"  class=" text-sm uppercase md:text-lg font-bold ">Project Table</a>
+        <button>Logout</button>
     </div>
+    </nav> -->
+    <div class=" text-black">
+        <div class="mx-14" style="overflow-x:auto;">
+            <div class="flex ">
 
-    
-    <form class="mx-10 mt-4" method="" action="">
-        <div style="overflow-x:auto;">
-            <table class="bg-purple-300 mr-2 " id='monday'>
-            
-                <!-- 1 hour classes -->
-               
-                    <tr class="bg-purple-500 border-2">
-                            <th class="p-1">DAY</th>
-                            <th class="p-2">7-8</th>
-                            <th class="p-2">8-9</th>
-                            <th class="p-2">9-10</th>
-                            <th class="p-2">10-11</th>
-                            <th class="p-2">11-12</th>
-                            <th class="p-2">12-1</th>
-                            <th class="p-2">2-3</th>
-                            <th class="p-2">3-4</th>
-                            <th class="p-2">4-5</th>
-                            <th class="p-2">5-6</th>
+                <div class="mx-2 mt-4 mr-8">
+                    <button class="daysbtn rounded p-1 bg-purple-500 text-white relative flex items-center">
+                        <span class="mb-1 text-sm">Days</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                        </svg>
+                    </button>
+                        <div class="dropdays text-sm bg-purple-400 rounded mt-1 p-2 flex flex-col hidden  w-max absolute">
+                            <ul class="space-y-2">
+                            <li><button class=" p-1  rounded hover:bg-purple-500"onClick='monTable()'>Monday</button> </li>
+                            <li> <button class="p-1  rounded hover:bg-purple-500 " onClick='tueTable()'>Tuesday</button></li>
+                            <li><button class=" p-1  rounded hover:bg-purple-500 " onClick='wedTable()'>Wednesday</button> </li>
+                            <li><button class=" p-1  rounded hover:bg-purple-500 " onClick='thurTable()'>Thursday</button> </li>
+                            <li><button class=" p-1  rounded hover:bg-purple-500 " onClick='friTable()'>Friday</button> </li>
+                            </ul>
                             
-                    </tr>
-    
-                <tr class="bg-purple-100">
-                    <td class="p-2 px-4 border-purple-500 border-2" >Monday</td>
-                    <td  class=" px-6 border-purple-500 border-2 py-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label> Course</label>
-                            <input type="text" size="8" id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm ">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8"  id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8" id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td> 
-    
-                    <td  class="px-4 border-purple-500 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="cmon" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm ">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8" id="lmon2" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vmon2" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td> 
-    
-                    <td  class="px-4 border-purple-500 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="cmon3" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8" id="lmon3" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vmon3" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td> 
-    
-                    <td  class=" px-4 border-purple-500 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8" id="cmon4" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8" id="lmon4" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vmon4" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td> 
-    
-                    <td  class=" px-4 border-purple-500 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="cmon5" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8" id="lmon5" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vmon5" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td> 
-    
-                    <td  class=" px-4 border-purple-500 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="cmon6" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8"  id="lmon6" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vmon6" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td>
-                    <td  class=" px-4 border-purple-500 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="cmon7" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8"  id="lmon7" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vmon7" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td> 
-    
-                    <td  class=" px-4 border-purple-500 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="cmon8" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8"  id="lmon8" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vmon8" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td>
-    
-                    <td  class=" px-4 border-purple-500 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="cmon9" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8"  id="lmon9" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vmon9" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td>
-    
-                    <td  class=" px-4 border-purple-500 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="cmon10" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8"  id="lmon10" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vmon10" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td>
-
-                </tr>
-
-                
-            </table>
-
-            <table class="border-2 bg-purple-300 mr-2 hidden" id='tuesday'>
             
-                <!-- 1 hour classes -->
-               
-                    <tr class="bg-purple-300 border-2">
-                            <th class="p-1">DAY</th>
-                            <th class="p-2">7-8</th>
-                            <th class="p-2">8-9</th>
-                            <th class="p-2">9-10</th>
-                            <th class="p-2">10-11</th>
-                            <th class="p-2">11-12</th>
-                            <th class="p-2">12-1</th>
-                            <th class="p-2">2-3</th>
-                            <th class="p-2">3-4</th>
-                            <th class="p-2">4-5</th>
-                            <th class="p-2">5-6</th>
-                            
-                    </tr>
-    
-                <tr class="bg-purple-100">
-                    <td class="p-2 border-purple-300 border-2" >Tuesday</td>
-                    <td  class=" px-4 border-purple-300 border-2 py-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label> Course</label>
-                            <input type="text" size="8" id="ctue1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm ">
                         </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8"  id="ltue1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8" id="vtue1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td> 
-    
-                    <td  class="px-4 border-purple-300 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="ctue2" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm ">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8" id="ltue2" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vtue2" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td> 
-    
-                    <td  class="px-4 border-purple-300 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="ctue3" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8" id="ltue3" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vtue3" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td> 
-    
-                    <td  class=" px-4 border-purple-300 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8" id="ctue4" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8" id="ltue4" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vtue4" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td> 
-    
-                    <td  class=" px-4 border-purple-300 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="ctue5" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8" id="ltue5" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vtue5" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td> 
-    
-                    <td  class=" px-4 border-purple-300 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="ctue6" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8"  id="ltue6" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vtue6" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td>
-                    <td  class=" px-4 border-purple-300 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="ctue7" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8"  id="ltue7" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vtue7" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td> 
-    
-                    <td  class=" px-4 border-purple-300 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="cmon8" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8"  id="lmon8" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vmon8" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td>
-    
-                    <td  class=" px-4 border-purple-300 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="cmon9" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8"  id="lmon9" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vmon9" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td>
-    
-                    <td  class=" px-4 border-purple-300 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="ctue10" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8"  id="ltue10" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vtue10" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td>
+                </div>
 
-                </tr>
-
-                
-            </table>
-
-            <table class="border-2 bg-purple-300 mr-2 hidden" id='wednesday'>
-            
-                <!-- 1 hour classes -->
-               
-                    <tr class="bg-purple-300 border-2">
-                            <th class="p-1">DAY</th>
-                            <th class="p-2">7-8</th>
-                            <th class="p-2">8-9</th>
-                            <th class="p-2">9-10</th>
-                            <th class="p-2">10-11</th>
-                            <th class="p-2">11-12</th>
-                            <th class="p-2">12-1</th>
-                            <th class="p-2">2-3</th>
-                            <th class="p-2">3-4</th>
-                            <th class="p-2">4-5</th>
-                            <th class="p-2">5-6</th>
-                            
-                    </tr>
-    
-                <tr class="bg-purple-100">
-                    <td class="p-2 border-purple-300 border-2" >Wednesday</td>
-                    <td  class=" px-4 border-purple-300 border-2 py-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label> Course</label>
-                            <input type="text" size="8" id="cwed1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm ">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8"  id="lwed1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8" id="vwed1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td> 
-    
-                    <td  class="px-4 border-purple-300 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="cwed2" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm ">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8" id="lwed2" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vwed2" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td> 
-    
-                    <td  class="px-4 border-purple-300 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="cwed3" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8" id="lmon3" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vmon3" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td> 
-    
-                    <td  class=" px-4 border-purple-300 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8" id="cwed4" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8" id="lwed4" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vwed4" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td> 
-    
-                    <td  class=" px-4 border-purple-300 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="cwed5" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8" id="lwed5" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vwed5" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td> 
-    
-                    <td  class=" px-4 border-purple-300 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="cwed6" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8"  id="lwed6" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vwed6" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td>
-                    <td  class=" px-4 border-purple-300 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="cwed7" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8"  id="lwed7" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vwed7" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td> 
-    
-                    <td  class=" px-4 border-purple-300 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="cwed8" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8"  id="lwed8" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vwed8" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td>
-    
-                    <td  class=" px-4 border-purple-300 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="cwed9" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8"  id="lwed9" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vwed9" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td>
-    
-                    <td  class=" px-4 border-purple-300 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="cwed10" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8"  id="lwed10" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vwed10" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td>
-
-                </tr>
-
-                
-            </table>
-
-            <table class="border-2 bg-purple-300 mr-2 hidden" id='thursday'>
-            
-                <!-- 1 hour classes -->
-               
-                    <tr class="bg-purple-300 border-2">
-                            <th class="p-1">DAY</th>
-                            <th class="p-2">7-8</th>
-                            <th class="p-2">8-9</th>
-                            <th class="p-2">9-10</th>
-                            <th class="p-2">10-11</th>
-                            <th class="p-2">11-12</th>
-                            <th class="p-2">12-1</th>
-                            <th class="p-2">2-3</th>
-                            <th class="p-2">3-4</th>
-                            <th class="p-2">4-5</th>
-                            <th class="p-2">5-6</th>
-                            
-                    </tr>
-    
-                <tr class="bg-purple-100">
-                    <td class="p-2 border-purple-300 border-2" >Thursday</td>
-                    <td  class=" px-4 border-purple-300 border-2 py-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label> Course</label>
-                            <input type="text" size="8" id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm ">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8"  id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8" id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td> 
-    
-                    <td  class="px-4 border-purple-300 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm ">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8" id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td> 
-    
-                    <td  class="px-4 border-purple-300 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8" id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td> 
-    
-                    <td  class=" px-4 border-purple-300 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8" id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8" id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td> 
-    
-                    <td  class=" px-4 border-purple-300 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8" id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td> 
-    
-                    <td  class=" px-4 border-purple-300 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8"  id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td>
-                    <td  class=" px-4 border-purple-300 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8"  id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td> 
-    
-                    <td  class=" px-4 border-purple-300 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8"  id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td>
-    
-                    <td  class=" px-4 border-purple-300 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8"  id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td>
-    
-                    <td  class=" px-4 border-purple-300 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8"  id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td>
-
-                </tr>
-
-                
-            </table>
-
-            <table class="border-2 bg-purple-300 mr-2 hidden" id='friday'>
-            
-                <!-- 1 hour classes -->
-               
-                    <tr class="bg-purple-300 border-2">
-                            <th class="p-1">DAY</th>
-                            <th class="p-2">7-8</th>
-                            <th class="p-2">8-9</th>
-                            <th class="p-2">9-10</th>
-                            <th class="p-2">10-11</th>
-                            <th class="p-2">11-12</th>
-                            <th class="p-2">12-1</th>
-                            <th class="p-2">2-3</th>
-                            <th class="p-2">3-4</th>
-                            <th class="p-2">4-5</th>
-                            <th class="p-2">5-6</th>
-                            
-                    </tr>
-    
-                <tr class="bg-purple-100">
-                    <td class="p-2 border-purple-300 border-2" >Friday</td>
-                    <td  class=" px-4 border-purple-300 border-2 py-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label> Course</label>
-                            <input type="text" size="8" id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm ">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8"  id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8" id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td> 
-    
-                    <td  class="px-4 border-purple-300 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm ">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8" id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td> 
-    
-                    <td  class="px-4 border-purple-300 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8" id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td> 
-    
-                    <td  class=" px-4 border-purple-300 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8" id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8" id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td> 
-    
-                    <td  class=" px-4 border-purple-300 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8" id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td> 
-    
-                    <td  class=" px-4 border-purple-300 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8"  id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td>
-                    <td  class=" px-4 border-purple-300 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8"  id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td> 
-    
-                    <td  class=" px-4 border-purple-300 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8"  id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td>
-    
-                    <td  class=" px-4 border-purple-300 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8"  id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td>
-    
-                    <td  class=" px-4 border-purple-300 border-2" >
-                        
-                        <div class="text-sm  my-1" >
-                            <label class="block"> Course</label>
-                            <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>
-                        <div class="text-sm my-1" >
-                            <label class="block">Lecturer</label>
-                            <input type="text" size="8"  id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                       </div>
-                    
-                        <div class="text-sm my-1" >
-                            <label class="block">Venue</label>
-                            <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
-                            class="text-sm">
-                        </div>       
-                    </td>
-
-                </tr>
-
-                
-            </table>
-           
-           
+                <form class="ml-2 mr-14 mt-4 text-sm" method="" action="">
         
-        </div>
-       
-    </form> 
+                    <table class="border-2 border-purple-500 bg-purple-500 mr-2 rounded" id='monday'>
+                    
+                        <!-- 1 hour classes -->
+                       
+                            <tr class="bg-purple-500 border-2 border-purple-500">
+                                    <th class="p-1">DAY</th>
+                                    <th class="p-1">7-8</th>
+                                    <th class="p-1">8-9</th>
+                                    <th class="p-1">9-10</th>
+                                    <th class="p-1">10-11</th>
+                                    <th class="p-1">11-12</th>
+                                    <th class="p-1">12-1</th>
+                                    <th class="p-1">2-3</th>
+                                    <th class="p-1">3-4</th>
+                                    <th class="p-1">4-5</th>
+                                    <th class="p-1">5-6</th>
+                                    
+                            </tr>
+            
+                        <tr class="bg-purple-100">
+                            <td class="p-2 px-6 border-purple-500 border-2" >Monday</td>
+                            <td  class=" px-6 border-purple-500 border-2 py-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label> Course</label>
+                                    <input type="text" size="8" id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm ">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8"  id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8" id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td> 
+            
+                            <td  class="px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="cmon" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm ">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8" id="lmon2" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vmon2" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td> 
+            
+                            <td  class="px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="cmon3" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8" id="lmon3" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vmon3" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td> 
+            
+                            <td  class=" px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8" id="cmon4" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8" id="lmon4" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vmon4" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td> 
+            
+                            <td  class=" px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="cmon5" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8" id="lmon5" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vmon5" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td> 
+            
+                            <td  class=" px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="cmon6" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8"  id="lmon6" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vmon6" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td>
+                            <td  class=" px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="cmon7" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8"  id="lmon7" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vmon7" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td> 
+            
+                            <td  class=" px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="cmon8" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8"  id="lmon8" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vmon8" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td>
+            
+                            <td  class=" px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="cmon9" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8"  id="lmon9" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vmon9" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td>
+            
+                            <td  class=" px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="cmon10" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8"  id="lmon10" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vmon10" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td>
+        
+                        </tr>
+        
+                        
+                    </table>
+        
+                    <table class="border-2 border-purple-500 bg-purple-500 mr-2 hidden rounded" id='tuesday'>
+                    
+                        <!-- 1 hour classes -->
+                       
+                            <tr class="bg-purple-500 border-2 border-purple-500">
+                                    <th class="p-1">DAY</th>
+                                    <th class="p-1">7-8</th>
+                                    <th class="p-1">8-9</th>
+                                    <th class="p-1">9-10</th>
+                                    <th class="p-1">10-11</th>
+                                    <th class="p-1">11-12</th>
+                                    <th class="p-1">12-1</th>
+                                    <th class="p-1">2-3</th>
+                                    <th class="p-1">3-4</th>
+                                    <th class="p-1">4-5</th>
+                                    <th class="p-1">5-6</th>
+                                    
+                            </tr>
+            
+                        <tr class="bg-purple-100">
+                            <td class="p-6 border-purple-500 border-2" >Tuesday</td>
+                            <td  class=" px-6 border-purple-500 border-2 py-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label> Course</label>
+                                    <input type="text" size="8" id="ctue1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm ">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8"  id="ltue1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8" id="vtue1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td> 
+            
+                            <td  class="px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="ctue2" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm ">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8" id="ltue2" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vtue2" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td> 
+            
+                            <td  class="px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="ctue3" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8" id="ltue3" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vtue3" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td> 
+            
+                            <td  class=" px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8" id="ctue4" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8" id="ltue4" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vtue4" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td> 
+            
+                            <td  class=" px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="ctue5" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8" id="ltue5" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vtue5" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td> 
+            
+                            <td  class=" px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="ctue6" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8"  id="ltue6" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vtue6" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td>
+                            <td  class=" px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="ctue7" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8"  id="ltue7" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vtue7" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td> 
+            
+                            <td  class=" px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="cmon8" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8"  id="lmon8" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vmon8" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td>
+            
+                            <td  class=" px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="cmon9" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8"  id="lmon9" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vmon9" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td>
+            
+                            <td  class=" px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="ctue10" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8"  id="ltue10" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vtue10" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td>
+        
+                        </tr>
+        
+                        
+                    </table>
+        
+                    <table class="border-2 border-purple-500 bg-purple-500 mr-2 hidden rounded" id='wednesday'>
+                    
+                        <!-- 1 hour classes -->
+                       
+                            <tr class="bg-purple-500 border-2 border-purple-500">
+                                    <th class="p-1">DAY</th>
+                                    <th class="p-1">7-8</th>
+                                    <th class="p-1">8-9</th>
+                                    <th class="p-1">9-10</th>
+                                    <th class="p-1">10-11</th>
+                                    <th class="p-1">11-12</th>
+                                    <th class="p-1">12-1</th>
+                                    <th class="p-1">2-3</th>
+                                    <th class="p-1">3-4</th>
+                                    <th class="p-1">4-5</th>
+                                    <th class="p-1">5-6</th>
+                                    
+                            </tr>
+            
+                        <tr class="bg-purple-100">
+                            <td class="p-4 border-purple-500 border-2" >Wednesday</td>
+                            <td  class=" px-6 border-purple-500 border-2 py-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label> Course</label>
+                                    <input type="text" size="8" id="cwed1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm ">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8"  id="lwed1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8" id="vwed1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td> 
+            
+                            <td  class="px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="cwed2" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm ">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8" id="lwed2" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vwed2" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td> 
+            
+                            <td  class="px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="cwed3" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8" id="lmon3" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vmon3" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td> 
+            
+                            <td  class=" px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8" id="cwed4" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8" id="lwed4" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vwed4" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td> 
+            
+                            <td  class=" px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="cwed5" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8" id="lwed5" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vwed5" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td> 
+            
+                            <td  class=" px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="cwed6" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8"  id="lwed6" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vwed6" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td>
+                            <td  class=" px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="cwed7" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8"  id="lwed7" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vwed7" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td> 
+            
+                            <td  class=" px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="cwed8" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8"  id="lwed8" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vwed8" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td>
+            
+                            <td  class=" px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="cwed9" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8"  id="lwed9" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vwed9" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td>
+            
+                            <td  class=" px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="cwed10" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8"  id="lwed10" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vwed10" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td>
+        
+                        </tr>
+        
+                        
+                    </table>
+        
+                    <table class="border-2 border-purple-500 bg-purple-500 mr-2 hidden rounded" id='thursday'>
+                    
+                        <!-- 1 hour classes -->
+                       
+                            <tr class="bg-purple-500 border-purple-500 border-2">
+                                    <th class="p-1">DAY</th>
+                                    <th class="p-1">7-8</th>
+                                    <th class="p-1">8-9</th>
+                                    <th class="p-1">9-10</th>
+                                    <th class="p-1">10-11</th>
+                                    <th class="p-1">11-12</th>
+                                    <th class="p-1">12-1</th>
+                                    <th class="p-1">2-3</th>
+                                    <th class="p-1">3-4</th>
+                                    <th class="p-1">4-5</th>
+                                    <th class="p-1">5-6</th>
+                                    
+                            </tr>
+            
+                        <tr class="bg-purple-100">
+                            <td class="p-6 border-purple-500 border-2" >Thursday</td>
+                            <td  class=" px-6 border-purple-500 border-2 py-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label> Course</label>
+                                    <input type="text" size="8" id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm ">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8"  id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8" id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td> 
+            
+                            <td  class="px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm ">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8" id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td> 
+            
+                            <td  class="px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8" id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td> 
+            
+                            <td  class=" px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8" id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8" id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td> 
+            
+                            <td  class=" px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8" id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td> 
+            
+                            <td  class=" px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8"  id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td>
+                            <td  class=" px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8"  id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td> 
+            
+                            <td  class=" px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8"  id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td>
+            
+                            <td  class=" px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8"  id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td>
+            
+                            <td  class=" px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8"  id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td>
+        
+                        </tr>
+        
+                        
+                    </table>
+        
+                    <table class="border-2 border-purple-500 bg-purple-500 mr-2 hidden rounded" id='friday'>
+                    
+                        <!-- 1 hour classes -->
+                       
+                            <tr class="bg-purple-500 border-2 border-purple-500">
+                                    <th class="p-1">DAY</th>
+                                    <th class="p-1">7-8</th>
+                                    <th class="p-1">8-9</th>
+                                    <th class="p-1">9-10</th>
+                                    <th class="p-1">10-11</th>
+                                    <th class="p-1">11-12</th>
+                                    <th class="p-1">12-1</th>
+                                    <th class="p-1">2-3</th>
+                                    <th class="p-1">3-4</th>
+                                    <th class="p-1">4-5</th>
+                                    <th class="p-1">5-6</th>
+                                    
+                            </tr>
+            
+                        <tr class="bg-purple-100">
+                            <td class="p-6 border-purple-500 border-2" >Friday</td>
+                            <td  class=" px-6 border-purple-500 border-2 py-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label> Course</label>
+                                    <input type="text" size="8" id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm ">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8"  id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8" id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td> 
+            
+                            <td  class="px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm ">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8" id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td> 
+            
+                            <td  class="px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8" id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td> 
+            
+                            <td  class=" px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8" id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8" id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td> 
+            
+                            <td  class=" px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8" id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td> 
+            
+                            <td  class=" px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8"  id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td>
+                            <td  class=" px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8"  id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td> 
+            
+                            <td  class=" px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8"  id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td>
+            
+                            <td  class=" px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8"  id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td>
+            
+                            <td  class=" px-6 border-purple-500 border-2" >
+                                
+                                <div class="text-sm  my-1" >
+                                    <label class="block"> Course</label>
+                                    <input type="text" size="8"  id="cmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>
+                                <div class="text-sm my-1" >
+                                    <label class="block">Lecturer</label>
+                                    <input type="text" size="8"  id="lmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                               </div>
+                            
+                                <div class="text-sm my-1" >
+                                    <label class="block">Venue</label>
+                                    <input type="text" size="8"  id="vmon1" ondrop="drop(event)" ondragover="allowDrop(event)" readonly
+                                    class="text-sm">
+                                </div>       
+                            </td>
+        
+                        </tr>
+        
+                        
+                    </table>
+                   
+                   
+                
+                </div>
+               
+            </form> 
+            </div>
 
    
     
     <!-- Course, Lecturer and venue list -->
 
-    <div class="bg-purple-500 p-2 flex flex-col  mt-32 mx-10">    
+    <div class="bg-purple-500 p-2  text-sm mt-32 mx-10 rounded" style="overflow-x:auto;">    
 
     <table>
 
         <tr>
             <th class="text-left pr-4 pb-4">Courses</th>
             {% for course in courses %}
-            <td><span draggable="true" ondragstart="drag(event)" id="{{course.course_code}}" class="border-2 px-1 rounded border-blue-100">{{course.course_code}}</span></td>
+            <td><span draggable="true" ondragstart="drag(event)" id="{{course.course_code}}" class="border-2 px-2 rounded border-purple-300">{{course.course_code}}</span></td>
             {% endfor %}
         </tr>
 
         <tr>
             <th class="text-left pb-4">Lecturer</th>
             {% for lecturer in admins %}
-        <td><span draggable="true" ondragstart="drag(event)" id="{{lecturer.user.email}}" class="border-2 px-1 rounded border-blue-100"> {{lecturer.user.first_name}} {{lecturer.user.last_name}}</span></td>
+        <td><span draggable="true" ondragstart="drag(event)" id="{{lecturer.user.email}}" class="border-2 px-2 rounded border-purple-300"> {{lecturer.user.first_name}} {{lecturer.user.last_name}}</span></td>
            {% endfor %} 
         </tr>
 
         <tr>
-            <th class="text-left pb-4">Venue</th>
+            <th class="text-left">Venue</th>
             {% for venue in venues %}
-            <td><span draggable="true" ondragstart="drag(event)" id="{{venue.name}}" class="border-2 px-1 rounded border-blue-100">{{venue.name}}</span></td>
+            <td><span draggable="true" ondragstart="drag(event)" id="{{venue.name}}" class="border-2 px-2 rounded border-purple-300">{{venue.name}}</span></td>
             {% endfor %}
         </tr>
 

@@ -13,6 +13,19 @@ window.addEventListener('DOMContentLoaded', ()=> {
    
   })
 
+  window.addEventListener('DOMContentLoaded', ()=> {
+          
+    const daysBtn = document.querySelector('.daysbtn');
+    const dropdays = document.querySelector('.dropdays');
+
+    daysBtn.addEventListener('click', () =>{
+      dropdays.classList.toggle('hidden');
+      dropdays.classList.toggle('flex');
+    })
+
+   
+  })
+
 //Responsive mobile menu
 
   const btn = document.querySelector('button.toggle-mobile-menu')
@@ -42,24 +55,92 @@ function drop(ev) {
   //ev.target.appendChild(document.getElementById(data));
 }
 
+
 //show Table
-function monTable(){
-	document.getElementById("monday").classList.toggle('hidden');
+function monTable() {
+  if (document.getElementById('monday').style.display === 'none') {
+    document.getElementById("monday").style.display = 'block';
+  }
   
-}
-function tueTable(){
-	document.getElementById("tuesday").classList.toggle('hidden');
-  
-}
-function wedTable(){
-	document.getElementById("wednesday").classList.toggle('hidden');
-  
-}
-function thurTable(){
-	document.getElementById("thursday").classList.toggle('hidden');
+  // document.getElementById("monday").style.display = '';
+  // document.getElementById("monday").classList.toggle('hidden');
+  document.getElementById("monday").style.display = 'block';
+
  
+  document.getElementById("tuesday").style.display = 'none';
+  document.getElementById("wednesday").style.display = 'none';
+  document.getElementById("thursday").style.display = 'none';
+  document.getElementById("friday").style.display = 'none';
+
+
+
+
 }
-function friTable(){
-	document.getElementById("friday").classList.toggle('hidden');
+function tueTable() {
+  // document.getElementById('tuesday').style.display = 'block';
+  if (document.getElementById('tuesday').style.display === 'none') {
+    document.getElementById("tuesday").style.display = 'block';
+    
+  }
+  
+  // document.getElementById('tuesday').classList.toggle('hidden');
+  // document.getElementById("tuesday").style.display = '';
+  // document.querySelector('table#tuesday').classList.toggle('hidden');
+  document.getElementById("tuesday").style.display = 'block';
+  
+  
+  document.getElementById("monday").style.display = 'none';
+  document.getElementById("wednesday").style.display = 'none';
+  document.getElementById("thursday").style.display = 'none';
+  document.getElementById("friday").style.display = 'none';
+
+}
+function wedTable() {
+
+  if (document.getElementById('wednesday').style.display === 'none') {
+    document.getElementById("wednesday").style.display = 'block';  
+  }
+
+  // document.getElementById("wednesday").classList.toggle('hidden');
+  document.getElementById("wednesday").style.display = 'block';
+
+  document.getElementById("monday").style.display = 'none';
+  document.getElementById("tuesday").style.display = 'none';
+  document.getElementById("thursday").style.display = 'none';
+  document.getElementById("friday").style.display = 'none';
+
+  
+
+}
+
+function thurTable() {
+  if (document.getElementById('thursday').style.display === 'none'){
+    document.getElementById("thursday").style.display = 'block';
+  }
+  
+  // document.getElementById("thursday").classList.toggle('hidden');
+  document.getElementById("thursday").style.display = 'block';
+
+  document.getElementById("monday").style.display = 'none';
+  document.getElementById("tuesday").style.display = 'none';
+  document.getElementById("wednesday").style.display = 'none';
+  document.getElementById("friday").style.display = 'none';
+
   
 }
+
+function friTable() {
+  if (document.getElementById('friday').style.display === 'none'){
+    document.getElementById("friday").style.display = 'block';
+  }
+  // document.getElementById("friday").classList.toggle('hidden');
+  document.getElementById("friday").style.display = 'block';
+
+  document.getElementById("monday").style.display = 'none';
+  document.getElementById("tuesday").style.display = 'none';
+  document.getElementById("wednesday").style.display = 'none';
+  document.getElementById("thursday").style.display = 'none';
+
+
+}
+
