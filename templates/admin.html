@@ -3,16 +3,6 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<!-- <nav class="bg-purple-600 text-purple-100 w-full border-b border-purple-100 
-    shadow-lg p-2 rounded-lg text-sm md:text-lg">
-
-    <div class="flex justify-between items-center">
-        <a  href="{% url 'page:home' %}"  class=" text-sm uppercase md:text-lg font-bold ">Project Table</a>
-        <button>Logout</button>
-    </div>
-    </nav> -->
-    <div class=" mt-10 text-black">
-
     <div class="mx-10">
         <button class="rounded p-1 bg-purple-500 text-white menubtn relative flex items-center">
             <span class="mb-1">Days</span>
@@ -1177,22 +1167,23 @@
 
         <tr>
             <th class="text-left pr-4 pb-4">Courses</th>
-            <td><span draggable="true" ondragstart="drag(event)" id="seng419" class="border-2 px-1 rounded border-blue-100"> SENG 419</span></td>
-            <td><span draggable="true" ondragstart="drag(event)" id="cosc419" class="border-2 px-1 rounded border-blue-100"> COSC 419</span></td>
-            
+            {% for course in courses %}
+            <td><span draggable="true" ondragstart="drag(event)" id="{{course.course_code}}" class="border-2 px-1 rounded border-blue-100">{{course.course_code}}</span></td>
+            {% endfor %}
         </tr>
 
         <tr>
             <th class="text-left pb-4">Lecturer</th>
-            <td><span draggable="true" ondragstart="drag(event)" id="ebiesuwa" class="border-2 px-1 rounded border-blue-100"> Ebiesuwa</span></td>
-            <td><span draggable="true" ondragstart="drag(event)" id="adegbola" class="border-2 px-1 rounded border-blue-100">Adegbola</span></td>
-            
+            {% for lecturer in admins %}
+        <td><span draggable="true" ondragstart="drag(event)" id="{{lecturer.user.email}}" class="border-2 px-1 rounded border-blue-100"> {{lecturer.user.first_name}} {{lecturer.user.last_name}}</span></td>
+           {% endfor %} 
         </tr>
 
         <tr>
             <th class="text-left pb-4">Venue</th>
-            <td><span draggable="true" ondragstart="drag(event)" id="b107" class="border-2 px-1 rounded border-blue-100"> B107</span></td>
-            <td><span draggable="true" ondragstart="drag(event)" id="f104" class="border-2 px-1 rounded border-blue-100"> F104</span></td>
+            {% for venue in venues %}
+            <td><span draggable="true" ondragstart="drag(event)" id="{{venue.name}}" class="border-2 px-1 rounded border-blue-100">{{venue.name}}</span></td>
+            {% endfor %}
         </tr>
 
             
@@ -1200,9 +1191,7 @@
 </div>
 
 
-</div>  
-</body>
-</html>
+
 
 
 
