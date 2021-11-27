@@ -3,15 +3,7 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-<!-- <nav class="bg-purple-600 text-purple-100 w-full border-b border-purple-100 
-    shadow-lg p-2 rounded-lg text-sm md:text-lg">
-
-    <div class="flex justify-between items-center">
-        <a  href="{% url 'page:home' %}"  class=" text-sm uppercase md:text-lg font-bold ">Project Table</a>
-        <button>Logout</button>
-    </div>
-    </nav> -->
-    <div class=" text-black">
+    <div class=" text-black font-sans">
         <div class="mx-14" style="overflow-x:auto;">
             <div class="flex ">
 
@@ -24,11 +16,11 @@
                     </button>
                         <div class="dropdays text-sm bg-purple-400 rounded mt-1 p-2 flex flex-col hidden  w-max absolute">
                             <ul class="space-y-2">
-                            <li><button class=" p-1  rounded hover:bg-purple-500"onClick='monTable()'>Monday</button> </li>
-                            <li> <button class="p-1  rounded hover:bg-purple-500 " onClick='tueTable()'>Tuesday</button></li>
-                            <li><button class=" p-1  rounded hover:bg-purple-500 " onClick='wedTable()'>Wednesday</button> </li>
-                            <li><button class=" p-1  rounded hover:bg-purple-500 " onClick='thurTable()'>Thursday</button> </li>
-                            <li><button class=" p-1  rounded hover:bg-purple-500 " onClick='friTable()'>Friday</button> </li>
+                            <li><button class="p-1  rounded hover:bg-purple-500" onClick='monTable()'>Monday</button></li>
+                            <li><button class="p-1  rounded hover:bg-purple-500" onClick='tueTable()'>Tuesday</button></li>
+                            <li><button class="p-1  rounded hover:bg-purple-500" onClick='wedTable()'>Wednesday</button></li>
+                            <li><button class="p-1  rounded hover:bg-purple-500" onClick='thurTable()'>Thursday</button></li>
+                            <li><button class="p-1  rounded hover:bg-purple-500" onClick='friTable()'>Friday</button> </li>
                             </ul>
                             
             
@@ -41,7 +33,7 @@
                     
                         <!-- 1 hour classes -->
                        
-                            <tr class="bg-purple-500 border-2 border-purple-500">
+                            <tr class="bg-purple-500 border-2 border-purple-500 text-white">
                                     <th class="p-1">DAY</th>
                                     <th class="p-1">7-8</th>
                                     <th class="p-1">8-9</th>
@@ -209,7 +201,7 @@
                     
                         <!-- 1 hour classes -->
                        
-                            <tr class="bg-purple-500 border-2 border-purple-500">
+                            <tr class="bg-purple-500 border-2 border-purple-500 text-white">
                                     <th class="p-1">DAY</th>
                                     <th class="p-1">7-8</th>
                                     <th class="p-1">8-9</th>
@@ -376,7 +368,7 @@
                     
                         <!-- 1 hour classes -->
                        
-                            <tr class="bg-purple-500 border-2 border-purple-500">
+                            <tr class="bg-purple-500 border-2 border-purple-500 text-white">
                                     <th class="p-1">DAY</th>
                                     <th class="p-1">7-8</th>
                                     <th class="p-1">8-9</th>
@@ -543,7 +535,7 @@
                     <table class="border-2 border-purple-500 bg-purple-500 mr-2 hidden rounded" id='thursday'>
                     
                         <!-- 1 hour classes -->
-                        <tr class="bg-purple-500 border-2 border-purple-500">
+                        <tr class="bg-purple-500 border-2 border-purple-500 text-white">
                             <th class="p-1">DAY</th>
                             <th class="p-1">7-8</th>
                             <th class="p-1">8-9</th>
@@ -711,7 +703,7 @@
                     
                         <!-- 1 hour classes -->
                        
-                        <tr class="bg-purple-500 border-2 border-purple-500">
+                        <tr class="bg-purple-500 border-2 border-purple-500 text-white">
                             <th class="p-1">DAY</th>
                             <th class="p-1">7-8</th>
                             <th class="p-1">8-9</th>
@@ -881,12 +873,18 @@
                
             </form> 
             </div>
+            <div class="text-right mx-14 mt-4 font-sans">
+                <button class="bg-purple-500 rounded font-bold text-sm p-2 text-white hover:bg-purple-600">
+                    Submit
+                </button>
+            </div>
+           
 
    
     
     <!-- Course, Lecturer and venue list -->
 
-    <div class="bg-purple-500 p-2  text-sm mt-32 mx-10 rounded" style="overflow-x:auto;">    
+    <div class="bg-purple-500 p-2  text-sm mt-16 mx-10 rounded" style="overflow-x:auto;">    
 
     <table>
 
@@ -900,7 +898,7 @@
         <tr>
             <th class="text-left pb-4">Lecturer</th>
             {% for lecturer in admins %}
-        <td><span draggable="true" ondragstart="drag(event)" id="{{lecturer.user.email}}" class="border-2 px-2 rounded border-purple-300"> {{lecturer.user.first_name}} {{lecturer.user.last_name}}</span></td>
+        <td><span draggable="true" ondragstart="drag(event)" id="{{lecturer.user.email}}" class="border-2 px-2 rounded border-purple-300 mb-1"> {{lecturer.user.first_name}} {{lecturer.user.last_name}}</span></td>
            {% endfor %} 
         </tr>
 

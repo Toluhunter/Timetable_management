@@ -19,7 +19,7 @@
     <!--Nav Bar -->
     <div class=""> 
         <nav class="bg-purple-600 text-purple-100 w-full border-b border-purple-100 
-                    shadow-lg p-2  text-sm md:text-lg w-full">
+                    shadow-lg p-2  text-sm md:text-lg w-full font-sans">
             
                 <div class="flex justify-between items-center">
                     <a  href="{% url 'page:home' %}"  class=" text-sm uppercase md:text-lg font-bold ">Project Table</a>
@@ -28,7 +28,7 @@
                     
                     <!-- nav items -->
                     <ul>
-                        <div class="hidden md:flex space-x-5 text-sm items-center ">
+                        <div class="hidden md:flex space-x-5 text-sm items-center  ">
                             {% if not user.is_authenticated %}
                             <div>
                                 <button class="relative menubtn">Sign Up</button>
@@ -43,7 +43,7 @@
                             </div>
                             {% else %}
                             <div>
-                                <button class="relative menubtn">Logged in: {{  user.first_name }}</button>
+                                <button class="relative menubtn font-bold">Logged in: {{  user.first_name }}</button>
                                     <ul class="absolute hidden flex-col bg-purple-600 p-2 text-sm space-y-4 rounded-b-lg dropdown">
                                         <li class="px-1 pt-1 hover:bg-purple-400  rounded"><a href="#">Timetable</a> </li> 
                                         <li class="px-1 hover:bg-purple-400  rounded"><a href="{% url 'timetable:select' %}">Create Timetable</a> </li>
