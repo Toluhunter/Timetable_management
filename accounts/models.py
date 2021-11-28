@@ -1,7 +1,8 @@
 import re
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser,BaseUserManager
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.core.exceptions import ValidationError
+
 
 # Create your models here.
 
@@ -23,7 +24,9 @@ class CustomManager(BaseUserManager):
         user.full_clean()
         user.save()
         if user.is_admin:
-            admin = Admin(user=user)
+            lecturer = Lecturer(user=user, initial=f"{user.last_name} .{user.first_name[0].upper()}")
+            lecturer.save()
+            admin = Admin(lecturer=lecturer)
             admin.save()
 
         return user
@@ -57,7 +60,7 @@ class CustomUser(AbstractBaseUser):
             if not student_email.match(email):
                 raise ValidationError("Not a Valid babcock email for student")
         elif self.is_lecturer or self.is_admin:
-            lecturer_email = re.compile(r"^[a-z]{3,}[0-9]{4}@babcock\.edu\.ng$")
+            lecturer_email = re.compile(r"^[a-z]{3,}@babcock\.edu\.ng$")
             if not lecturer_email.match(email):
                 raise ValidationError("Not a Valid babcock email for staff")
         
@@ -77,12 +80,13 @@ class Student(models.Model):
 
 class Lecturer(models.Model):
     user = models.OneToOneField(CustomUser, on_delete=models.CASCADE)
+    initial = models.CharField(max_length=35, unique=True)
 
     def __str__(self):
         return f'{self.user.first_name} {self.user.last_name}'
     
-class Admin(Lecturer):
-    pass
+class Admin(models.Model):
+    lecturer = models.ForeignKey(Lecturer, on_delete=models.CASCADE)
 
 class Courses(models.Model):
     department = models.ManyToManyField('Department')

@@ -1,6 +1,6 @@
 from django import forms
-from accounts.models import Department, Courses
-
+from accounts.models import Department, Courses, Lecturer, Venue
+from .save_timetable import SaveTimeTable
 
 class SelectTimetableForm(forms.Form):
     choices = [
@@ -138,7 +138,7 @@ class CreateTimetableForm(forms.Form):
 
     # Monday Lecturer
     monday_lecturer_7_8 = forms.CharField(
-        max_length=12,
+        max_length=25,
         label="Lecturer",
         required=False,
         widget=forms.TextInput(
@@ -150,7 +150,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     monday_lecturer_8_9 = forms.CharField(
-        max_length=12,
+        max_length=25,
         label="Lecturer",
         required=False,
         widget=forms.TextInput(
@@ -162,7 +162,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     monday_lecturer_9_10 = forms.CharField(
-        max_length=12,
+        max_length=25,
         required=False,
         label="Lecturer",
         widget=forms.TextInput(
@@ -174,7 +174,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     monday_lecturer_10_11 = forms.CharField(
-        max_length=12,
+        max_length=25,
         label="Lecturer",
         required=False,
         widget=forms.TextInput(
@@ -186,7 +186,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     monday_lecturer_11_12 = forms.CharField(
-        max_length=12,
+        max_length=25,
         label="Lecturer",
         required=False,
         widget=forms.TextInput(
@@ -198,7 +198,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     monday_lecturer_12_1 = forms.CharField(
-        max_length=12,
+        max_length=25,
         label="Lecturer",
         required=False,
         widget=forms.TextInput(
@@ -210,7 +210,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     monday_lecturer_2_3 = forms.CharField(
-        max_length=12,
+        max_length=25,
         required=False,
         label="Lecturer",
         widget=forms.TextInput(
@@ -222,7 +222,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     monday_lecturer_3_4 = forms.CharField(
-        max_length=12,
+        max_length=25,
         label="Lecturer",
         required=False,
         widget=forms.TextInput(
@@ -234,7 +234,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     monday_lecturer_4_5 = forms.CharField(
-        max_length=12,
+        max_length=25,
         required=False,
         label="Lecturer",
         widget=forms.TextInput(
@@ -246,7 +246,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     monday_lecturer_5_6 = forms.CharField(
-        max_length=12,
+        max_length=25,
         label="Lecturer",
         required=False,
         widget=forms.TextInput(
@@ -504,7 +504,7 @@ class CreateTimetableForm(forms.Form):
 
     # Tuesday Lecturer
     tuesday_lecturer_7_8 = forms.CharField(
-        max_length=12,
+        max_length=25,
         required=False,
         label="Lecturer",
         widget=forms.TextInput(
@@ -516,7 +516,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     tuesday_lecturer_8_9 = forms.CharField(
-        max_length=12,
+        max_length=25,
         required=False,
         label="Lecturer",
         widget=forms.TextInput(
@@ -528,7 +528,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     tuesday_lecturer_9_10 = forms.CharField(
-        max_length=12,
+        max_length=25,
         label="Lecturer",
         required=False,
         widget=forms.TextInput(
@@ -540,7 +540,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     tuesday_lecturer_10_11 = forms.CharField(
-        max_length=12,
+        max_length=25,
         required=False,
         label="Lecturer",
         widget=forms.TextInput(
@@ -552,7 +552,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     tuesday_lecturer_11_12 = forms.CharField(
-        max_length=12,
+        max_length=25,
         required=False,
         label="Lecturer",
         widget=forms.TextInput(
@@ -564,7 +564,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     tuesday_lecturer_12_1 = forms.CharField(
-        max_length=12,
+        max_length=25,
         required=False,
         label="Lecturer",
         widget=forms.TextInput(
@@ -576,7 +576,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     tuesday_lecturer_2_3 = forms.CharField(
-        max_length=12,
+        max_length=25,
         label="Lecturer",
         required=False,
         widget=forms.TextInput(
@@ -588,7 +588,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     tuesday_lecturer_3_4 = forms.CharField(
-        max_length=12,
+        max_length=25,
         label="Lecturer",
         required=False,
         widget=forms.TextInput(
@@ -600,7 +600,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     tuesday_lecturer_4_5 = forms.CharField(
-        max_length=12,
+        max_length=25,
         label="Lecturer",
         required=False,
         widget=forms.TextInput(
@@ -612,7 +612,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     tuesday_lecturer_5_6 = forms.CharField(
-        max_length=12,
+        max_length=25,
         required=False,
         label="Lecturer",
         widget=forms.TextInput(
@@ -872,7 +872,7 @@ class CreateTimetableForm(forms.Form):
 
     # Wednesday Lecturer
     wednesday_lecturer_7_8 = forms.CharField(
-        max_length=12,
+        max_length=25,
         required=False,
         label="Lecturer",
         widget=forms.TextInput(
@@ -884,7 +884,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     wednesday_lecturer_8_9 = forms.CharField(
-        max_length=12,
+        max_length=25,
         required=False,
         label="Lecturer",
         widget=forms.TextInput(
@@ -896,7 +896,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     wednesday_lecturer_9_10 = forms.CharField(
-        max_length=12,
+        max_length=25,
         label="Lecturer",
         required=False,
         widget=forms.TextInput(
@@ -908,7 +908,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     wednesday_lecturer_10_11 = forms.CharField(
-        max_length=12,
+        max_length=25,
         required=False,
         label="Lecturer",
         widget=forms.TextInput(
@@ -920,7 +920,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     wednesday_lecturer_11_12 = forms.CharField(
-        max_length=12,
+        max_length=25,
         required=False,
         label="Lecturer",
         widget=forms.TextInput(
@@ -932,7 +932,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     wednesday_lecturer_12_1 = forms.CharField(
-        max_length=12,
+        max_length=25,
         required=False,
         label="Lecturer",
         widget=forms.TextInput(
@@ -944,7 +944,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     wednesday_lecturer_2_3 = forms.CharField(
-        max_length=12,
+        max_length=25,
         label="Lecturer",
         required=False,
         widget=forms.TextInput(
@@ -956,7 +956,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     wednesday_lecturer_3_4 = forms.CharField(
-        max_length=12,
+        max_length=25,
         label="Lecturer",
         required=False,
         widget=forms.TextInput(
@@ -968,7 +968,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     wednesday_lecturer_4_5 = forms.CharField(
-        max_length=12,
+        max_length=25,
         label="Lecturer",
         required=False,
         widget=forms.TextInput(
@@ -980,7 +980,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     wednesday_lecturer_5_6 = forms.CharField(
-        max_length=12,
+        max_length=25,
         required=False,
         label="Lecturer",
         widget=forms.TextInput(
@@ -1238,7 +1238,7 @@ class CreateTimetableForm(forms.Form):
 
     # Thursday Lecturer
     thursday_lecturer_7_8 = forms.CharField(
-        max_length=12,
+        max_length=25,
         required=False,
         label="Lecturer",
         widget=forms.TextInput(
@@ -1250,7 +1250,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     thursday_lecturer_8_9 = forms.CharField(
-        max_length=12,
+        max_length=25,
         required=False,
         label="Lecturer",
         widget=forms.TextInput(
@@ -1262,7 +1262,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     thursday_lecturer_9_10 = forms.CharField(
-        max_length=12,
+        max_length=25,
         label="Lecturer",
         required=False,
         widget=forms.TextInput(
@@ -1274,7 +1274,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     thursday_lecturer_10_11 = forms.CharField(
-        max_length=12,
+        max_length=25,
         required=False,
         label="Lecturer",
         widget=forms.TextInput(
@@ -1286,7 +1286,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     thursday_lecturer_11_12 = forms.CharField(
-        max_length=12,
+        max_length=25,
         required=False,
         label="Lecturer",
         widget=forms.TextInput(
@@ -1298,7 +1298,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     thursday_lecturer_12_1 = forms.CharField(
-        max_length=12,
+        max_length=25,
         required=False,
         label="Lecturer",
         widget=forms.TextInput(
@@ -1310,7 +1310,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     thursday_lecturer_2_3 = forms.CharField(
-        max_length=12,
+        max_length=25,
         label="Lecturer",
         required=False,
         widget=forms.TextInput(
@@ -1322,7 +1322,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     thursday_lecturer_3_4 = forms.CharField(
-        max_length=12,
+        max_length=25,
         label="Lecturer",
         required=False,
         widget=forms.TextInput(
@@ -1334,7 +1334,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     thursday_lecturer_4_5 = forms.CharField(
-        max_length=12,
+        max_length=25,
         label="Lecturer",
         required=False,
         widget=forms.TextInput(
@@ -1346,7 +1346,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     thursday_lecturer_5_6 = forms.CharField(
-        max_length=12,
+        max_length=25,
         required=False,
         label="Lecturer",
         widget=forms.TextInput(
@@ -1604,7 +1604,7 @@ class CreateTimetableForm(forms.Form):
 
     # Friday Lecturer
     friday_lecturer_7_8 = forms.CharField(
-        max_length=12,
+        max_length=25,
         required=False,
         label="Lecturer",
         widget=forms.TextInput(
@@ -1616,7 +1616,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     friday_lecturer_8_9 = forms.CharField(
-        max_length=12,
+        max_length=25,
         required=False,
         label="Lecturer",
         widget=forms.TextInput(
@@ -1628,7 +1628,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     friday_lecturer_9_10 = forms.CharField(
-        max_length=12,
+        max_length=25,
         label="Lecturer",
         required=False,
         widget=forms.TextInput(
@@ -1640,7 +1640,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     friday_lecturer_10_11 = forms.CharField(
-        max_length=12,
+        max_length=25,
         required=False,
         label="Lecturer",
         widget=forms.TextInput(
@@ -1652,7 +1652,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     friday_lecturer_11_12 = forms.CharField(
-        max_length=12,
+        max_length=25,
         required=False,
         label="Lecturer",
         widget=forms.TextInput(
@@ -1664,7 +1664,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     friday_lecturer_12_1 = forms.CharField(
-        max_length=12,
+        max_length=25,
         required=False,
         label="Lecturer",
         widget=forms.TextInput(
@@ -1676,7 +1676,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     friday_lecturer_2_3 = forms.CharField(
-        max_length=12,
+        max_length=25,
         label="Lecturer",
         required=False,
         widget=forms.TextInput(
@@ -1688,7 +1688,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     friday_lecturer_3_4 = forms.CharField(
-        max_length=12,
+        max_length=25,
         label="Lecturer",
         required=False,
         widget=forms.TextInput(
@@ -1700,7 +1700,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     friday_lecturer_4_5 = forms.CharField(
-        max_length=12,
+        max_length=25,
         label="Lecturer",
         required=False,
         widget=forms.TextInput(
@@ -1712,7 +1712,7 @@ class CreateTimetableForm(forms.Form):
         )
     )
     friday_lecturer_5_6 = forms.CharField(
-        max_length=12,
+        max_length=25,
         required=False,
         label="Lecturer",
         widget=forms.TextInput(
@@ -1845,3 +1845,86 @@ class CreateTimetableForm(forms.Form):
             }
         )
     )
+
+    def __init__(self, **kwargs):
+        self.department = kwargs.pop("department")
+        self.level = kwargs.pop("level")
+
+        return super().__init__(**kwargs)
+
+
+    def clean(self, *args, **kwargs):
+        ERROR = forms.ValidationError
+        
+        for value in self.cleaned_data.values():
+            if value:
+                break
+        else:
+            raise forms.ValidationError("Atleast one course must be set on any day")
+
+        department = self.department
+        level = self.level
+        lecturers = [ 
+            f"{lecturer.initial}" 
+            for lecturer in Lecturer.objects.filter(user__department__name=department) 
+            ]
+        venues = [ 
+            f"{venue.name}" 
+            for venue in Venue.objects.filter(department__name=department) 
+            ]
+        courses = [ 
+            f"{course.course_code}" 
+            for course in Courses.objects.filter(department__name=department, level=level) 
+            ]
+       
+        days = [
+            "monday",
+            "tuesday",
+            "wednesday",
+            "thursday",
+            "friday"
+        ]
+        timestamps = [
+            ('7', '8'),
+            ('8', '9'),
+            ('9', '10'),
+            ('10', '11'),
+            ('11', '12'),
+            ('12', '1'),
+            ('2', '3'),
+            ('3', '4'),
+            ('4', '5'),
+            ('5', '6')
+        ]
+        for day in days:
+            for timestamp in timestamps:
+                try:
+                    if self.cleaned_data[f"{day}_course_{timestamp[0]}_{timestamp[1]}"] or\
+                        self.cleaned_data[f"{day}_venue_{timestamp[0]}_{timestamp[1]}"] or\
+                        self.cleaned_data[f"{day}_lecturer_{timestamp[0]}_{timestamp[1]}"]:
+
+                        if not self.cleaned_data[f"{day}_venue_{timestamp[0]}_{timestamp[1]}"]:
+                            self.add_error(f"{day}_venue_{timestamp[0]}_{timestamp[1]}", ERROR("Cannot be left empty"))
+                        else:
+                            if not(self.cleaned_data[f"{day}_venue_{timestamp[0]}_{timestamp[1]}"] in venues): 
+                                self.add_error(f"{day}_venue_{timestamp[0]}_{timestamp[1]}", ERROR("Not a Valid venue"))
+
+                        if not self.cleaned_data[f"{day}_lecturer_{timestamp[0]}_{timestamp[1]}"]:
+                            self.add_error(f"{day}_lecturer_{timestamp[0]}_{timestamp[1]}", ERROR("Cannot be left empty"))
+                        else:
+                            if not(self.cleaned_data[f"{day}_lecturer_{timestamp[0]}_{timestamp[1]}"] in lecturers): 
+                                self.add_error(f"{day}_lecturer_{timestamp[0]}_{timestamp[1]}", ERROR("Not a valid Lecturer"))
+
+                        if not self.cleaned_data[f"{day}_course_{timestamp[0]}_{timestamp[1]}"]:
+                            self.add_error(f"{day}_course_{timestamp[0]}_{timestamp[1]}", ERROR("Cannot be left empty"))
+                        else:
+                            if not(self.cleaned_data[f"{day}_course_{timestamp[0]}_{timestamp[1]}"] in courses): 
+                                self.add_error(f"{day}_course_{timestamp[0]}_{timestamp[1]}", ERROR("Not a Valid Course"))
+                except:
+                    continue
+
+                    
+
+        if self.errors:
+            raise forms.ValidationError("Check fields")        
+        return super().clean(*args, **kwargs)
