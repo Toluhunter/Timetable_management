@@ -6,5 +6,5 @@ app_name = 'timetable'
 urlpatterns = [
     path('select/', SelectTimeTableView.as_view(), name="select"),
     path('create/<department>/<level>/', CreateTimeTableView.as_view(), name="create"),
-    path('timetable/', TimeTableView.as_view(), name="view")
+    path('view/', TimeTableView.as_view(), name="view")
 ]
