@@ -27,7 +27,7 @@
                         </div>
                 </div>
 
-                <form class="ml-2 mr-14 mt-4 text-sm" method="post" action="{% url 'timetable:create' department=department level=level %}">
+                <form class="ml-2 mr-14 mt-4 text-sm zoom" method="post" action="{% url 'timetable:create' department=department level=level %}">
                     {% csrf_token %}
                     {{ form | as_crispy_errors }}
         

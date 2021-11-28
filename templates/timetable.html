@@ -1,131 +1,979 @@
 {% extends 'base.html' %}
     {% block content %}
-    <main class="px-20 py-3 ">
-        <p class="font-bold text-2xl">Welcome!</p>
+    <main class="md:px-20 py-3 ">
+        <p class="font-bold text-2xl text-center">Software Engineering 300 Level</p>
 
-        <div class="table w-full p-2">
-            <table class="w-full border">
-                <tr class="bg-purple-300 border-b ">
-                        <th class="p-2">Course</th>
-                        <th class="p-2">Time</th>
-                        <th class="p-2">Venue</th>  
-                        <th class="p-2">Lecturer</th>    
-                </tr>
+        <div class=" text-black font-sans"> 
+            <div class="md:mx-14" style="overflow-x:auto;">
+                <div class="flex ">
+    
+                    <div class="mx-2 mt-4 mr-8">
+                        <button class="daysbtn rounded p-1 bg-purple-500 text-white relative flex items-center">
+                            <span class="mb-1  text-sm">Days</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                            <div class="dropdays text-sm bg-purple-400 rounded mt-1 p-2 flex flex-col hidden  w-max absolute">
+                                <ul class="space-y-2">
+                                <li><button class="p-1  rounded hover:bg-purple-500" onClick='viewmonTable()'>Monday</button></li>
+                                <li><button class="p-1  rounded hover:bg-purple-500" onClick='viewtueTable()'>Tuesday</button></li>
+                                <li><button class="p-1  rounded hover:bg-purple-500" onClick='viewwedTable()'>Wednesday</button></li>
+                                <li><button class="p-1  rounded hover:bg-purple-500" onClick='viewthurTable()'>Thursday</button></li>
+                                <li><button class="p-1  rounded hover:bg-purple-500" onClick='viewfriTable()'>Friday</button> </li>
+                                </ul>
+                                
+                
+                            </div>
+                    </div>
 
-                <tr class="bg-purple-100 text-center">
-                    <td class="p-2">SENG 305</td>
-                    <td class="p-2">9-11</td> 
-                    <td class="p-2">E102</td>
-                    <td class="p-2">MR. Man</td>
-                </tr>
-                
-                <tr class="bg-purple-300 text-center">
-                    <td class="p-2">COSC 335</td>
-                    <td class="p-2">12-1</td> 
-                    <td class="p-2">RM 7</td>
-                    <td class="p-2">MR. Man</td>
-                </tr>
-                
-                <tr class="bg-purple-100 text-center">
-                    <td class="p-2">GEDS 204</td>
-                    <td class="p-2">2-4</td> 
-                    <td class="p-2">WRA</td>
-                    <td class="p-2">MR. Man</td>
-                </tr>
-                
-                <tr class="bg-purple-300 text-center">
-                    <td class="p-2">COSC 219</td>
-                    <td class="p-2">4-6</td> 
-                    <td class="p-2">CIT</td>
-                    <td class="p-2">MR. Man</td>
-                </tr>
+                        <div class="flex items-center justify-center">
+                            <div class="container">
+                                <table class="view w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5" id="view_monday">
+                                    <thead class="view text-white">
+                                        <tr class="bg-purple-400  flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
+                                            <th class="p-3 view ">DAY</th>
+                                            <th class="p-3 view ">7-8</th>
+                                            <th class="p-3 view ">8-9</th>
+                                            <th class="p-3 view ">9-10</th>
+                                            <th class="p-3 view ">10-11</th>
+                                            <th class="p-3 view ">11-12</th>
+                                            <th class="p-3 view ">12-1</th>
+                                            <th class="p-3 view ">2-3</th>
+                                            <th class="p-3 view ">3-4</th>
+                                            <th class="p-3 view ">4-5</th>
+                                            <th class="p-3 view ">5-6</th>
+                                            
+                                            
+                                        </tr>
+                                    
+                                    </thead>
+                                    <tbody class="flex-1 sm:flex-none text-black">
+                                        <tr class="flex flex-col border-purple-500 border-2  flex-no wrap sm:table-row mb-2 sm:mb-0">
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 p-3">Monday</td>
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  " >
+                                                    <label class="block font-bold"> Course</label>
+                                                   
+                                                </div>
+                                                <div class="text-sm" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                                            
+                                        </tr>
+                    
+                                    </tbody>
+                                </table>
 
-               
-                
-            </table>
+                                <table class="view hidden w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5 " id="view_tuesday">
+                                    <thead class="view text-white">
+                                        <tr class="bg-purple-400 flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
+                                            <th class="p-3 view">DAY</th>
+                                            <th class="p-3 view">7-8</th>
+                                            <th class="p-3 view">8-9</th>
+                                            <th class="p-3 view">9-10</th>
+                                            <th class="p-3 view">10-11</th>
+                                            <th class="p-3 view">11-12</th>
+                                            <th class="p-3 view">12-1</th>
+                                            <th class="p-3 view">2-3</th>
+                                            <th class="p-3 view">3-4</th>
+                                            <th class="p-3 view">4-5</th>
+                                            <th class="p-3 view">5-6</th>
+                                            
+                                            
+                                        </tr>
+                                    
+                                    </thead>
+                                    <tbody class="flex-1 sm:flex-none text-black">
+                                        <tr class="flex flex-col border-purple-500 border-2 flex-no wrap sm:table-row mb-2 sm:mb-0">
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 p-3">Tuesday</td>
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  " >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                                            
+                                        </tr>
+                    
+                                    </tbody>
+                                </table>
+
+                                <table class="view hidden w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5 " id="view_wednesday">
+                                    <thead class="view text-white">
+                                        <tr class="bg-purple-400 flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
+                                            <th class="p-3 view">DAY</th>
+                                            <th class="p-3 view">7-8</th>
+                                            <th class="p-3 view">8-9</th>
+                                            <th class="p-3 view">9-10</th>
+                                            <th class="p-3 view">10-11</th>
+                                            <th class="p-3 view">11-12</th>
+                                            <th class="p-3 view">12-1</th>
+                                            <th class="p-3 view">2-3</th>
+                                            <th class="p-3 view">3-4</th>
+                                            <th class="p-3 view">4-5</th>
+                                            <th class="p-3 view">5-6</th>
+                                            
+                                            
+                                        </tr>
+                                    
+                                    </thead>
+                                    <tbody class="flex-1 sm:flex-none text-black">
+                                        <tr class="flex flex-col border-purple-500 border-2  flex-no wrap sm:table-row mb-2 sm:mb-0">
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 p-3">Wednesday</td>
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  " >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                                            
+                                        </tr>
+                    
+                                    </tbody>
+                                </table>
+
+                                <table class="view hidden w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5 " id="view_thursday">
+                                    <thead class="view text-white">
+                                        <tr class="bg-purple-400 flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
+                                            <th class="p-3 view">DAY</th>
+                                            <th class="p-3 view">7-8</th>
+                                            <th class="p-3 view">8-9</th>
+                                            <th class="p-3 view">9-10</th>
+                                            <th class="p-3 view">10-11</th>
+                                            <th class="p-3 view">11-12</th>
+                                            <th class="p-3 view">12-1</th>
+                                            <th class="p-3 view">2-3</th>
+                                            <th class="p-3 view">3-4</th>
+                                            <th class="p-3 view">4-5</th>
+                                            <th class="p-3 view">5-6</th>
+                                            
+                                            
+                                        </tr>
+                                    
+                                    </thead>
+                                    <tbody class="flex-1 sm:flex-none text-black">
+                                        <tr class="flex flex-col border-purple-500 border-2  flex-no wrap sm:table-row mb-2 sm:mb-0">
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 p-3">Thursday</td>
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  " >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                                            
+                                        </tr>
+                    
+                                    </tbody>
+                                </table>
+
+                                <table class="view hidden w-full flex flex-row flex-no-wrap sm:bg-white rounded-lg overflow-hidden sm:shadow-lg my-5 mb-10" id="view_friday">
+                                    <thead class="view text-white">
+                                        <tr class="bg-purple-400 flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
+                                            <th class="p-3 view">DAY</th>
+                                            <th class="p-3 view">7-8</th>
+                                            <th class="p-3 view">8-9</th>
+                                            <th class="p-3 view">9-10</th>
+                                            <th class="p-3 view">10-11</th>
+                                            <th class="p-3 view">11-12</th>
+                                            <th class="p-3 view">12-1</th>
+                                            <th class="p-3 view">2-3</th>
+                                            <th class="p-3 view">3-4</th>
+                                            <th class="p-3 view">4-5</th>
+                                            <th class="p-3 view">5-6</th>
+                                            
+                                            
+                                        </tr>
+                                    
+                                    </thead>
+                                    <tbody class="flex-1 sm:flex-none text-black">
+                                        <tr class="flex flex-col border-purple-500 border-2  flex-no wrap sm:table-row mb-2 sm:mb-0">
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 p-3">Friday</td>
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  " >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                    
+                                            <td class="view border-purple-500 border-2 hover:bg-gray-200 px-3 ">
+                                                <div class="text-sm  my-1" >
+                                                    <label class="block font-bold"> Course</label>
+                                                    
+                                                </div>
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Lecturer</label>
+                                                    
+                                            </div>
+                                            
+                                                <div class="text-sm my-1" >
+                                                    <label class="block font-bold">Venue</label>
+                                                    
+                                                </div>  
+                                            </td>
+                                            
+                                        </tr>
+                    
+                                    </tbody>
+                                </table>
+
+
+                                
+            </div>
+            </div>
+            </div>
+            </div>
+            
         </div>
-
-        <div class="table w-full p-2">
-            <table class="w-full border md:bg-red-500">
-                <tr class="bg-purple-300 border-b ">
-                        <th class="p-1">DAY</th>
-                        <th class="p-2">7-8</th>
-                        <th class="p-2">8-9</th>
-                        <th class="p-2">9-10</th>
-                        <th class="p-2">11-12</th>
-                        <th class="p-2">1-2</th>
-                        <th class="p-2">2-4</th>
-                        <th class="p-2">4-6</th>
-                </tr>
-
-                <tr class="bg-purple-100 text-center">
-                    <td class="p-2">MONDAY</td>
-                    <td class="p-2"></td> 
-                    <td class="p-2"></td>
-                    <td class="p-2"></td> 
-                    <td class="p-2"></td>
-                    <td class="p-2"></td> 
-                    <td class="p-2"></td>
-                    <td class="p-2"></td> 
-                   
-                    
-                    
-                </tr>
-                
-                <tr class="bg-purple-300 text-center">
-                    <td class="p-2">TUESDAY</td>
-                    <td class="p-2"></td> 
-                    <td class="p-2"></td>
-                    <td class="p-2"></td> 
-                    <td class="p-2"></td>
-                    <td class="p-2"></td> 
-                    <td class="p-2"></td>
-                    <td class="p-2"></td> 
-                </tr>
-                
-                <tr class="bg-purple-100 text-center">
-                    <td class="p-2">WEDNESDAY</td>
-                    <td class="p-2"></td> 
-                    <td class="p-2"></td>
-                    <td class="p-2"></td> 
-                    <td class="p-2"></td>
-                    <td class="p-2"></td> 
-                    <td class="p-2"></td>
-                    <td class="p-2"></td> 
-                    
-                </tr>
-                
-                <tr class="bg-purple-300 text-center">
-                    <td class="p-2">THURSDAY</td>
-                    <td class="p-2"></td> 
-                    <td class="p-2"></td>
-                    <td class="p-2"></td> 
-                    <td class="p-2"></td>
-                    <td class="p-2"></td> 
-                    <td class="p-2"></td>
-                    <td class="p-2"></td> 
-                   
-                </tr>
-
-                <tr class="bg-purple-100 text-center">
-                    <td class="p-2">FRIDAY</td>
-                    <td class="p-2"></td> 
-                    <td class="p-2"></td>
-                    <td class="p-2"></td> 
-                    <td class="p-2"></td>
-                    <td class="p-2"></td> 
-                    <td class="p-2"></td>
-                    <td class="p-2"></td> 
-                    
-                </tr>
-                
-            </table>
-        </div>
-
-
-
     </main>
 
 {% endblock content %}
-     -->
+     
 
