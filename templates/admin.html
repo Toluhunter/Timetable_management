@@ -3,7 +3,7 @@
 {% load crispy_forms_tags %}
 {% block content %}
 
-    <div class=" text-black font-sans">
+    <div class=" text-black font-sans"> 
         <div class="mx-14" style="overflow-x:auto;">
             <div class="flex ">
 
@@ -27,15 +27,16 @@
                         </div>
                 </div>
 
-                <form class="ml-2 mr-14 mt-4 text-sm" method="" action="">
+                <form class="ml-2 mr-14 mt-4 text-sm zoom" method="" action="">
         
-                    <table class="border-2 border-purple-500 bg-purple-500 mr-2 rounded" id='monday'>
+                    <table class="border-2 border-purple-500 bg-purple-500 mr-2 rounded" 
+                                  style="width:100%" id='monday'>
                     
                         <!-- 1 hour classes -->
                        
                             <tr class="bg-purple-500 border-2 border-purple-500 text-white">
                                     <th class="p-1">DAY</th>
-                                    <th class="p-1">7-8</th>
+                                    <th class="p-1" >7-8</th>
                                     <th class="p-1">8-9</th>
                                     <th class="p-1">9-10</th>
                                     <th class="p-1">10-11</th>
@@ -49,8 +50,8 @@
                             </tr>
             
                         <tr class="bg-purple-100">
-                            <td class="p-2 px-6 border-purple-500 border-2" >Monday</td>
-                            <td  class=" px-6 border-purple-500 border-2 py-2" >
+                            <td class="p-2 px-6 border-purple-500 border-2">Monday</td>
+                            <td  class="px-6 border-purple-500 border-2 py-2">
                                 <div class="text-sm  my-1" >
                                     {{ form.monday_course_7_8 | as_crispy_field}}
                                 </div>
@@ -884,7 +885,7 @@
     
     <!-- Course, Lecturer and venue list -->
 
-    <div class="bg-purple-500 p-2  text-sm mt-16 mx-10 rounded" style="overflow-x:auto;">    
+    <div class="bg-purple-500 p-2 text-sm mb-36 mt-16 mx-10 rounded" style="overflow-x:auto;">    
 
     <table>
 
