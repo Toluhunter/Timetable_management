@@ -28,7 +28,7 @@ class SaveTimeTable:
             end_time=details["end_time"]
         )
         table.full_clean()
-        table.save()
+        # table.save()
         return table
 
     @classmethod
@@ -82,6 +82,6 @@ class SaveTimeTable:
                     day=f"{day}"
                 )
                 timetable.full_clean()
-                timetable.save()
+                # timetable.save()
         
         return redirect(reverse("page:home"))
