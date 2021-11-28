@@ -11,10 +11,28 @@
         .asteriskField{
         display: none;
          }
+         .zoom{
+              zoom:65%;
+          }
+
+          .zoom-moz{
+              transform: scale(0.5,0.5);
+              transform-origin: 0 0;
+          }
+          @media (min-width: 640px) {
+            table.view {
+            display: inline-table !important;
+            }
+            thead tr:not(:first-child) {
+            display: none;
+            }
+        }
+       
+        
         </style>
         
     </head>
-<body  class="text-purple-700  bg-purple-200">
+<body  class="text-purple-700  bg-purple-200 ">
     
     <!--Nav Bar -->
     <div class=""> 
@@ -93,7 +111,8 @@
     {% endblock content %}
 
 <footer class="font-bold text-purple-100 bg-purple-600 
-                               p-2 mt-20  w-full flex justify-between"> 
+                p-2 w-full flex justify-between"
+                style="position:fixed; bottom:0;"              > 
                     <div>
                         Project Table 2022
                     </div>

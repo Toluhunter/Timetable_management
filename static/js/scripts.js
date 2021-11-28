@@ -144,3 +144,93 @@ function friTable() {
 
 }
 
+
+//show Table
+function viewmonTable() {
+  if (document.getElementById('view_monday').style.display === 'none') {
+    document.getElementById("view_monday").style.display = 'block';
+  }
+  
+  // document.getElementById("monday").style.display = '';
+  // document.getElementById("monday").classList.toggle('hidden');
+  document.getElementById("view_monday").style.display = 'block';
+
+ 
+  document.getElementById("view_tuesday").style.display = 'none';
+  document.getElementById("view_wednesday").style.display = 'none';
+  document.getElementById("view_thursday").style.display = 'none';
+  document.getElementById("view_friday").style.display = 'none';
+
+
+
+
+}
+function viewtueTable() {
+  // document.getElementById('tuesday').style.display = 'block';
+  if (document.getElementById('view_tuesday').style.display === 'none') {
+    document.getElementById("view_tuesday").style.display = 'block';
+    
+  }
+  
+  // document.getElementById('tuesday').classList.toggle('hidden');
+  // document.getElementById("tuesday").style.display = '';
+  // document.querySelector('table#tuesday').classList.toggle('hidden');
+  document.getElementById("view_tuesday").style.display = 'block';
+  
+  
+  document.getElementById("view_monday").style.display = 'none';
+  document.getElementById("view_wednesday").style.display = 'none';
+  document.getElementById("view_thursday").style.display = 'none';
+  document.getElementById("view_friday").style.display = 'none';
+
+}
+function viewwedTable() {
+
+  if (document.getElementById('view_wednesday').style.display === 'none') {
+    document.getElementById("view_wednesday").style.display = 'block';  
+  }
+
+  // document.getElementById("wednesday").classList.toggle('hidden');
+  document.getElementById("view_wednesday").style.display = 'block';
+
+  document.getElementById("view_monday").style.display = 'none';
+  document.getElementById("view_tuesday").style.display = 'none';
+  document.getElementById("view_thursday").style.display = 'none';
+  document.getElementById("view_friday").style.display = 'none';
+
+  
+
+}
+
+function viewthurTable() {
+  if (document.getElementById('view_thursday').style.display === 'none'){
+    document.getElementById("view_thursday").style.display = 'block';
+  }
+  
+  // document.getElementById("thursday").classList.toggle('hidden');
+  document.getElementById("view_thursday").style.display = 'block';
+
+  document.getElementById("view_monday").style.display = 'none';
+  document.getElementById("view_tuesday").style.display = 'none';
+  document.getElementById("view_wednesday").style.display = 'none';
+  document.getElementById("view_friday").style.display = 'none';
+
+  
+}
+
+function viewfriTable() {
+  if (document.getElementById('view_friday').style.display === 'none'){
+    document.getElementById("view_friday").style.display = 'block';
+  }
+  // document.getElementById("friday").classList.toggle('hidden');
+  document.getElementById("view_friday").style.display = 'block';
+
+  document.getElementById("view_monday").style.display = 'none';
+  document.getElementById("view_tuesday").style.display = 'none';
+  document.getElementById("view_wednesday").style.display = 'none';
+  document.getElementById("view_thursday").style.display = 'none';
+
+
+}
+
+

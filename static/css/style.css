@@ -32269,6 +32269,24 @@ video {
 }
 
 @media (min-width: 640px) {
+  table.view {
+    display: inline-table !important;
+  }
+
+  thead tr:not(:first-child).view {
+    display: none;
+  }
+}
+
+td:not(:last-child).view {
+  border-bottom: 0;
+}
+
+th:not(:last-child).view {
+  border-bottom: 2px solid rgba(0, 0, 0, .1);
+}
+
+@media (min-width: 640px) {
   .sm\:container {
     width: 100%;
   }
@@ -188401,4 +188419,4 @@ video {
   .\32xl\:ease-in-out {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   }
-}  
+}
