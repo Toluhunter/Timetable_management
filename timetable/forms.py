@@ -1,6 +1,8 @@
 from django import forms
 from accounts.models import Department, Courses, Lecturer, Venue
-from .save_timetable import SaveTimeTable
+from .models import TimeTable
+
+
 
 class SelectTimetableForm(forms.Form):
     choices = [
@@ -1876,6 +1878,8 @@ class CreateTimetableForm(forms.Form):
             f"{course.course_code}" 
             for course in Courses.objects.filter(department__name=department, level=level) 
             ]
+        
+        
        
         days = [
             "monday",
@@ -1897,30 +1901,70 @@ class CreateTimetableForm(forms.Form):
             ('5', '6')
         ]
         for day in days:
+            tables = TimeTable.objects.filter(day=day)
+            # set_lecturers = TimeTable.objects.filter(day=day)
+
             for timestamp in timestamps:
+                course = f"{day}_course_{timestamp[0]}_{timestamp[1]}"
+                venue = f"{day}_venue_{timestamp[0]}_{timestamp[1]}"
+                lecturer = f"{day}_lecturer_{timestamp[0]}_{timestamp[1]}"
                 try:
-                    if self.cleaned_data[f"{day}_course_{timestamp[0]}_{timestamp[1]}"] or\
-                        self.cleaned_data[f"{day}_venue_{timestamp[0]}_{timestamp[1]}"] or\
-                        self.cleaned_data[f"{day}_lecturer_{timestamp[0]}_{timestamp[1]}"]:
+                    if self.cleaned_data[course] or\
+                        self.cleaned_data[venue] or\
+                        self.cleaned_data[lecturer]:
 
-                        if not self.cleaned_data[f"{day}_venue_{timestamp[0]}_{timestamp[1]}"]:
-                            self.add_error(f"{day}_venue_{timestamp[0]}_{timestamp[1]}", ERROR("Cannot be left empty"))
+                        if not self.cleaned_data[venue]:
+                            self.add_error(venue, ERROR("Cannot be left empty"))
                         else:
-                            if not(self.cleaned_data[f"{day}_venue_{timestamp[0]}_{timestamp[1]}"] in venues): 
-                                self.add_error(f"{day}_venue_{timestamp[0]}_{timestamp[1]}", ERROR("Not a Valid venue"))
+                            if not(self.cleaned_data[venue] in venues): 
+                                self.add_error(venue, ERROR("Not a Valid venue"))
+                            else:
+                                try:   
+                                    set_venue = tables.get(
+                                        table__venue_id__name=self.cleaned_data[venue],
+                                        table__start_time=f"{timestamp[0]}:00",
+                                        table__end_time=f"{timestamp[1]}:00"
+                                    )
+                                except TimeTable.DoesNotExist:
+                                    set_venue = None
+                                finally:
+                                    
+                                    if set_venue:
+                                        print(set_venue.table.venue_id)
+                                        self.add_error(venue, ERROR("This Venue is already booked by a different department or level"))
 
-                        if not self.cleaned_data[f"{day}_lecturer_{timestamp[0]}_{timestamp[1]}"]:
-                            self.add_error(f"{day}_lecturer_{timestamp[0]}_{timestamp[1]}", ERROR("Cannot be left empty"))
+                        if not self.cleaned_data[lecturer]:
+                            self.add_error(lecturer, ERROR("Cannot be left empty"))
                         else:
-                            if not(self.cleaned_data[f"{day}_lecturer_{timestamp[0]}_{timestamp[1]}"] in lecturers): 
-                                self.add_error(f"{day}_lecturer_{timestamp[0]}_{timestamp[1]}", ERROR("Not a valid Lecturer"))
+                            if not(self.cleaned_data[lecturer] in lecturers): 
+                                self.add_error(lecturer, ERROR("Not a valid Lecturer"))
+                            
+                            else:
+                                try:   
+                                    set_lecturer = tables.get(
+                                        table__lecturer__initial=self.cleaned_data[lecturer],
+                                        table__start_time=f"{timestamp[0]}:00",
+                                        table__end_time=f"{timestamp[1]}:00"
+                                    )
+                                except TimeTable.DoesNotExist:
+                                    set_lecturer = None
+                                finally:
+                                    
+                                    if set_lecturer:
+                                        self.add_error(lecturer, ERROR("This Lecturer is already booked by a different level"))
+                            
+                            
 
-                        if not self.cleaned_data[f"{day}_course_{timestamp[0]}_{timestamp[1]}"]:
-                            self.add_error(f"{day}_course_{timestamp[0]}_{timestamp[1]}", ERROR("Cannot be left empty"))
+                        if not self.cleaned_data[course]:
+                            self.add_error(course, ERROR("Cannot be left empty"))
                         else:
-                            if not(self.cleaned_data[f"{day}_course_{timestamp[0]}_{timestamp[1]}"] in courses): 
-                                self.add_error(f"{day}_course_{timestamp[0]}_{timestamp[1]}", ERROR("Not a Valid Course"))
-                except:
+                            if not(self.cleaned_data[course] in courses): 
+                                self.add_error(course, ERROR("Not a Valid Course"))
+                            
+                            
+                        
+                        
+                except KeyError:
                     continue
 
                     
