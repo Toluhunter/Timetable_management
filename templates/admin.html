@@ -27,7 +27,9 @@
                         </div>
                 </div>
 
-                <form class="ml-2 mr-14 mt-4 text-sm" method="" action="">
+                <form class="ml-2 mr-14 mt-4 text-sm" method="post" action="{% url 'timetable:create' department=department level=level %}">
+                    {% csrf_token %}
+                    {{ form | as_crispy_errors }}
         
                     <table class="border-2 border-purple-500 bg-purple-500 mr-2 rounded" id='monday'>
                     
@@ -870,14 +872,14 @@
                    
                 
                 </div>
-               
-            </form> 
-            </div>
-            <div class="text-right mx-14 mt-4 font-sans">
-                <button class="bg-purple-500 rounded font-bold text-sm p-2 text-white hover:bg-purple-600">
+               <div class="text-right mx-14 mt-4 font-sans">
+                <button type="submit" class="bg-purple-500 rounded font-bold text-sm p-2 text-white hover:bg-purple-600">
                     Submit
                 </button>
             </div>
+            </form> 
+            </div>
+            
            
 
    
@@ -897,8 +899,8 @@
 
         <tr>
             <th class="text-left pb-4">Lecturer</th>
-            {% for lecturer in admins %}
-        <td><span draggable="true" ondragstart="drag(event)" id="{{lecturer.user.email}}" class="border-2 px-2 rounded border-purple-300 mb-1"> {{lecturer.user.first_name}} {{lecturer.user.last_name}}</span></td>
+            {% for lecturer in lecturers %}
+        <td><span draggable="true" ondragstart="drag(event)" id="{{lecturer.initial}}" class="border-2 px-2 rounded border-purple-300 mb-1"> {{lecturer.initial}} </span></td>
            {% endfor %} 
         </tr>
 
