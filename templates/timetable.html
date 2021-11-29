@@ -77,8 +77,10 @@
         
                     </div>
             </div>
-            <div>
+            <div> 
+                        
                 <table class="w-full" id="view_monday">
+               
                     <thead>
                         <tr class="bg-purple-500 text-white">
                             
@@ -96,212 +98,55 @@
                                             
                         </tr>
                     <tbody>
+                        
                         <tr>
+                       
                             <td class="md:p-2">Monday</td>
+                            
+                            {% for time in monday %}
                             <td class="md:p-4">
                               <div class="text-sm  my-1" >
-                                <label class="font-bold "> Course: </label>
+                                <label class="font-bold "> Course: 
+                                    {% if time.table.course_code %}
+                                    {{time.table.course_code}}
+                                    {% endif %}
+                                </label>
                                 
                             </div>
                             
                         
                             <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
+                                <label class="font-bold ">Venue: 
+                                    {% if time.table.venue_id %}
+                                    {{time.table.venue_id}}
+                                    {% endif %}
+                                </label>
                                
                             </div> 
 
                             <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
+                                
+                                <label class="font-bold ">{{label}}:
+                                    {% if time.table.venue_id %} 
+                                        {% if user.is_student %}
+                                            {{time.table.lecturer}}</label>
+                                        {% else %}
+                                            {{time.level}}
+                                        {% endif %}
+                                    {% endif %}    
                                 
                            </div>
-                            
-                            
+                                
                             </td>
-                            
-                            
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td>
-                
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td>
-                
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td> 
-                
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td> 
-                
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td>
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td>
-                
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td>
-                
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td>
-                
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td>
-                            
-                            
-                
+                        {% endfor %}
+                                    
                         </tr>
                     </tbody>
                     </thead>
-                </table>        
-    
+                </table>    
+
                 <table class="w-full hidden" id="view_tuesday">
+               
                     <thead>
                         <tr class="bg-purple-500 text-white">
                             
@@ -319,214 +164,55 @@
                                             
                         </tr>
                     <tbody>
+                        
                         <tr>
-                            <td class="md:p-4">Tuesday</td>
-                            <td class="md:p-4">
-                            <div class="text-sm  my-1" >
-                                <label class="font-bold "> Course: </label>
-                                
-                            </div>
-
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-
                        
+                            <td class="md:p-2">Tuesday</td>
+                            
+                            {% for time in tuesday %}
+                            <td class="md:p-4">
+                              <div class="text-sm  my-1" >
+                                <label class="font-bold "> Course: 
+                                    {% if time.table.course_code %}
+                                    {{time.table.course_code}}
+                                    {% endif %}
+                                </label>
+                                
+                            </div>
+                            
+                        
                             <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
+                                <label class="font-bold ">Venue: 
+                                    {% if time.table.venue_id %}
+                                    {{time.table.venue_id}}
+                                    {% endif %}
+                                    </label>
+                               
+                            </div> 
+
+                            <div class="text-sm my-1" >
+                                
+                                <label class="font-bold ">{{label}}:
+                                    {% if time.table.venue_id %} 
+                                        {% if user.is_student %}
+                                            {{time.table.lecturer}}</label>
+                                        {% else %}
+                                            {{time.level}}
+                                        {% endif %}
+                                    {% endif %}    
                                 
                            </div>
+                                
                             </td>
-                            
-                            
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td>
-                
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td>
-                
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td> 
-                
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td> 
-                
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td>
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td>
-                
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td>
-                
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td>
-                
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td>
-                            
-                            
-                
+                        {% endfor %}
+                                    
                         </tr>
                     </tbody>
                     </thead>
-                </table>
+                </table>  
 
                 <table class="w-full hidden" id="view_wednesday">
+               
                     <thead>
                         <tr class="bg-purple-500 text-white">
                             
@@ -544,213 +230,56 @@
                                             
                         </tr>
                     <tbody>
+                        
                         <tr>
-                            <td class="md:p-4">Wednesday</td>
+                       
+                            <td class="md:p-2">Wednesday</td>
+                            
+                            {% for time in wednesday %}
                             <td class="md:p-4">
                               <div class="text-sm  my-1" >
-                                <label class="font-bold "> Course: </label>
+                                <label class="font-bold "> Course: 
+                                    {% if time.table.course_code %}
+                                    {{time.table.course_code}}
+                                    {% endif %}
+                                </label>
                                 
                             </div>
+                            
+                        
+                            <div class="text-sm my-1" >
+                                <label class="font-bold ">Venue:
+                                     {% if time.table.venue_id %}
+                                    {{time.table.venue_id}}
+                                    {% endif %}
+                                    </label>
+                                    
+                               
+                            </div> 
 
                             <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
                                 
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
+                                <label class="font-bold ">{{label}}:
+                                    {% if time.table.venue_id %} 
+                                        {% if user.is_student %}
+                                            {{time.table.lecturer}}</label>
+                                        {% else %}
+                                            {{time.level}}
+                                        {% endif %}
+                                    {% endif %}    
                                 
                            </div>
+                                
                             </td>
-                            
-                            
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td>
-                
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td>
-                
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td> 
-                
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td> 
-                
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td>
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td>
-                
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td>
-                
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td>
-                
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td>
-                            
-                            
-                
+                        {% endfor %}
+                                    
                         </tr>
                     </tbody>
                     </thead>
-                </table>
-
+                </table>  
+                
                 <table class="w-full hidden" id="view_thursday">
+               
                     <thead>
                         <tr class="bg-purple-500 text-white">
                             
@@ -768,213 +297,55 @@
                                             
                         </tr>
                     <tbody>
+                        
                         <tr>
-                            <td class="md:p-4">Thursday</td>
+                       
+                            <td class="md:p-2">Thursday</td>
+                            
+                            {% for time in thursday %}
                             <td class="md:p-4">
                               <div class="text-sm  my-1" >
-                                <label class="font-bold "> Course: </label>
+                                <label class="font-bold "> Course: 
+                                    {% if time.table.course_code %}
+                                    {{time.table.course_code}}
+                                    {% endif %}
+                                </label>
                                 
                             </div>
+                            
+                        
+                            <div class="text-sm my-1" >
+                                <label class="font-bold ">Venue: 
+                                    {% if time.table.venue_id %}
+                                    {{time.table.venue_id}}
+                                    {% endif %}
+                                    </label>
+                               
+                            </div> 
 
                             <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
                                 
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
+                                <label class="font-bold ">{{label}}:
+                                    {% if time.table.venue_id %} 
+                                        {% if user.is_student %}
+                                            {{time.table.lecturer}}</label>
+                                        {% else %}
+                                            {{time.level}}
+                                        {% endif %}
+                                    {% endif %}    
                                 
                            </div>
+                                
                             </td>
-                            
-                            
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td>
-                
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td>
-                
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td> 
-                
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td> 
-                
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td>
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td>
-                
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td>
-                
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td>
-                
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td>
-                            
-                            
-                
+                        {% endfor %}
+                                    
                         </tr>
                     </tbody>
                     </thead>
-                </table>
-
+                </table> 
+                
                 <table class="w-full hidden" id="view_friday">
+               
                     <thead>
                         <tr class="bg-purple-500 text-white">
                             
@@ -992,220 +363,58 @@
                                             
                         </tr>
                     <tbody>
+                        
                         <tr>
-                            <td class="md:p-4">Friday</td>
+                       
+                            <td class="md:p-2">Friday</td>
+                            
+                            {% for time in friday %}
                             <td class="md:p-4">
                               <div class="text-sm  my-1" >
-                                <label class="font-bold "> Course: </label>
+                                <label class="font-bold "> Course: 
+                                    {% if time.table.course_code %}
+                                    {{time.table.course_code}}
+                                    {% endif %}
+                                </label>
                                 
                             </div>
+                            
+                        
+                            <div class="text-sm my-1" >
+                                <label class="font-bold ">Venue: 
+                                   {% if time.table.venue_id %}
+                                    {{time.table.venue_id}}
+                                    {% endif %}
+                                    </label>
+                               
+                            </div> 
 
                             <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
                                 
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
+                                <label class="font-bold ">{{label}}:
+                                    {% if time.table.venue_id %} 
+                                        {% if user.is_student %}
+                                            {{time.table.lecturer}}</label>
+                                        {% else %}
+                                            {{time.level}}
+                                        {% endif %}
+                                    {% endif %}    
                                 
                            </div>
+                                
                             </td>
-                            
-                            
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td>
-                
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td>
-                
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td> 
-                
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td> 
-                
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td>
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td>
-                
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td>
-                
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td>
-                
-                            <td class="md:p-4">
-                              <div class="text-sm  my-1" >
-                                <label class="font-bold">  Course:  </label>
-                                
-                            </div>
-
-                            
-                            
-                        
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue: </label>
-                                
-                            </div> 
-                            
-                            <div class="text-sm my-1" >
-                                <label class="font-bold ">Lecturer: </label>
-                                
-                           </div>
-                            </td>
-                            
-                            
-                
+                        {% endfor %}
+                                    
                         </tr>
                     </tbody>
                     </thead>
-                </table>
-
-                
-
-
+                </table>  
             </div>
             
         </div>
     </div>
-   
+</div>
+
 
 {% endblock content %}
      
