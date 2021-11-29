@@ -76,11 +76,26 @@ class TimeTableView(LoginRequiredMixin, generic.TemplateView):
             thursday = TimeTable.objects.filter(day="thursday", department=user.department, level=user.student_set.level)
             friday = TimeTable.objects.filter(day="friday", department=user.department, level=user.student_set.level)
         else:
-            monday = TimeTable.objects.filter(day="monday", department=user.department)
-            tuesday = TimeTable.objects.filter(day="tuesday", department=user.department)
-            wednesday = TimeTable.objects.filter(day="wednesday", department=user.department)
-            thursday = TimeTable.objects.filter(day="thursday", department=user.department)
-            friday = TimeTable.objects.filter(day="friday", department=user.department)
+            monday = TimeTable.objects.filter(
+                day="monday", 
+                department=user.department
+                )
+            tuesday = TimeTable.objects.filter(
+                day="tuesday", 
+                department=user.department
+                )
+            wednesday = TimeTable.objects.filter(
+                day="wednesday", 
+                department=user.department
+                )
+            thursday = TimeTable.objects.filter(
+                day="thursday", 
+                department=user.department
+                )
+            friday = TimeTable.objects.filter(
+                day="friday", 
+                department=user.department
+                )
 
         kwargs = super().get_context_data(**kwargs)
         days = [
