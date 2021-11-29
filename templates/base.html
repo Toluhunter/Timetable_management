@@ -19,16 +19,8 @@
               transform: scale(0.5,0.5);
               transform-origin: 0 0;
           }
-          @media (min-width: 640px) {
-            table.view {
-            display: inline-table !important;
-            }
-            thead tr:not(:first-child) {
-            display: none;
-            }
-        }
-       
-        
+          
+
         </style>
         
     </head>
@@ -37,56 +29,69 @@
     <!--Nav Bar -->
     <div class=""> 
         <nav class="bg-purple-600 text-purple-100 w-full border-b border-purple-100 
-                    shadow-lg p-2  text-sm md:text-lg w-full font-sans">
-            
-                <div class="flex justify-between items-center">
-                    <a  href="{% url 'page:home' %}"  class=" text-sm uppercase md:text-lg font-bold ">Project Table</a>
-   
-                 
-                    
-                    <!-- nav items -->
-                    <ul>
-                        <div class="hidden md:flex space-x-5 text-sm items-center  ">
-                            {% if not user.is_authenticated %}
-                            <div>
-                                <button class="relative menubtn">Sign Up</button>
-                                    <ul class="absolute hidden flex-col bg-purple-600 p-2 text-sm space-y-4 rounded-b-lg dropdown">
-                                        <li class="px-1 pt-1 hover:bg-purple-400  rounded"><a href="{% url 'accounts:lecturersignup' %}">Staff</a> </li> 
-                                        <li class="px-1 hover:bg-purple-400  rounded"><a href="{% url 'accounts:studentsignup' %}">Student</a> </li> 
-                                    </ul>
-                            </div>  
-                            <li class="hover:bg-purple-500 rounded p-1"><a href="{% url 'accounts:login' %}" >Log in</a></li> 
-
-                                   
-                            </div>
-                            {% else %}
-                            <div>
-                                <button class="relative menubtn font-bold">Logged in: {{  user.first_name }}</button>
-                                    <ul class="absolute hidden flex-col bg-purple-600 p-2 text-sm space-y-4 rounded-b-lg dropdown">
-                                        <li class="px-1 pt-1 hover:bg-purple-400  rounded"><a href="{% url 'timetable:view' %}">Timetable</a> </li> 
-                                        {% if user.is_admin %}
-                                        <li class="px-1 hover:bg-purple-400  rounded"><a href="{% url 'timetable:select' %}">Create Timetable</a> </li>
-                                        {% endif %}
-                                        <li class="px-1 hover:bg-purple-400  rounded"><a href="{% url 'accounts:delete' %}">delete account</a> </li>
-                                        <li class="px-1 hover:bg-purple-400  rounded"><a href="{% url 'accounts:password_change' %}">Change Password</a> </li>
-                                        <li class="px-1 hover:bg-purple-400  rounded"><a href="{% url 'accounts:logout' %}">Logout</a> </li> 
-                                    </ul>
-                            </div>  
-                            {% endif %}
-                        
-                
-
+                    shadow-lg p-2  text-sm md:text-lg font-sans">
+                    <div class="flex justify-between">
                         <!-- toggle button -->
-                        <div class="md:hidden flex items-center">
-                            <button class="toggle-mobile-menu">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-                                  </svg>
-                            </button>  
+                        <button class="toggle-mobile-menu md:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
+                              </svg>
+                        </button>  
+                        <a  href="{% url 'page:home' %}"  class="text-sm uppercase md:text-lg font-bold">Project Table</a>
+
+                        <div class="flex justify-between items-center ">
+                            
+                            
+                            <div>
+
+                                <ul> <!-- nav items -->
+                                    <div class="hidden md:flex space-x-5 text-sm items-center">
+                                        {% if not user.is_authenticated %}
+                                        <div>
+                                            <button class="relative menubtn">Sign Up</button>
+                                                <ul class="absolute hidden flex-col bg-purple-600 p-2 text-sm space-y-4 rounded-b-lg dropdown">
+                                                    <li class="px-1 pt-1 hover:bg-purple-400  rounded"><a href="{% url 'accounts:lecturersignup' %}">Staff</a> </li> 
+                                                    <li class="px-1 hover:bg-purple-400  rounded"><a href="{% url 'accounts:studentsignup' %}">Student</a> </li> 
+                                                </ul>
+                                        </div>  
+                                        <li class="hover:bg-purple-500 rounded p-1"><a href="{% url 'accounts:login' %}" >Log in</a></li> 
+            
+                                               
+                                        </div>
+                                        {% else %}
+                                        <div>
+                                            <button class="relative menubtn font-bold ">Logged in: {{  user.first_name }}</button>
+                                                <ul class="absolute hidden flex-col bg-purple-600 p-2 text-sm space-y-4 rounded-b-lg dropdown">
+                                                    <li class="px-1 pt-1 hover:bg-purple-400  rounded"><a href="{% url 'timetable:view' %}">Timetable</a> </li> 
+                                                    {% if user.is_admin %}
+                                                    <li class="px-1 hover:bg-purple-400  rounded"><a href="{% url 'timetable:select' %}">Create Timetable</a> </li>
+                                                    {% endif %}
+                                                    <li class="px-1 hover:bg-purple-400  rounded"><a href="{% url 'accounts:delete' %}">delete account</a> </li>
+                                                    <li class="px-1 hover:bg-purple-400  rounded"><a href="{% url 'accounts:password_change' %}">Change Password</a> </li>
+                                                    <li class="px-1 hover:bg-purple-400  rounded"><a href="{% url 'accounts:logout' %}">Logout</a> </li> 
+                                                </ul>
+                                        </div>  
+                                        {% endif %}
+                                    
+                            
+            
+                                    <!-- toggle button -->
+                                    <div class="md:hidden flex items-center">
+                                        <button class="toggle-mobile-menu">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                                <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
+                                              </svg>
+                                        </button>  
+                                    </div>
+                                </ul>
+
+                            </div>
+                       
                         </div>
-                    </ul>
+                    </div>
+                    
+                    
                
-                </div>
                 <!-- mobile menu -->
                  
                  <div class="hidden mobile-menu md:hidden">

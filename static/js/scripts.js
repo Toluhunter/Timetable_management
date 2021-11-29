@@ -33,6 +33,7 @@ window.addEventListener('DOMContentLoaded', ()=> {
 
         btn.addEventListener('click', () => {
             menu.classList.toggle("hidden")
+            
         })
 
 //Drag 'n' drop
