@@ -63,6 +63,7 @@ class CustomUser(AbstractBaseUser):
             lecturer_email = re.compile(r"^[a-z]{3,}@babcock\.edu\.ng$")
             if not lecturer_email.match(email):
                 raise ValidationError("Not a Valid babcock email for staff")
+
         
         super().clean(*args, **kwargs)
 

@@ -108,7 +108,9 @@
                               <div class="text-sm  my-1" >
                                 <label class="font-bold "> Course: 
                                     {% if time.table.course_code %}
-                                    {{time.table.course_code}}
+                                        {% if user.is_student or user.is_admin or user.lecturer.initial == time.table.lecturer.initial %}
+                                            {{time.table.course_code}}
+                                        {% endif %}
                                     {% endif %}
                                 </label>
                                 
@@ -118,7 +120,9 @@
                             <div class="text-sm my-1" >
                                 <label class="font-bold ">Venue: 
                                     {% if time.table.venue_id %}
-                                    {{time.table.venue_id}}
+                                        {% if user.is_student or user.is_admin or user.lecturer.initial == time.table.lecturer.initial %}
+                                            {{time.table.venue_id}}
+                                        {% endif %}
                                     {% endif %}
                                 </label>
                                
@@ -128,14 +132,22 @@
                                 
                                 <label class="font-bold ">{{label}}:
                                     {% if time.table.venue_id %} 
-                                        {% if user.is_student %}
-                                            {{time.table.lecturer}}</label>
-                                        {% else %}
+                                        {% if user.is_student%}
+                                            {{time.table.lecturer}}
+                                        {% elif user.is_admin or user.lecturer.initial == time.table.lecturer.initial %}
                                             {{time.level}}
                                         {% endif %}
                                     {% endif %}    
                                 
                            </div>
+                           {% if user.is_admin %}
+                           <div class="text-sm my-1" >
+                                
+                                <label class="font-bold ">Lecturer:
+                                    {{time.table.lecturer.initial}}
+                                
+                           </div>
+                           {% endif %}
                                 
                             </td>
                         {% endfor %}
@@ -170,11 +182,13 @@
                             <td class="md:p-2">Tuesday</td>
                             
                             {% for time in tuesday %}
-                            <td class="md:p-4">
+                           <td class="md:p-4">
                               <div class="text-sm  my-1" >
                                 <label class="font-bold "> Course: 
                                     {% if time.table.course_code %}
-                                    {{time.table.course_code}}
+                                        {% if user.is_student or user.is_admin or user.lecturer.initial == time.table.lecturer.initial %}
+                                            {{time.table.course_code}}
+                                        {% endif %}
                                     {% endif %}
                                 </label>
                                 
@@ -184,24 +198,34 @@
                             <div class="text-sm my-1" >
                                 <label class="font-bold ">Venue: 
                                     {% if time.table.venue_id %}
-                                    {{time.table.venue_id}}
+                                        {% if user.is_student or user.is_admin or user.lecturer.initial == time.table.lecturer.initial %}
+                                            {{time.table.venue_id}}
+                                        {% endif %}
                                     {% endif %}
-                                    </label>
+                                </label>
                                
                             </div> 
 
-                            <div class="text-sm my-1" >
+                           <div class="text-sm my-1" >
                                 
                                 <label class="font-bold ">{{label}}:
                                     {% if time.table.venue_id %} 
-                                        {% if user.is_student %}
-                                            {{time.table.lecturer}}</label>
-                                        {% else %}
+                                        {% if user.is_student%}
+                                            {{time.table.lecturer}}
+                                        {% elif user.is_admin or user.lecturer.initial == time.table.lecturer.initial %}
                                             {{time.level}}
                                         {% endif %}
                                     {% endif %}    
                                 
                            </div>
+                           {% if user.is_admin %}
+                           <div class="text-sm my-1" >
+                                
+                                <label class="font-bold ">Lecturer:
+                                    {{time.table.lecturer.initial}}
+                                
+                           </div>
+                           {% endif %}
                                 
                             </td>
                         {% endfor %}
@@ -209,7 +233,8 @@
                         </tr>
                     </tbody>
                     </thead>
-                </table>  
+                </table>    
+
 
                 <table class="w-full hidden" id="view_wednesday">
                
@@ -236,11 +261,13 @@
                             <td class="md:p-2">Wednesday</td>
                             
                             {% for time in wednesday %}
-                            <td class="md:p-4">
+                           <td class="md:p-4">
                               <div class="text-sm  my-1" >
                                 <label class="font-bold "> Course: 
                                     {% if time.table.course_code %}
-                                    {{time.table.course_code}}
+                                        {% if user.is_student or user.is_admin or user.lecturer.initial == time.table.lecturer.initial %}
+                                            {{time.table.course_code}}
+                                        {% endif %}
                                     {% endif %}
                                 </label>
                                 
@@ -248,12 +275,13 @@
                             
                         
                             <div class="text-sm my-1" >
-                                <label class="font-bold ">Venue:
-                                     {% if time.table.venue_id %}
-                                    {{time.table.venue_id}}
+                                <label class="font-bold ">Venue: 
+                                    {% if time.table.venue_id %}
+                                        {% if user.is_student or user.is_admin or user.lecturer.initial == time.table.lecturer.initial %}
+                                            {{time.table.venue_id}}
+                                        {% endif %}
                                     {% endif %}
-                                    </label>
-                                    
+                                </label>
                                
                             </div> 
 
@@ -261,14 +289,22 @@
                                 
                                 <label class="font-bold ">{{label}}:
                                     {% if time.table.venue_id %} 
-                                        {% if user.is_student %}
-                                            {{time.table.lecturer}}</label>
-                                        {% else %}
+                                        {% if user.is_student%}
+                                            {{time.table.lecturer}}
+                                        {% elif user.is_admin or user.lecturer.initial == time.table.lecturer.initial %}
                                             {{time.level}}
                                         {% endif %}
                                     {% endif %}    
                                 
                            </div>
+                           {% if user.is_admin %}
+                           <div class="text-sm my-1" >
+                                
+                                <label class="font-bold ">Lecturer:
+                                    {{time.table.lecturer.initial}}
+                                
+                           </div>
+                           {% endif %}
                                 
                             </td>
                         {% endfor %}
@@ -276,7 +312,8 @@
                         </tr>
                     </tbody>
                     </thead>
-                </table>  
+                </table>    
+
                 
                 <table class="w-full hidden" id="view_thursday">
                
@@ -307,7 +344,9 @@
                               <div class="text-sm  my-1" >
                                 <label class="font-bold "> Course: 
                                     {% if time.table.course_code %}
-                                    {{time.table.course_code}}
+                                        {% if user.is_student or user.is_admin or user.lecturer.initial == time.table.lecturer.initial %}
+                                            {{time.table.course_code}}
+                                        {% endif %}
                                     {% endif %}
                                 </label>
                                 
@@ -317,24 +356,34 @@
                             <div class="text-sm my-1" >
                                 <label class="font-bold ">Venue: 
                                     {% if time.table.venue_id %}
-                                    {{time.table.venue_id}}
+                                        {% if user.is_student or user.is_admin or user.lecturer.initial == time.table.lecturer.initial %}
+                                            {{time.table.venue_id}}
+                                        {% endif %}
                                     {% endif %}
-                                    </label>
+                                </label>
                                
                             </div> 
 
-                            <div class="text-sm my-1" >
+                           <div class="text-sm my-1" >
                                 
                                 <label class="font-bold ">{{label}}:
                                     {% if time.table.venue_id %} 
-                                        {% if user.is_student %}
-                                            {{time.table.lecturer}}</label>
-                                        {% else %}
+                                        {% if user.is_student%}
+                                            {{time.table.lecturer}}
+                                        {% elif user.is_admin or user.lecturer.initial == time.table.lecturer.initial %}
                                             {{time.level}}
                                         {% endif %}
                                     {% endif %}    
                                 
                            </div>
+                           {% if user.is_admin %}
+                           <div class="text-sm my-1" >
+                                
+                                <label class="font-bold ">Lecturer:
+                                    {{time.table.lecturer.initial}}
+                                
+                           </div>
+                           {% endif %}
                                 
                             </td>
                         {% endfor %}
@@ -342,7 +391,8 @@
                         </tr>
                     </tbody>
                     </thead>
-                </table> 
+                </table>    
+
                 
                 <table class="w-full hidden" id="view_friday">
                
@@ -373,7 +423,9 @@
                               <div class="text-sm  my-1" >
                                 <label class="font-bold "> Course: 
                                     {% if time.table.course_code %}
-                                    {{time.table.course_code}}
+                                        {% if user.is_student or user.is_admin or user.lecturer.initial == time.table.lecturer.initial %}
+                                            {{time.table.course_code}}
+                                        {% endif %}
                                     {% endif %}
                                 </label>
                                 
@@ -382,25 +434,35 @@
                         
                             <div class="text-sm my-1" >
                                 <label class="font-bold ">Venue: 
-                                   {% if time.table.venue_id %}
-                                    {{time.table.venue_id}}
+                                    {% if time.table.venue_id %}
+                                        {% if user.is_student or user.is_admin or user.lecturer.initial == time.table.lecturer.initial %}
+                                            {{time.table.venue_id}}
+                                        {% endif %}
                                     {% endif %}
-                                    </label>
+                                </label>
                                
                             </div> 
 
-                            <div class="text-sm my-1" >
+                          <div class="text-sm my-1" >
                                 
                                 <label class="font-bold ">{{label}}:
                                     {% if time.table.venue_id %} 
-                                        {% if user.is_student %}
-                                            {{time.table.lecturer}}</label>
-                                        {% else %}
+                                        {% if user.is_student%}
+                                            {{time.table.lecturer}}
+                                        {% elif user.is_admin or user.lecturer.initial == time.table.lecturer.initial %}
                                             {{time.level}}
                                         {% endif %}
                                     {% endif %}    
                                 
                            </div>
+                           {% if user.is_admin %}
+                           <div class="text-sm my-1" >
+                                
+                                <label class="font-bold ">Lecturer:
+                                    {{time.table.lecturer.initial}}
+                                
+                           </div>
+                           {% endif %}
                                 
                             </td>
                         {% endfor %}
@@ -408,7 +470,8 @@
                         </tr>
                     </tbody>
                     </thead>
-                </table>  
+                </table>    
+
             </div>
             
         </div>

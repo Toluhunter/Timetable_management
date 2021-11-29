@@ -6,6 +6,8 @@ name = "pypi"
 [packages]
 django-crispy-forms = "*"
 crispy-tailwind = "*"
+gunicorn = "*"
+whitenoise = "*"
 
 [dev-packages]
 autopep8 = "*"
