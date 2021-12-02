@@ -1,4 +1,5 @@
 from django import forms
+from django.http import request
 from accounts.models import Department, Courses, Lecturer, Venue
 from .models import TimeTable
 
@@ -11,8 +12,13 @@ class SelectTimetableForm(forms.Form):
         ("300", "300 Level"),
         ("400", "400 Level"),
     ]
+    actions = [
+        ("view", "view"),
+        ("edit", "edit/create")
+    ]
     department = forms.ModelChoiceField(Department.objects.all())
     level = forms.ChoiceField(choices=choices)
+    action = forms.ChoiceField(choices=actions)
 
 
 class CreateTimetableForm(forms.Form):
@@ -1851,11 +1857,15 @@ class CreateTimetableForm(forms.Form):
     def __init__(self, **kwargs):
         self.department = kwargs.pop("department")
         self.level = kwargs.pop("level")
+        self.request = kwargs.pop("request")
 
         return super().__init__(**kwargs)
 
 
     def clean(self, *args, **kwargs):
+        if self.request.method == "GET":
+            return super().clean(*args, **kwargs)
+
         ERROR = forms.ValidationError
         
         for value in self.cleaned_data.values():
@@ -1864,6 +1874,7 @@ class CreateTimetableForm(forms.Form):
         else:
             raise forms.ValidationError("Atleast one course must be set on any day")
 
+       
         department = self.department
         level = self.level
         lecturers = [ 
@@ -1900,9 +1911,10 @@ class CreateTimetableForm(forms.Form):
             ('4', '5'),
             ('5', '6')
         ]
+        tables = TimeTable.objects.all()
         for day in days:
-            tables = TimeTable.objects.filter(day=day)
-            # set_lecturers = TimeTable.objects.filter(day=day)
+            # tables = TimeTable.objects.filter(day=day)
+          
 
             for timestamp in timestamps:
                 course = f"{day}_course_{timestamp[0]}_{timestamp[1]}"
@@ -1919,18 +1931,15 @@ class CreateTimetableForm(forms.Form):
                             if not(self.cleaned_data[venue] in venues): 
                                 self.add_error(venue, ERROR("Not a Valid venue"))
                             else:
-                                try:   
-                                    set_venue = tables.get(
-                                        table__venue_id__name=self.cleaned_data[venue],
-                                        table__start_time=f"{timestamp[0]}:00",
-                                        table__end_time=f"{timestamp[1]}:00"
-                                    )
-                                except TimeTable.DoesNotExist:
-                                    set_venue = None
-                                finally:
-                                    
-                                    if set_venue:
-                                        print(set_venue.table.venue_id)
+                            
+                                set_venue = tables.filter(
+                                    day=day,
+                                    table__venue_id__name=self.cleaned_data[venue],
+                                    table__start_time=f"{timestamp[0]}:00",
+                                    table__end_time=f"{timestamp[1]}:00"
+                                )
+                                if set_venue.exists(): 
+                                    if not(set_venue[0].level == level and set_venue[0].department.name == department):
                                         self.add_error(venue, ERROR("This Venue is already booked by a different department or level"))
 
                         if not self.cleaned_data[lecturer]:
@@ -1940,17 +1949,15 @@ class CreateTimetableForm(forms.Form):
                                 self.add_error(lecturer, ERROR("Not a valid Lecturer"))
                             
                             else:
-                                try:   
-                                    set_lecturer = tables.get(
-                                        table__lecturer__initial=self.cleaned_data[lecturer],
-                                        table__start_time=f"{timestamp[0]}:00",
-                                        table__end_time=f"{timestamp[1]}:00"
-                                    )
-                                except TimeTable.DoesNotExist:
-                                    set_lecturer = None
-                                finally:
+                                set_lecturer = tables.filter(
+                                    day=day,
+                                    table__lecturer__initial=self.cleaned_data[lecturer],
+                                    table__start_time=f"{timestamp[0]}:00",
+                                    table__end_time=f"{timestamp[1]}:00"
+                                )
                                     
-                                    if set_lecturer:
+                                if set_lecturer.exists():
+                                    if not(set_lecturer[0].level == level and set_lecturer[0].department.name == department):
                                         self.add_error(lecturer, ERROR("This Lecturer is already booked by a different level"))
                             
                             
@@ -1962,7 +1969,7 @@ class CreateTimetableForm(forms.Form):
                                 self.add_error(course, ERROR("Not a Valid Course"))
                             
                             
-                        
+
                         
                 except KeyError:
                     continue
@@ -1970,5 +1977,5 @@ class CreateTimetableForm(forms.Form):
                     
 
         if self.errors:
-            raise forms.ValidationError("Check fields")        
+            raise forms.ValidationError("Please Check Fileds an Error")        
         return super().clean(*args, **kwargs)
