@@ -36,8 +36,8 @@ class TimeTable(models.Model):
         ("300", "300 Level"),
         ("400", "400 Level"),
     ]
-    department = models.ForeignKey(Department, models.SET_NULL, blank=True, null=True)
-    table = models.ForeignKey(Table, on_delete=models.SET_NULL, blank=True, null=True)
+    department = models.ForeignKey(Department, on_delete=models.CASCADE)
+    table = models.ForeignKey(Table, on_delete=models.CASCADE)
     day = models.CharField(max_length=10, choices=days)
     level = models.CharField(max_length=3, choices=levels)
     

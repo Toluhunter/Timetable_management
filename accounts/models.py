@@ -84,7 +84,7 @@ class Lecturer(models.Model):
     initial = models.CharField(max_length=35, unique=True)
 
     def __str__(self):
-        return f'{self.user.first_name} {self.user.last_name}'
+        return f'{self.initial}'
     
 class Admin(models.Model):
     lecturer = models.ForeignKey(Lecturer, on_delete=models.CASCADE)
@@ -97,7 +97,7 @@ class Courses(models.Model):
     unit = models.CharField(max_length=1)
 
     def __str__(self):
-        return self.name
+        return self.course_code
 
 class Department(models.Model):
     name = models.CharField(max_length=60, unique=True)
