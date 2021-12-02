@@ -6,19 +6,11 @@ from django.urls import reverse
 
 class SaveTimeTable:
     def create_table(self, **details):
-        for key, value in details.items():
-            if not details[key]:
-                details[key] = None
+        details["lecturer"] = Lecturer.objects.get(initial=details["lecturer"])
             
-            elif key == "lecturer":
-                details["lecturer"] = Lecturer.objects.get(initial=details["lecturer"])
-            
-            elif key == "venue_id":
-                details["venue_id"] = Venue.objects.get(name=details["venue_id"])
+        details["venue_id"] = Venue.objects.get(name=details["venue_id"])
 
-            elif key == "course_code":
-                details["course_code"] = Courses.objects.get(course_code=details["course_code"])
-
+        details["course_code"] = Courses.objects.get(course_code=details["course_code"])
 
         table = Table(
             course_code=details["course_code"],
@@ -28,7 +20,7 @@ class SaveTimeTable:
             end_time=details["end_time"]
         )
         table.full_clean()
-        # table.save()
+        table.save()
         return table
 
     @classmethod
@@ -67,21 +59,41 @@ class SaveTimeTable:
         ]
         for day in days:
             for timestamp, time in zip(timestamps,times):
-                table = self.create_table(
-                    course_code=form.cleaned_data[f"{day}_course_{timestamp[0]}_{timestamp[1]}"],
-                    lecturer=form.cleaned_data[f"{day}_lecturer_{timestamp[0]}_{timestamp[1]}"],
-                    venue_id=form.cleaned_data[f"{day}_venue_{timestamp[0]}_{timestamp[1]}"],
-                    start_time=f"{time[0]}:00",
-                    end_time=f"{time[1]}:00"
-                )
-
-                timetable = TimeTable(
+                query = TimeTable.objects.filter(
+                    day=day, 
                     department=department, 
-                    level=level,
-                    table=table,
-                    day=f"{day}"
-                )
-                timetable.full_clean()
-                # timetable.save()
+                    level=level, 
+                    table__start_time=f"{time[0]}:00",
+                    table__end_time=f"{time[1]}:00"
+                    )
+                if form.cleaned_data[f"{day}_course_{timestamp[0]}_{timestamp[1]}"] and not query.exists():
+                    table = self.create_table(
+                        course_code=form.cleaned_data[f"{day}_course_{timestamp[0]}_{timestamp[1]}"],
+                        lecturer=form.cleaned_data[f"{day}_lecturer_{timestamp[0]}_{timestamp[1]}"],
+                        venue_id=form.cleaned_data[f"{day}_venue_{timestamp[0]}_{timestamp[1]}"],
+                        start_time=f"{time[0]}:00",
+                        end_time=f"{time[1]}:00"
+                    )
+
+                    timetable = TimeTable(
+                        department=department, 
+                        level=level,
+                        table=table,
+                        day=f"{day}"
+                    )
+                    timetable.full_clean()
+                    timetable.save()
+                elif form.cleaned_data[f"{day}_course_{timestamp[0]}_{timestamp[1]}"] and query.exists:
+                    print("TESTTTSTSTSTST")
+                    course = form.cleaned_data[f"{day}_course_{timestamp[0]}_{timestamp[1]}"]
+                    lecturer = form.cleaned_data[f"{day}_lecturer_{timestamp[0]}_{timestamp[1]}"]
+                    venue = form.cleaned_data[f"{day}_venue_{timestamp[0]}_{timestamp[1]}"]
+
+                    table = query[0]
+                    table.table.course_code = Courses.objects.get(course_code=course)
+                    table.table.lecturer = Lecturer.objects.get(initial=lecturer)
+                    table.table.venue_id = Venue.objects.get(name=venue)
+
+                    table.table.save()
         
         return redirect(reverse("page:home"))
