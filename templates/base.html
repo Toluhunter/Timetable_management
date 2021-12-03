@@ -19,6 +19,10 @@
               transform: scale(0.5,0.5);
               transform-origin: 0 0;
           }
+
+        .delete:hover + .hidden{
+            display:block;
+        }
           
 
         </style>
@@ -61,12 +65,12 @@
                                         {% else %}
                                         <div>
                                             <button class="relative menubtn font-bold ">Logged in: {{  user.first_name }}</button>
-                                                <ul class="absolute hidden flex-col bg-purple-600 p-2 text-sm space-y-4 rounded-b-lg dropdown">
+                                                <ul class="absolute font-serif hidden flex-col bg-purple-600 text-sm space-y-2 rounded-b-lg dropdown">
                                                     <li class="px-1 pt-1 hover:bg-purple-400  rounded"><a href="{% url 'timetable:view' %}">Timetable</a> </li> 
                                                     {% if user.is_admin %}
-                                                    <li class="px-1 hover:bg-purple-400  rounded"><a href="{% url 'timetable:select' %}">select Timetable</a> </li>
+                                                    <li class="px-1 hover:bg-purple-400  rounded"><a href="{% url 'timetable:select' %}">Select Timetable</a> </li>
                                                     {% endif %}
-                                                    <li class="px-1 hover:bg-purple-400  rounded"><a href="{% url 'accounts:delete' %}">delete account</a> </li>
+                                                    <li class="px-1 hover:bg-purple-400  rounded"><a href="{% url 'accounts:delete' %}">Delete account</a> </li>
                                                     <li class="px-1 hover:bg-purple-400  rounded"><a href="{% url 'accounts:password_change' %}">Change Password</a> </li>
                                                     <li class="px-1 hover:bg-purple-400  rounded"><a href="{% url 'accounts:logout' %}">Logout</a> </li> 
                                                 </ul>
@@ -115,8 +119,8 @@
     {% block content %}
     {% endblock content %}
 
-<footer class="font-bold text-purple-100 bg-purple-600 
-                p-2 w-full flex justify-between"
+<footer class="hidden font-bold text-purple-100 bg-purple-600 
+                p-2 w-full md:flex justify-between"
                 style="position:fixed; bottom:0;"> 
                     <div>
                         Project Table 2022

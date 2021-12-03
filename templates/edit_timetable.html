@@ -873,8 +873,9 @@
                    
                 
                 </div>
+                
                <div class="text-right mx-14 mt-4 font-sans"> 
-                <span draggable="true" ondragstart="drag(event)" id="delete" class="bg-red-500 rounded font-bold text-sm p-2 text-white"> Delete</span>              
+                
                 <button type="submit" class="bg-purple-500 rounded font-bold text-sm p-2 text-white hover:bg-purple-600">
                     Submit
                 </button>
@@ -890,7 +891,7 @@
     <!-- Course, Lecturer and venue list -->
 
     <div class="bg-purple-500 p-2 text-sm mb-36 mt-16 mx-10 rounded" style="overflow-x:auto;">    
-
+    
     <table>
 
         <tr>
@@ -914,15 +915,9 @@
             {% endfor %}
         </tr>
 
-        <tr>
-            <th class="text-left pb-4"></th>
-            <td></td>
-            <td><span draggable="true" ondragstart="drag(event)" id="b107" class="border-2 px-1 rounded border-purple-300">Delete</span></td>
-           
-
-        </tr>
-          
     </table>
+    <span draggable="true" ondragstart="drag(event)" id="delete" class="w-max delete flex justify-end mt-8 bg-red-500 rounded font-bold text-xs px-1 px-2 text-white"> Delete</span> 
+    <span class="hidden text-xs text-white">Drag to delete</span>
     
 </div>
 
