@@ -57,7 +57,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'victoria.urls'
+ROOT_URLCONF = 'TimeTableManagement.urls'
 
 TEMPLATES = [
     {
@@ -75,7 +75,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'victoria.wsgi.application'
+WSGI_APPLICATION = 'TimeTableManagement.wsgi.application'
 
 
 # Database
