@@ -11,6 +11,6 @@ Ninioluwa
 
 # Lincense & Copyright
 
-The program is under the Apache-2.0 lince. Please Note some third-party frameworks my contain different linceses
+The program is under the <a href="https://github.com/Toluhunter/Timetable_management/blob/main/LICENSE">Apache 2.0 license</a>. Please Note some third-party frameworks my contain different linceses
 
 Copyright (c) 2021 Toluhunter and Ninioluwa. All rights reserved
