@@ -84,7 +84,7 @@ class SaveTimeTable:
                     timetable.full_clean()
                     timetable.save()
                 elif form.cleaned_data[f"{day}_course_{timestamp[0]}_{timestamp[1]}"] and query.exists:
-                    print("TESTTTSTSTSTST")
+                    print( form.cleaned_data[f"{day}_lecturer_{timestamp[0]}_{timestamp[1]}"])
                     course = form.cleaned_data[f"{day}_course_{timestamp[0]}_{timestamp[1]}"]
                     lecturer = form.cleaned_data[f"{day}_lecturer_{timestamp[0]}_{timestamp[1]}"]
                     venue = form.cleaned_data[f"{day}_venue_{timestamp[0]}_{timestamp[1]}"]
@@ -95,5 +95,6 @@ class SaveTimeTable:
                     table.table.venue_id = Venue.objects.get(name=venue)
 
                     table.table.save()
+                    table.save()
         
         return redirect(reverse("page:home"))
