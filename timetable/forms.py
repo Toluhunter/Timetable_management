@@ -31,7 +31,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -43,7 +44,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -55,7 +57,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -67,7 +70,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -79,7 +83,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -91,7 +96,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -103,7 +109,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -115,7 +122,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -127,7 +135,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -139,7 +148,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -153,7 +163,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -165,7 +176,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -177,7 +189,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -189,7 +202,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -201,7 +215,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -213,7 +228,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -225,7 +241,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -237,7 +254,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -249,7 +267,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -261,7 +280,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -275,7 +295,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -287,7 +308,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -299,7 +321,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -311,7 +334,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -323,7 +347,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -335,7 +360,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -347,7 +373,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -359,7 +386,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -371,7 +399,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -383,7 +412,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -397,7 +427,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -409,7 +440,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -421,7 +453,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -433,7 +466,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -445,7 +479,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -457,7 +492,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -469,7 +505,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -481,7 +518,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -493,7 +531,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -505,7 +544,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -519,7 +559,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -531,7 +572,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -543,7 +585,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -555,7 +598,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -567,7 +611,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -579,7 +624,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -591,7 +637,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -603,7 +650,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -615,7 +663,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -627,7 +676,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -641,7 +691,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -653,7 +704,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -665,7 +717,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -677,7 +730,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -689,7 +743,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -701,7 +756,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -713,7 +769,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -725,7 +782,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -737,7 +795,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -749,7 +808,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -765,7 +825,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -777,7 +838,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -789,7 +851,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -801,7 +864,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -813,7 +877,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -825,7 +890,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -837,7 +903,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -849,7 +916,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -861,7 +929,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -873,7 +942,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -887,7 +957,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -899,7 +970,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -911,7 +983,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -923,7 +996,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -935,7 +1009,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -947,7 +1022,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -959,7 +1035,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -971,7 +1048,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -983,7 +1061,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -995,7 +1074,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1009,7 +1089,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1021,7 +1102,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1033,7 +1115,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1045,7 +1128,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1057,7 +1141,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1069,7 +1154,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1081,7 +1167,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1093,7 +1180,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1105,7 +1193,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1117,7 +1206,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1131,7 +1221,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1143,7 +1234,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1155,7 +1247,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1167,7 +1260,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1179,7 +1273,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1191,7 +1286,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1203,7 +1299,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1215,7 +1312,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1227,7 +1325,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1239,7 +1338,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1253,7 +1353,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1265,7 +1366,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1277,7 +1379,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1289,7 +1392,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1301,7 +1405,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1313,7 +1418,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1325,7 +1431,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1337,7 +1444,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1349,7 +1457,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1361,7 +1470,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1375,7 +1485,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1387,7 +1498,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1399,7 +1511,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1411,7 +1524,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1423,7 +1537,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1435,7 +1550,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1447,7 +1563,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1459,7 +1576,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1471,7 +1589,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1483,7 +1602,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1497,7 +1617,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1509,7 +1630,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1521,7 +1643,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1533,7 +1656,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1545,7 +1669,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1557,7 +1682,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1569,7 +1695,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1581,7 +1708,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1593,7 +1721,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1605,7 +1734,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1619,7 +1749,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1631,7 +1762,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1643,7 +1775,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1655,7 +1788,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1667,7 +1801,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1679,7 +1814,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1691,7 +1827,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1703,7 +1840,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1715,7 +1853,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1727,7 +1866,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1741,7 +1881,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1753,7 +1894,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1765,7 +1907,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1777,7 +1920,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1789,7 +1933,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1801,7 +1946,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1813,7 +1959,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1825,7 +1972,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1837,7 +1985,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
@@ -1849,7 +1998,8 @@ class CreateTimetableForm(forms.Form):
             attrs={
                 "ondrop": "drop(event)",
                 "ondragover": "allowDrop(event)",
-                "readonly": True
+                "readonly": True,
+                "ondblclick": "this.value=''"
             }
         )
     )
