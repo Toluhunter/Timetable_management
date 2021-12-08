@@ -1,9 +1,11 @@
 {% extends 'base.html' %}
-    {% block content %}
-    <style>
-        .hidden{
+{% block content %}
+
+
+ <style>
+        /* .hidden{
             display: none;
-        }
+        } */
 
         td,th{
           border: 2px solid #8B5CF6;
@@ -23,7 +25,10 @@
             left: -9999px;
           }
         
-          tr{ border: 2px solid #8B5CF6; }
+          tr{ 
+              border: 2px solid #8B5CF6; 
+              border-radius: 6px;
+            }
         
           td{
             border:none;
@@ -41,25 +46,25 @@
           }
         
           td:nth-of-type(1):before {content: "Day";}
-          td:nth-of-type(2):before {content: "7-8";}
-          td:nth-of-type(3):before {content: "8-9";}
-          td:nth-of-type(4):before {content: "9-10";}
-          td:nth-of-type(5):before {content: "10-11";}
-          td:nth-of-type(6):before {content: "11-12";}
-          td:nth-of-type(7):before {content: "12-1";}
-          td:nth-of-type(8):before {content: "2-3";}
-          td:nth-of-type(9):before {content: "3-4";}
-          td:nth-of-type(10):before {content: "4-5";}
-          td:nth-of-type(11):before {content: "5-6";}
+          td:nth-of-type(2):before {content: "";}
+          td:nth-of-type(3):before {content: "";}
+          td:nth-of-type(4):before {content: "";}
+          td:nth-of-type(5):before {content: "";}
+          td:nth-of-type(6):before {content: "";}
+          td:nth-of-type(7):before {content: "";}
+          td:nth-of-type(8):before {content: "";}
+          td:nth-of-type(9):before {content: "";}
+          td:nth-of-type(10):before {content: "";}
+          td:nth-of-type(11):before {content: "";}
         }
-          </style>
+          </style> 
 
-<div class=" text-black font-sans px-2 py-4 mb-24"> 
+<div class=" text-black font-serif px-2 py-4 mb-24"> 
     <div class="md:mx-14" style="overflow-x:auto;">
         <div class="md:flex">
-
-            <div class="mx-2 mr-8">
-                <button class="daysbtn rounded p-1 mr-2 mb-2 bg-purple-500 text-white relative flex items-center">
+            
+            <div class=" mx-2 mr-8">
+                <button class="md:flex items-center hidden  daysbtn rounded p-1 mr-2 mb-2 bg-purple-500 text-white relative ">
                     <span class="mb-1  text-sm">Days</span>
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -73,11 +78,22 @@
                         <li><button class="p-1  rounded hover:bg-purple-500" onClick='viewthurTable()'>Thursday</button></li>
                         <li><button class="p-1  rounded hover:bg-purple-500" onClick='viewfriTable()'>Friday</button> </li>
                         </ul>
-                        
-        
                     </div>
+
             </div>
             <div> 
+                <div class="md:hidden flex flex-col space-y-2 text-white font-bold font-serif">
+                    <!-- <span class="bg-purple-500 rounded p-1 mobdaysbtn relative">Days</span> -->
+                    <div class="mobdropdays flex text-sm mb-4 space-x-2">
+                        <button class="bg-purple-500 rounded p-1" onClick='viewmonTable()'>Monday</button>
+                        <button class="bg-purple-500 rounded p-1" onClick='viewtueTable()'>Tuesday</button>
+                        <button class="bg-purple-500 rounded p-1" onClick='viewwedTable()'>Wednesday</button>
+                        <button class="bg-purple-500 rounded p-1" onClick='viewthurTable()'>Thursday</button>
+                        <button class="bg-purple-500 rounded p-1" onClick='viewfriTable()'>Friday</button>
+    
+                    </div>
+                    
+                </div>
                         
                 <table class="w-full" id="view_monday">
                
@@ -486,6 +502,8 @@
         </div>
     </div>
 </div>
+
+ 
 
 
 {% endblock content %}

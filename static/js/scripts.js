@@ -26,6 +26,19 @@ window.addEventListener('DOMContentLoaded', ()=> {
    
   })
 
+  // window.addEventListener('DOMContentLoaded', ()=> {
+          
+  //   const daysBtn = document.querySelector('.mobdaysbtn');
+  //   const dropdays = document.querySelector('.mobdropdays');
+
+  //   daysBtn.addEventListener('click', () =>{
+  //     dropdays.classList.toggle('hidden');
+  //     dropdays.classList.toggle('flex');
+  //   })
+
+   
+  // })
+
 //Responsive mobile menu
 
   const btn = document.querySelector('button.toggle-mobile-menu')
@@ -50,9 +63,10 @@ function drop(ev) {
   ev.preventDefault();
   var data = ev.dataTransfer.getData("text");
   var nodeCopy = document.getElementById(data).cloneNode(true); 
- 
+  
   ev.target.appendChild(nodeCopy); 
-  ev.target.value=nodeCopy.innerHTML
+  ev.target.value=nodeCopy.innerHTML;
+ 
   //ev.target.appendChild(document.getElementById(data));
 }
 
@@ -233,5 +247,7 @@ function viewfriTable() {
 
 
 }
+
+
 
 
