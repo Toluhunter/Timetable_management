@@ -2040,6 +2040,9 @@ class CreateTimetableForm(forms.Form):
             for course in Courses.objects.filter(department__name=department, level=level) 
             ]
         
+        lecturers.append("(Deleted)")
+        venues.append("(Deleted)")
+        courses.append("(Deleted)")
         
        
         days = [
