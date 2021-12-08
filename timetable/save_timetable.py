@@ -66,11 +66,16 @@ class SaveTimeTable:
                     table__start_time=f"{time[0]}:00",
                     table__end_time=f"{time[1]}:00"
                     )
-                if form.cleaned_data[f"{day}_course_{timestamp[0]}_{timestamp[1]}"] and not query.exists():
+                course = form.cleaned_data[f"{day}_course_{timestamp[0]}_{timestamp[1]}"]
+                venue = form.cleaned_data[f"{day}_venue_{timestamp[0]}_{timestamp[1]}"]
+                lecturer = form.cleaned_data[f"{day}_lecturer_{timestamp[0]}_{timestamp[1]}"]
+                if course and not query.exists():
+                    if course=="(Deleted)" or lecturer=="(Deleted)" or venue=="(Deleted)":
+                        continue
                     table = self.create_table(
-                        course_code=form.cleaned_data[f"{day}_course_{timestamp[0]}_{timestamp[1]}"],
-                        lecturer=form.cleaned_data[f"{day}_lecturer_{timestamp[0]}_{timestamp[1]}"],
-                        venue_id=form.cleaned_data[f"{day}_venue_{timestamp[0]}_{timestamp[1]}"],
+                        course_code=course,
+                        lecturer=lecturer,
+                        venue_id=venue,
                         start_time=f"{time[0]}:00",
                         end_time=f"{time[1]}:00"
                     )
@@ -83,13 +88,12 @@ class SaveTimeTable:
                     )
                     timetable.full_clean()
                     timetable.save()
-                elif form.cleaned_data[f"{day}_course_{timestamp[0]}_{timestamp[1]}"] and query.exists:
-                    print( form.cleaned_data[f"{day}_lecturer_{timestamp[0]}_{timestamp[1]}"])
-                    course = form.cleaned_data[f"{day}_course_{timestamp[0]}_{timestamp[1]}"]
-                    lecturer = form.cleaned_data[f"{day}_lecturer_{timestamp[0]}_{timestamp[1]}"]
-                    venue = form.cleaned_data[f"{day}_venue_{timestamp[0]}_{timestamp[1]}"]
-
+                elif course and query.exists:
                     table = query[0]
+                    if course=="(Deleted)" or lecturer=="(Deleted)" or venue=="(Deleted)":
+                        table.table.delete()
+                        continue            
+                   
                     table.table.course_code = Courses.objects.get(course_code=course)
                     table.table.lecturer = Lecturer.objects.get(initial=lecturer)
                     table.table.venue_id = Venue.objects.get(name=venue)

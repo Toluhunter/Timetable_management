@@ -59,14 +59,46 @@ function drag(ev) {
   //ev.effectAllowed = "copyMove"; 
 }
 
+function delete_drag(ev){
+  deleted = document.createElement("span");
+  deleted.innerHTML = "(Deleted)";
+  deleted.id = "(Deleted)"
+  deleted.hidden=true
+  ev.target.appendChild(deleted)
+  ev.dataTransfer.setData("text", deleted.id);
+  }
+
+
 function drop(ev) {
   ev.preventDefault();
   var data = ev.dataTransfer.getData("text");
   var nodeCopy = document.getElementById(data).cloneNode(true); 
+<<<<<<< HEAD
   
   ev.target.appendChild(nodeCopy); 
   ev.target.value=nodeCopy.innerHTML;
  
+=======
+ 
+  // ev.target.appendChild(nodeCopy); 
+  // console.log(ev.targe.id)
+  value = nodeCopy.innerHTML
+  if (value != "(Deleted)"){
+    ev.target.value = value;
+    return
+  }
+  
+  _id = ev.target.id
+  values = ['course', 'lecturer', 'venue']
+  field = _id.split("_")
+ 
+
+  for(i=0; i<values.length; i++){
+    field[2] = values[i]
+    obj = document.getElementById(field.join("_"))
+    obj.value = "(Deleted)"
+  }
+>>>>>>> 9ceec55709f263567a94786776add91b548048d1
   //ev.target.appendChild(document.getElementById(data));
 }
 
