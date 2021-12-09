@@ -11,7 +11,7 @@
         .asteriskField{
         display: none;
          }
-         .zoom{
+         /* .zoom{
               zoom:65%;
           }
 
@@ -25,7 +25,7 @@
         }
 
         
-          
+           */
 
         </style>
         
@@ -37,7 +37,7 @@
         <nav class="bg-purple-600 text-purple-100 w-full border-b border-purple-100 
                     shadow-lg p-2  text-sm md:text-lg font-sans">
                     <div class="flex justify-between">
-                        <!-- toggle button -->
+                        <!-- toggle mobile menu button -->
                         <button class="toggle-mobile-menu md:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                                 <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
@@ -78,17 +78,6 @@
                                                 </ul>
                                         </div>  
                                         {% endif %}
-                                    
-                            
-            
-                                    <!-- toggle button -->
-                                    <!-- <div class="md:hidden flex items-center">
-                                        <button class="toggle-mobile-menu">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                                <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd" />
-                                              </svg>
-                                        </button>  
-                                    </div> -->
                                 </ul>
 
                             </div>
@@ -100,7 +89,7 @@
                
                 <!-- mobile menu -->
                  
-                 <div class="hidden mobile-menu md:hidden">
+                 <div class="hidden mobile-menu md:hidden font-serif">
                      {% if not user.is_authenticated %}
                     <a href="{% url 'accounts:login' %}" class="block  p-2 rounded text-sm hover:bg-purple-500">Login</a>
                     <a href="{% url 'accounts:studentsignup' %}" class="block p-2 rounded text-sm hover:bg-purple-500">Register Student</a>
@@ -121,19 +110,17 @@
     {% block content %}
     {% endblock content %}
 
-<footer class="hidden font-bold text-purple-100 bg-purple-600 
-                p-2 w-full md:flex justify-between"
-                style="position:fixed; bottom:0;"> 
+<footer class="text-sm md:text-lg font-bold text-purple-100 bg-purple-600 bottom-0
+                p-2 w-full flex justify-between fixed"
+                > 
                     <div>
                         Project Table 2022
                     </div>
                     <div class="space-x-4">
                         <a href="{% url 'page:about' %}">About</a>
                         <a href="{% url 'page:contact' %}">Contact Us</a>
-                    </div>
-                    
-                   
-                </footer>
+                    </div>                  
+</footer>
 
    
 

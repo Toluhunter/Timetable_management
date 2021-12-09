@@ -73,12 +73,6 @@ function drop(ev) {
   ev.preventDefault();
   var data = ev.dataTransfer.getData("text");
   var nodeCopy = document.getElementById(data).cloneNode(true); 
-<<<<<<< HEAD
-  
-  ev.target.appendChild(nodeCopy); 
-  ev.target.value=nodeCopy.innerHTML;
- 
-=======
  
   // ev.target.appendChild(nodeCopy); 
   // console.log(ev.targe.id)
@@ -98,9 +92,10 @@ function drop(ev) {
     obj = document.getElementById(field.join("_"))
     obj.value = "(Deleted)"
   }
->>>>>>> 9ceec55709f263567a94786776add91b548048d1
   //ev.target.appendChild(document.getElementById(data));
 }
+
+
 
 
 //show Table
