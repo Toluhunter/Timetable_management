@@ -56,11 +56,11 @@ class CustomUser(AbstractBaseUser):
         email = self.email.strip()
         
         if self.is_student:       
-            student_email = re.compile(r"^[a-z]{3,}[0-9]{4}@student\.babcock\.edu\.ng$")
+            student_email = re.compile(r"^[a-zA-Z-]{3,}[0-9]{4}@student\.babcock\.edu\.ng$")
             if not student_email.match(email):
                 raise ValidationError("Not a Valid babcock email for student")
         elif self.is_lecturer or self.is_admin:
-            lecturer_email = re.compile(r"^[a-z]{3,}@babcock\.edu\.ng$")
+            lecturer_email = re.compile(r"^[a-zA-Z-]{3,}@babcock\.edu\.ng$")
             if not lecturer_email.match(email):
                 raise ValidationError("Not a Valid babcock email for staff")
 
