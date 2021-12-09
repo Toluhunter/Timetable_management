@@ -26,6 +26,19 @@ window.addEventListener('DOMContentLoaded', ()=> {
    
   })
 
+  // window.addEventListener('DOMContentLoaded', ()=> {
+          
+  //   const daysBtn = document.querySelector('.mobdaysbtn');
+  //   const dropdays = document.querySelector('.mobdropdays');
+
+  //   daysBtn.addEventListener('click', () =>{
+  //     dropdays.classList.toggle('hidden');
+  //     dropdays.classList.toggle('flex');
+  //   })
+
+   
+  // })
+
 //Responsive mobile menu
 
   const btn = document.querySelector('button.toggle-mobile-menu')
@@ -81,6 +94,8 @@ function drop(ev) {
   }
   //ev.target.appendChild(document.getElementById(data));
 }
+
+
 
 
 //show Table
@@ -259,5 +274,7 @@ function viewfriTable() {
 
 
 }
+
+
 
 
