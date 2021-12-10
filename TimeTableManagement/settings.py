@@ -96,7 +96,7 @@ DATABASES = {
         'NAME': env('NAME'),
         'USER': env('USERDB'),
         'HOST': env('HOST'),
-        'PORT': env('PORT'),
+        'PORT': int(env('PORT')),
         'PASSWORD': env('PASSWORD')
     }
 }
