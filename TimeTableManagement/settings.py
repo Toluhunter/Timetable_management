@@ -12,20 +12,27 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import configparser
+from environ import environ
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 CONFIG = configparser.ConfigParser()
-CONFIG.read('config.ini')
+
+env = environ.Env(
+    DEBUG=(bool, False),
+    PORT=(int, 5432),
+)
+environ.Env.read_env()
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-9d1oo)s+#*3lgew+5)ixj6qflb)dnh0!4nn*+cn9ydxu0q*4xm'
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env("DEBUG")
 
 ALLOWED_HOSTS = ['*']
 
@@ -86,11 +93,11 @@ WSGI_APPLICATION = 'TimeTableManagement.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': CONFIG['DEFAULT']['NAME'],
-        'USER': CONFIG['DEFAULT']['USER'],
-        'HOST': CONFIG['DEFAULT']['HOST'],
-        'PORT': int(CONFIG['DEFAULT']['PORT']),
-        'PASSWORD': CONFIG['DEFAULT']['PASSWORD']
+        'NAME': env('NAME'),
+        'USER': env('USERDB'),
+        'HOST': env('HOST'),
+        'PORT': env('PORT'),
+        'PASSWORD': env('PASSWORD')
     }
 }
 
@@ -133,7 +140,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [ BASE_DIR / "static" ]
-STATIC_ROOT = BASE_DIR/"static_root"
+STATIC_ROOT = os.path.join(BASE_DIR, "static_root")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

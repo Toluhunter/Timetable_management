@@ -8,6 +8,7 @@ django-crispy-forms = "*"
 crispy-tailwind = "*"
 gunicorn = "*"
 whitenoise = "*"
+django-environ = "*"
 
 [dev-packages]
 autopep8 = "*"
