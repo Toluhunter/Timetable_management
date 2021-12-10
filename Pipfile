@@ -9,6 +9,7 @@ crispy-tailwind = "*"
 gunicorn = "*"
 whitenoise = "*"
 django-environ = "*"
+django = "*"
 
 [dev-packages]
 autopep8 = "*"
