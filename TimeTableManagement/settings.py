@@ -34,7 +34,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env("DEBUG")
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*', 'https://timetable-final-year-project.herokuapp.com']
 
 
 # Application definition
@@ -93,11 +93,11 @@ WSGI_APPLICATION = 'TimeTableManagement.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': env('NAME'),
+        'NAME': env('NAMEDB'),
         'USER': env('USERDB'),
-        'HOST': env('HOST'),
-        'PORT': int(env('PORT')),
-        'PASSWORD': env('PASSWORD')
+        'HOST': env('HOSTDB'),
+        'PORT': int(env('PORTDB')),
+        'PASSWORD': env('PASSWORDDB')
     }
 }
 
