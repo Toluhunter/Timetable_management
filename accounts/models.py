@@ -3,7 +3,6 @@ from django.db import models
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.core.exceptions import ValidationError
 
-
 # Create your models here.
 
 class CustomManager(BaseUserManager):

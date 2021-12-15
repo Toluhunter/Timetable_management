@@ -1,1 +1,1 @@
-web: gunicorn victoria.wsgi
+web: gunicorn TimeTableManagement.wsgi
