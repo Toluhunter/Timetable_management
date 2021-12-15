@@ -34,7 +34,11 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env("DEBUG")
 
-ALLOWED_HOSTS = ['localhost', 'timetable-final-year-project.herokuapp.com', 'live.bu-timtable.com.ng']
+ALLOWED_HOSTS = [
+    'localhost', 
+    'timetable-final-year-project.herokuapp.com', 
+    'www.bu-timtable.com.ng'
+    ]
 
 
 # Application definition
