@@ -5,7 +5,7 @@ from django.views import generic
 from django.contrib.auth import get_user_model
 from django.contrib.auth.tokens import default_token_generator
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.core.mail import EmailMessage
+from django.core.mail import send_mail
 from django.utils.encoding import force_bytes
 from .models import Student, Lecturer
 from .forms import StudentCreation, LecturerCreation
@@ -43,12 +43,13 @@ class StudentSignupView(generic.CreateView):
                     'token': default_token_generator.make_token(user)
                 }
         )
-        email = EmailMessage(
+        send_mail(
             'Activate Account', 
             message,
-            to=[user.email]
+            'admin@bu-timtable.com.ng',
+            [user.email],
+            fail_silently=False
         )
-        email.send()
 
         return redirect(self.get_success_url())
 
@@ -76,12 +77,14 @@ class LecturerSignupView(generic.CreateView):
                     'token': default_token_generator.make_token(user)
                 }
         )
-        email = EmailMessage(
+        email = send_mail(
             'Activate Account', 
             message,
-            to=[user.email]
+            'admin@bu-timtable.com.ng',
+            [user.email],
+            fail_silently=False
         )
-        email.send()
+
 
         return redirect(self.get_success_url())
  

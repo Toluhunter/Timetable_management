@@ -22,7 +22,10 @@ CONFIG = configparser.ConfigParser()
 env = environ.Env(
     DEBUG=(bool, False),
     PORT=(int, 5432),
+    EMAIL_PORT=(int, 465),
+    EMAIL_USE_TLS=(bool, True)
 )
+
 environ.Env.read_env()
 
 # Quick-start development settings - unsuitable for production
@@ -37,7 +40,7 @@ DEBUG = env("DEBUG")
 ALLOWED_HOSTS = [
     'localhost', 
     'timetable-final-year-project.herokuapp.com', 
-    'www.bu-timtable.com.ng'
+    'live.bu-timtable.com.ng'
     ]
 
 
@@ -156,5 +159,11 @@ AUTH_USER_MODEL = 'accounts.CustomUser'
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+EMAIL_HOST = env("EMAIL_HOST")
+EMAIL_HOST_USER = env("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD")
+EMAIL_PORT = int(env("EMAIL_PORT"))
+EMAIL_USE_TLS = bool(env("EMAIL_USE_TLS"))
 
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
