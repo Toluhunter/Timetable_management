@@ -8,19 +8,19 @@
             <div class="flex ">
 
                 <div class="mx-2 mt-4 mr-8">
-                    <button class="daysbtn rounded p-1 bg-purple-500 text-white relative flex items-center">
+                    <button class="daysbtn rounded p-1 bg-blue-500 text-white relative flex items-center">
                         <span class="mb-1 text-sm">Days</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
                         </svg>
                     </button>
-                        <div class="dropdays text-sm bg-purple-400 rounded mt-1 p-2 flex flex-col hidden  w-max absolute">
+                        <div class="dropdays text-sm bg-blue-500 text-white rounded mt-1 p-2 flex flex-col hidden  w-max absolute">
                             <ul class="space-y-2">
-                            <li><button class="p-1  rounded hover:bg-purple-500" onClick='monTable()'>Monday</button></li>
-                            <li><button class="p-1  rounded hover:bg-purple-500" onClick='tueTable()'>Tuesday</button></li>
-                            <li><button class="p-1  rounded hover:bg-purple-500" onClick='wedTable()'>Wednesday</button></li>
-                            <li><button class="p-1  rounded hover:bg-purple-500" onClick='thurTable()'>Thursday</button></li>
-                            <li><button class="p-1  rounded hover:bg-purple-500" onClick='friTable()'>Friday</button> </li>
+                            <li><button class="p-1  rounded hover:bg-blue-400" onClick='monTable()'>Monday</button></li>
+                            <li><button class="p-1  rounded hover:bg-blue-400" onClick='tueTable()'>Tuesday</button></li>
+                            <li><button class="p-1  rounded hover:bg-blue-400" onClick='wedTable()'>Wednesday</button></li>
+                            <li><button class="p-1  rounded hover:bg-blue-400" onClick='thurTable()'>Thursday</button></li>
+                            <li><button class="p-1  rounded hover:bg-blue-400" onClick='friTable()'>Friday</button> </li>
                             </ul>
                             
             
@@ -31,12 +31,12 @@
                     {% csrf_token %}
                     {{ form | as_crispy_errors }}
         
-                    <table class="border-2 border-purple-500 bg-purple-500 mr-2 rounded" 
+                    <table class="border-2 border-gray-400 bg-gray-300 mr-2 rounded" 
                                   style="width:100%" id='monday'>
                     
                         <!-- 1 hour classes -->
                        
-                            <tr class="bg-purple-500 border-2 border-purple-500 text-white">
+                            <tr class="bg-gray-300 border-2 border-gray-400 text-gray-700">
                                     <th class="p-1">DAY</th>
                                     <th class="p-1" >7-8</th>
                                     <th class="p-1">8-9</th>
@@ -51,9 +51,9 @@
                                     
                             </tr>
             
-                        <tr class="bg-purple-100">
-                            <td class="p-2 px-6 border-purple-500 border-2">Monday</td>
-                            <td  class="px-6 border-purple-500 border-2 py-2">
+                        <tr class="bg-gray-100">
+                            <td class="p-2 px-6 border-gray-400 border-2">Monday</td>
+                            <td  class="px-6 border-gray-400 border-2 py-2">
                                 <div class="text-sm  my-1" >
                                     {{ form.monday_course_7_8 | as_crispy_field}}
                                 </div>
@@ -66,7 +66,7 @@
                                 </div>       
                             </td> 
             
-                            <td  class="px-6 border-purple-500 border-2" >
+                            <td  class="px-6 border-gray-400 border-2" >
                                 
                                 <div class="text-sm  my-1" >
                                     {{ form.monday_course_8_9 | as_crispy_field }}
@@ -80,7 +80,7 @@
                                 </div>       
                             </td> 
             
-                            <td  class="px-6 border-purple-500 border-2" >
+                            <td  class="px-6 border-gray-400 border-2" >
                                 
                                 <div class="text-sm  my-1" >
                                    {{ form.monday_course_9_10 | as_crispy_field }}
@@ -94,7 +94,7 @@
                                 </div>       
                             </td> 
             
-                            <td  class=" px-6 border-purple-500 border-2" >
+                            <td  class=" px-6 border-gray-400 border-2" >
                                 
                                 <div class="text-sm  my-1" >
                                     {{ form.monday_course_10_11 | as_crispy_field }}
@@ -108,7 +108,7 @@
                                 </div>       
                             </td> 
             
-                            <td  class=" px-6 border-purple-500 border-2" >
+                            <td  class=" px-6 border-gray-400 border-2" >
                                 
                                 <div class="text-sm  my-1" >
                                    {{ form.monday_course_11_12 | as_crispy_field }}
@@ -122,7 +122,7 @@
                                 </div>       
                             </td> 
             
-                            <td  class=" px-6 border-purple-500 border-2" >
+                            <td  class=" px-6 border-gray-400 border-2" >
                                 
                                 <div class="text-sm  my-1" >
                                     {{ form.monday_course_12_1 | as_crispy_field }}
@@ -135,7 +135,7 @@
                                     {{ form.monday_venue_12_1 | as_crispy_field }}
                                 </div>       
                             </td>
-                            <td  class=" px-6 border-purple-500 border-2" >
+                            <td  class=" px-6 border-gray-400 border-2" >
                                 
                                 <div class="text-sm  my-1" >
                                     
@@ -150,7 +150,7 @@
                                 </div>       
                             </td> 
             
-                            <td  class=" px-6 border-purple-500 border-2" >
+                            <td  class=" px-6 border-gray-400 border-2" >
                                 
                                 <div class="text-sm  my-1" >
                                     
@@ -165,7 +165,7 @@
                                 </div>       
                             </td>
             
-                            <td  class=" px-6 border-purple-500 border-2" >
+                            <td  class=" px-6 border-gray-400 border-2" >
                                 
                                 <div class="text-sm  my-1" >
                                    
@@ -180,7 +180,7 @@
                                 </div>       
                             </td>
             
-                            <td  class=" px-6 border-purple-500 border-2" >
+                            <td  class=" px-6 border-gray-400 border-2" >
                                 
                                 <div class="text-sm  my-1" >
                                     
@@ -200,11 +200,11 @@
                         
                     </table>
         
-                    <table class="border-2 border-purple-500 bg-purple-500 mr-2 hidden rounded" id='tuesday'>
+                    <table class="border-2 border-gray-400 bg-gray-300 mr-2 hidden rounded" id='tuesday'>
                     
                         <!-- 1 hour classes -->
                        
-                            <tr class="bg-purple-500 border-2 border-purple-500 text-white">
+                            <tr class="bg-gray-300 border-2 border-gray-400 text-gray-700">
                                     <th class="p-1">DAY</th>
                                     <th class="p-1">7-8</th>
                                     <th class="p-1">8-9</th>
@@ -219,9 +219,9 @@
                                     
                             </tr>
             
-                        <tr class="bg-purple-100">
-                            <td class="p-2 px-6 border-purple-500 border-2" >Tuesday</td>
-                            <td  class=" px-6 border-purple-500 border-2 py-2" >
+                        <tr class="bg-gray-100">
+                            <td class="p-2 px-6 border-gray-400 border-2" >Tuesday</td>
+                            <td  class=" px-6 border-gray-400 border-2 py-2" >
                                 <div class="text-sm  my-1" >
                                     {{ form.tuesday_course_7_8 | as_crispy_field}}
                                 </div>
@@ -234,7 +234,7 @@
                                 </div>       
                             </td> 
             
-                            <td  class="px-6 border-purple-500 border-2" >
+                            <td  class="px-6 border-gray-400 border-2" >
                                 
                                 <div class="text-sm  my-1" >
                                     {{ form.tuesday_course_8_9 | as_crispy_field }}
@@ -248,7 +248,7 @@
                                 </div>       
                             </td> 
             
-                            <td  class="px-6 border-purple-500 border-2" >
+                            <td  class="px-6 border-gray-400 border-2" >
                                 
                                 <div class="text-sm  my-1" >
                                    {{ form.tuesday_course_9_10 | as_crispy_field }}
@@ -262,7 +262,7 @@
                                 </div>       
                             </td> 
             
-                            <td  class=" px-6 border-purple-500 border-2" >
+                            <td  class=" px-6 border-gray-400 border-2" >
                                 
                                 <div class="text-sm  my-1" >
                                     {{ form.tuesday_course_10_11 | as_crispy_field }}
@@ -276,7 +276,7 @@
                                 </div>       
                             </td> 
             
-                            <td  class=" px-6 border-purple-500 border-2" >
+                            <td  class=" px-6 border-gray-400 border-2" >
                                 
                                 <div class="text-sm  my-1" >
                                    {{ form.tuesday_course_11_12 | as_crispy_field }}
@@ -290,7 +290,7 @@
                                 </div>       
                             </td> 
             
-                            <td  class=" px-6 border-purple-500 border-2" >
+                            <td  class=" px-6 border-gray-400 border-2" >
                                 
                                 <div class="text-sm  my-1" >
                                     {{ form.tuesday_course_12_1 | as_crispy_field }}
@@ -303,7 +303,7 @@
                                     {{ form.tuesday_venue_12_1 | as_crispy_field }}
                                 </div>       
                             </td>
-                            <td  class=" px-6 border-purple-500 border-2" >
+                            <td  class=" px-6 border-gray-400 border-2" >
                                 
                                 <div class="text-sm  my-1" >
                                     
@@ -318,7 +318,7 @@
                                 </div>       
                             </td> 
             
-                            <td  class=" px-6 border-purple-500 border-2" >
+                            <td  class=" px-6 border-gray-400 border-2" >
                                 
                                 <div class="text-sm  my-1" >
                                     
@@ -333,7 +333,7 @@
                                 </div>       
                             </td>
             
-                            <td  class=" px-6 border-purple-500 border-2" >
+                            <td  class=" px-6 border-gray-400 border-2" >
                                 
                                 <div class="text-sm  my-1" >
                                    
@@ -348,7 +348,7 @@
                                 </div>       
                             </td>
             
-                            <td  class=" px-6 border-purple-500 border-2" >
+                            <td  class=" px-6 border-gray-400 border-2" >
                                 
                                 <div class="text-sm  my-1" >
                                     
@@ -367,11 +367,11 @@
         
                         
                     </table>
-                      <table class="border-2 border-purple-500 bg-purple-500 mr-2 hidden rounded" id='wednesday'>
+                      <table class="border-2 border-gray-400 bg-gray-300 mr-2 hidden rounded" id='wednesday'>
                     
                         <!-- 1 hour classes -->
                        
-                            <tr class="bg-purple-500 border-2 border-purple-500 text-white">
+                            <tr class="bg-gray-300 border-2 border-gray-400 text-gray-700">
                                     <th class="p-1">DAY</th>
                                     <th class="p-1">7-8</th>
                                     <th class="p-1">8-9</th>
@@ -386,9 +386,9 @@
                                     
                             </tr>
             
-                        <tr class="bg-purple-100">
-                            <td class="p-2 px-6 border-purple-500 border-2" >Wednesday</td>
-                            <td  class=" px-6 border-purple-500 border-2 py-2" >
+                        <tr class="bg-gray-100">
+                            <td class="p-2 px-6 border-gray-400 border-2" >Wednesday</td>
+                            <td  class=" px-6 border-gray-400 border-2 py-2" >
                                 <div class="text-sm  my-1" >
                                     {{ form.wednesday_course_7_8 | as_crispy_field}}
                                 </div>
@@ -401,7 +401,7 @@
                                 </div>       
                             </td> 
             
-                            <td  class="px-6 border-purple-500 border-2" >
+                            <td  class="px-6 border-gray-400 border-2" >
                                 
                                 <div class="text-sm  my-1" >
                                     {{ form.wednesday_course_8_9 | as_crispy_field }}
@@ -415,7 +415,7 @@
                                 </div>       
                             </td> 
             
-                            <td  class="px-6 border-purple-500 border-2" >
+                            <td  class="px-6 border-gray-400 border-2" >
                                 
                                 <div class="text-sm  my-1" >
                                    {{ form.wednesday_course_9_10 | as_crispy_field }}
@@ -429,7 +429,7 @@
                                 </div>       
                             </td> 
             
-                            <td  class=" px-6 border-purple-500 border-2" >
+                            <td  class=" px-6 border-gray-400 border-2" >
                                 
                                 <div class="text-sm  my-1" >
                                     {{ form.wednesday_course_10_11 | as_crispy_field }}
@@ -443,7 +443,7 @@
                                 </div>       
                             </td> 
             
-                            <td  class=" px-6 border-purple-500 border-2" >
+                            <td  class=" px-6 border-gray-400 border-2" >
                                 
                                 <div class="text-sm  my-1" >
                                    {{ form.wednesday_course_11_12 | as_crispy_field }}
@@ -457,7 +457,7 @@
                                 </div>       
                             </td> 
             
-                            <td  class=" px-6 border-purple-500 border-2" >
+                            <td  class=" px-6 border-gray-400 border-2" >
                                 
                                 <div class="text-sm  my-1" >
                                     {{ form.wednesday_course_12_1 | as_crispy_field }}
@@ -470,7 +470,7 @@
                                     {{ form.wednesday_venue_12_1 | as_crispy_field }}
                                 </div>       
                             </td>
-                            <td  class=" px-6 border-purple-500 border-2" >
+                            <td  class=" px-6 border-gray-400 border-2" >
                                 
                                 <div class="text-sm  my-1" >
                                     
@@ -485,7 +485,7 @@
                                 </div>       
                             </td> 
             
-                            <td  class=" px-6 border-purple-500 border-2" >
+                            <td  class=" px-6 border-gray-400 border-2" >
                                 
                                 <div class="text-sm  my-1" >
                                     
@@ -500,7 +500,7 @@
                                 </div>       
                             </td>
             
-                            <td  class=" px-6 border-purple-500 border-2" >
+                            <td  class=" px-6 border-gray-400 border-2" >
                                 
                                 <div class="text-sm  my-1" >
                                    
@@ -515,7 +515,7 @@
                                 </div>       
                             </td>
             
-                            <td  class=" px-6 border-purple-500 border-2" >
+                            <td  class=" px-6 border-gray-400 border-2" >
                                 
                                 <div class="text-sm  my-1" >
                                     
@@ -535,10 +535,10 @@
                         
                     </table>
         
-                    <table class="border-2 border-purple-500 bg-purple-500 mr-2 hidden rounded" id='thursday'>
+                    <table class="border-2 border-gray-400 bg-gray-300 mr-2 hidden rounded" id='thursday'>
                     
                         <!-- 1 hour classes -->
-                        <tr class="bg-purple-500 border-2 border-purple-500 text-white">
+                        <tr class="bg-gray-300 border-2 border-gray-400 text-gray-700">
                             <th class="p-1">DAY</th>
                             <th class="p-1">7-8</th>
                             <th class="p-1">8-9</th>
@@ -553,9 +553,9 @@
                             
                     </tr>
     
-                <tr class="bg-purple-100">
-                    <td class="p-2 px-6 border-purple-500 border-2" >Thursday</td>
-                    <td  class=" px-6 border-purple-500 border-2 py-2" >
+                <tr class="bg-gray-100">
+                    <td class="p-2 px-6 border-gray-400 border-2" >Thursday</td>
+                    <td  class=" px-6 border-gray-400 border-2 py-2" >
                         <div class="text-sm  my-1" >
                             {{ form.thursday_course_7_8 | as_crispy_field}}
                         </div>
@@ -568,7 +568,7 @@
                         </div>       
                     </td> 
     
-                    <td  class="px-6 border-purple-500 border-2" >
+                    <td  class="px-6 border-gray-400 border-2" >
                         
                         <div class="text-sm  my-1" >
                             {{ form.thursday_course_8_9 | as_crispy_field }}
@@ -582,7 +582,7 @@
                         </div>       
                     </td> 
     
-                    <td  class="px-6 border-purple-500 border-2" >
+                    <td  class="px-6 border-gray-400 border-2" >
                         
                         <div class="text-sm  my-1" >
                            {{ form.thursday_course_9_10 | as_crispy_field }}
@@ -596,7 +596,7 @@
                         </div>       
                     </td> 
     
-                    <td  class=" px-6 border-purple-500 border-2" >
+                    <td  class=" px-6 border-gray-400 border-2" >
                         
                         <div class="text-sm  my-1" >
                             {{ form.thursday_course_10_11 | as_crispy_field }}
@@ -610,7 +610,7 @@
                         </div>       
                     </td> 
     
-                    <td  class=" px-6 border-purple-500 border-2" >
+                    <td  class=" px-6 border-gray-400 border-2" >
                         
                         <div class="text-sm  my-1" >
                            {{ form.thursday_course_11_12 | as_crispy_field }}
@@ -624,7 +624,7 @@
                         </div>       
                     </td> 
     
-                    <td  class=" px-6 border-purple-500 border-2" >
+                    <td  class=" px-6 border-gray-400 border-2" >
                         
                         <div class="text-sm  my-1" >
                             {{ form.thursday_course_12_1 | as_crispy_field }}
@@ -637,7 +637,7 @@
                             {{ form.thursday_venue_12_1 | as_crispy_field }}
                         </div>       
                     </td>
-                    <td  class=" px-6 border-purple-500 border-2" >
+                    <td  class=" px-6 border-gray-400 border-2" >
                         
                         <div class="text-sm  my-1" >
                             
@@ -652,7 +652,7 @@
                         </div>       
                     </td> 
     
-                    <td  class=" px-6 border-purple-500 border-2" >
+                    <td  class=" px-6 border-gray-400 border-2" >
                         
                         <div class="text-sm  my-1" >
                             
@@ -667,7 +667,7 @@
                         </div>       
                     </td>
     
-                    <td  class=" px-6 border-purple-500 border-2" >
+                    <td  class=" px-6 border-gray-400 border-2" >
                         
                         <div class="text-sm  my-1" >
                            
@@ -682,7 +682,7 @@
                         </div>       
                     </td>
     
-                    <td  class=" px-6 border-purple-500 border-2" >
+                    <td  class=" px-6 border-gray-400 border-2" >
                         
                         <div class="text-sm  my-1" >
                             
@@ -702,11 +702,11 @@
                         
                     </table>
         
-                    <table class="border-2 border-purple-500 bg-purple-500 mr-2 hidden rounded" id='friday'>
+                    <table class="border-2 border-gray-400 bg-gray-300 mr-2 hidden rounded" id='friday'>
                     
                         <!-- 1 hour classes -->
                        
-                        <tr class="bg-purple-500 border-2 border-purple-500 text-white">
+                        <tr class="bg-gray-300 border-2 border-gray-400 text-gray-700">
                             <th class="p-1">DAY</th>
                             <th class="p-1">7-8</th>
                             <th class="p-1">8-9</th>
@@ -721,9 +721,9 @@
                             
                     </tr>
     
-                <tr class="bg-purple-100">
-                    <td class="p-2 px-6 border-purple-500 border-2" >Friday</td>
-                    <td  class=" px-6 border-purple-500 border-2 py-2" >
+                <tr class="bg-gray-100">
+                    <td class="p-2 px-6 border-gray-400 border-2" >Friday</td>
+                    <td  class=" px-6 border-gray-400 border-2 py-2" >
                         <div class="text-sm  my-1" >
                             {{ form.friday_course_7_8 | as_crispy_field}}
                         </div>
@@ -736,7 +736,7 @@
                         </div>       
                     </td> 
     
-                    <td  class="px-6 border-purple-500 border-2" >
+                    <td  class="px-6 border-gray-400 border-2" >
                         
                         <div class="text-sm  my-1" >
                             {{ form.friday_course_8_9 | as_crispy_field }}
@@ -750,7 +750,7 @@
                         </div>       
                     </td> 
     
-                    <td  class="px-6 border-purple-500 border-2" >
+                    <td  class="px-6 border-gray-400 border-2" >
                         
                         <div class="text-sm  my-1" >
                            {{ form.friday_course_9_10 | as_crispy_field }}
@@ -764,7 +764,7 @@
                         </div>       
                     </td> 
     
-                    <td  class=" px-6 border-purple-500 border-2" >
+                    <td  class=" px-6 border-gray-400 border-2" >
                         
                         <div class="text-sm  my-1" >
                             {{ form.friday_course_10_11 | as_crispy_field }}
@@ -778,7 +778,7 @@
                         </div>       
                     </td> 
     
-                    <td  class=" px-6 border-purple-500 border-2" >
+                    <td  class=" px-6 border-gray-400 border-2" >
                         
                         <div class="text-sm  my-1" >
                            {{ form.friday_course_11_12 | as_crispy_field }}
@@ -792,7 +792,7 @@
                         </div>       
                     </td> 
     
-                    <td  class=" px-6 border-purple-500 border-2" >
+                    <td  class=" px-6 border-gray-400 border-2" >
                         
                         <div class="text-sm  my-1" >
                             {{ form.friday_course_12_1 | as_crispy_field }}
@@ -805,7 +805,7 @@
                             {{ form.friday_venue_12_1 | as_crispy_field }}
                         </div>       
                     </td>
-                    <td  class=" px-6 border-purple-500 border-2" >
+                    <td  class=" px-6 border-gray-400 border-2" >
                         
                         <div class="text-sm  my-1" >
                             
@@ -820,7 +820,7 @@
                         </div>       
                     </td> 
     
-                    <td  class=" px-6 border-purple-500 border-2" >
+                    <td  class=" px-6 border-gray-400 border-2" >
                         
                         <div class="text-sm  my-1" >
                             
@@ -835,7 +835,7 @@
                         </div>       
                     </td>
     
-                    <td  class=" px-6 border-purple-500 border-2" >
+                    <td  class=" px-6 border-gray-400 border-2" >
                         
                         <div class="text-sm  my-1" >
                            
@@ -850,7 +850,7 @@
                         </div>       
                     </td>
     
-                    <td  class=" px-6 border-purple-500 border-2" >
+                    <td  class=" px-6 border-gray-400 border-2" >
                         
                         <div class="text-sm  my-1" >
                             
@@ -876,7 +876,7 @@
                 
                <div class="text-right md:mx-14 mt-4 font-sans"> 
                 
-                <button type="submit" class="bg-purple-500 rounded font-bold text-sm p-2 text-white hover:bg-purple-600">
+                <button type="submit" class="bg-blue-500 rounded font-bold text-sm p-2 text-white hover:bg-blue-700">
                     Submit
                 </button>
             </div>
@@ -890,28 +890,28 @@
     
     <!-- Course, Lecturer and venue list -->
 
-    <div class="bg-purple-500 p-2 text-sm mb-4 mt-8 mx-4 md:mx-10 rounded" style="overflow-x:auto;">    
+    <div class="bg-gray-300 p-2 text-sm mb-4 mt-8 mx-4 md:mx-10 rounded" style="overflow-x:auto;">    
     
     <table>
 
         <tr>
             <th class="text-left pr-4 pb-4">Courses</th>
             {% for course in courses %}
-            <td><span draggable="true" ondragstart="drag(event)" id="{{course.course_code}}" class="cursor-move border-2 px-2 rounded border-purple-300">{{course.course_code}}</span></td>
+            <td><span draggable="true" ondragstart="drag(event)" id="{{course.course_code}}" class="cursor-move border-2 px-2 rounded border-gray-500">{{course.course_code}}</span></td>
             {% endfor %}
         </tr>
 
         <tr>
             <th class="text-left pb-4">Lecturer</th>
             {% for lecturer in lecturers %}
-        <td><span draggable="true" ondragstart="drag(event)" id="{{lecturer.initial}}" class="cursor-move border-2 px-2 rounded border-purple-300 mb-1"> {{lecturer.initial}} </span></td>
+        <td><span draggable="true" ondragstart="drag(event)" id="{{lecturer.initial}}" class="cursor-move border-2 px-2 rounded border-gray-500 mb-1"> {{lecturer.initial}} </span></td>
            {% endfor %} 
         </tr>
 
         <tr>
             <th class="text-left">Venue</th>
             {% for venue in venues %}
-            <td><span draggable="true" ondragstart="drag(event)" id="{{venue.name}}" class="cursor-move mb-2 border-2 px-2 rounded border-purple-300">{{venue.name}}</span></td>
+            <td><span draggable="true" ondragstart="drag(event)" id="{{venue.name}}" class="cursor-move mb-2 border-2 px-2 rounded border-gray-500">{{venue.name}}</span></td>
             {% endfor %}
         </tr>
 

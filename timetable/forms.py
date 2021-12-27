@@ -13,8 +13,8 @@ class SelectTimetableForm(forms.Form):
         ("400", "400 Level"),
     ]
     actions = [
-        ("view", "view"),
-        ("edit", "edit/create")
+        ("view", "View"),
+        ("edit", "Edit/Create")
     ]
     department = forms.ModelChoiceField(Department.objects.all())
     level = forms.ChoiceField(choices=choices)
