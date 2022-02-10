@@ -40,7 +40,7 @@ DEBUG = env("DEBUG")
 ALLOWED_HOSTS = [
     'localhost', 
     'timetable-final-year-project.herokuapp.com', 
-    'live.bu-timtable.com.ng'
+    'www.bu-timtable.com.ng'
     ]
 
 
