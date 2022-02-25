@@ -18,12 +18,6 @@ from django.contrib.auth.views import PasswordChangeView, PasswordChangeDoneView
 # Create your views here.
 User = get_user_model()
 
-class LoginView(generic.TemplateView):
-    template_name = 'registration/login.html'
-
-    def post(self, request):
-        pass
-
 class StudentSignupView(generic.CreateView):
     template_name = 'registration/studentsignup.html'
     form_class = StudentCreation
