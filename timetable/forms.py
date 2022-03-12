@@ -2069,10 +2069,18 @@ class CreateTimetableForm(forms.Form):
             # tables = TimeTable.objects.filter(day=day)
           
 
-            for timestamp in timestamps:
-                course = f"{day}_course_{timestamp[0]}_{timestamp[1]}"
-                venue = f"{day}_venue_{timestamp[0]}_{timestamp[1]}"
-                lecturer = f"{day}_lecturer_{timestamp[0]}_{timestamp[1]}"
+            for timestamp_12 in timestamps:
+                course = f"{day}_course_{timestamp_12[0]}_{timestamp_12[1]}"
+                venue = f"{day}_venue_{timestamp_12[0]}_{timestamp_12[1]}"
+                lecturer = f"{day}_lecturer_{timestamp_12[0]}_{timestamp_12[1]}"
+
+                time_24 = {"1":"13", "02":"14", "3":"15", "4":"16", "5":"17", "6":"18"}
+
+                timestamp = [ "0", "0" ]
+                timestamp[0] = time_24[timestamp_12[0]] if timestamp_12[0] in time_24 else timestamp_12[0]
+                timestamp[1] = time_24[timestamp_12[1]] if timestamp_12[1] in time_24 else timestamp_12[1]
+                
+                    
                 try:
                     if self.cleaned_data[course] or\
                         self.cleaned_data[venue] or\
@@ -2108,7 +2116,7 @@ class CreateTimetableForm(forms.Form):
                                     table__start_time=f"{timestamp[0]}:00",
                                     table__end_time=f"{timestamp[1]}:00"
                                 )
-                                    
+                                print(timestamp[1])
                                 if set_lecturer.exists():
                                     if not(set_lecturer[0].level == level and set_lecturer[0].department.name == department):
                                         self.add_error(lecturer, ERROR("This Lecturer is already booked by a different level"))

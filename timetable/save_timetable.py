@@ -101,4 +101,4 @@ class SaveTimeTable:
                     table.table.save()
                     table.save()
         
-        return redirect(reverse("page:home"))
+        return redirect(reverse("timetable:edit", kwargs={"department":department, "level":level}))
