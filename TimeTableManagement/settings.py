@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 CONFIG = configparser.ConfigParser()
 
 env = environ.Env(
-    DEBUG=(bool, False),
+    DEBUG=(bool, True),
     PORT=(int, 5432),
     EMAIL_PORT=(int, 465),
     EMAIL_USE_TLS=(bool, True)
