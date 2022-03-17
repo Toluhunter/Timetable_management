@@ -1,6 +1,6 @@
 import re
 from django.db import models
-from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
+from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, PermissionsMixin
 from django.core.exceptions import ValidationError
 
 # Create your models here.
@@ -34,16 +34,20 @@ class CustomManager(BaseUserManager):
         kwargs.setdefault("is_lecturer", True)
         kwargs.setdefault("is_active", True)
         kwargs.setdefault("is_admin", True)
+        kwargs.setdefault("is_staff", True)
+        kwargs.setdefault("is_superuser", True)
 
         return self.create_user(email, first_name, last_name, password, department, *args, **kwargs)
 
-class CustomUser(AbstractBaseUser):
+class CustomUser(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(unique=True)
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     is_lecturer = models.BooleanField(default=False)
     is_student = models.BooleanField(default=False)
     is_admin = models.BooleanField(default=False)
+    is_superuser = models.BooleanField(default=False)
+    is_staff = models.BooleanField(default=False)
     is_active = models.BooleanField(default=False)
     department = models.ForeignKey('Department', on_delete=models.CASCADE)
 
