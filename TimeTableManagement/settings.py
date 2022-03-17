@@ -20,7 +20,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 CONFIG = configparser.ConfigParser()
 
 env = environ.Env(
-    DEBUG=(bool, True),
+    DEBUG=(bool, False),
     PORT=(int, 5432),
     EMAIL_PORT=(int, 465),
     EMAIL_USE_TLS=(bool, True)
@@ -35,13 +35,14 @@ environ.Env.read_env()
 SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = env("DEBUG")
-DEBUG = True
+DEBUG = env("DEBUG")
+# DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost', 
     'timetable-final-year-project.herokuapp.com', 
-    'www.bu-timtable.com.ng'
+    'www.bu-timtable.com.ng',
+    '127.0.0.1',
     ]
 
 
