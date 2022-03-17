@@ -92,6 +92,8 @@ class Lecturer(models.Model):
 class Admin(models.Model):
     lecturer = models.ForeignKey(Lecturer, on_delete=models.CASCADE)
 
+    def __str__(self):
+        return f'{self.lecturer.initial}'
 class Courses(models.Model):
     department = models.ManyToManyField('Department')
     name = models.CharField(max_length=80)
